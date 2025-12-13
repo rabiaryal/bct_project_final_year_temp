@@ -1,0 +1,25 @@
+1. must answer the direct question answer like: what is the fee of the clz
+2. Must recommend the college based on the query_encoder
+3. Shoulf be able to remember the previous conversion or the context of the chat called the context memory,
+shot filling , hostel
+4. must be able to compare the two colleges 
+
+basic diagram of this college recommendation system 
+User
+ ↓
+      ↓
+    Intent Detector
+      ↓
+      if greeting handle here and firectly geenrate the response , for greeting + task , treat it as the task
+    Entity Extractor
+      ↓
+    Conversation State Manager
+      ↓
+   ┌───────────────┬────────────────┬──────────────────┐
+   │ Direct Answer │ Recommendation │ Comparison Engine │all three combined
+   └───────────────┴────────────────┴──────────────────┘
+      ↓
+    Response Generator
+
+
+for the direct answer the faiss system is used, for the other still undecided

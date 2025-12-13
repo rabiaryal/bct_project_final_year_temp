@@ -1,0 +1,573 @@
+text,primary_intent
+Hello,greeting
+Hello!,greeting
+Hi there,greeting
+Hi there!,greeting
+Hey,greeting
+Hey!,greeting
+Good morning,greeting
+Good morning!,greeting
+Good afternoon,greeting
+Good afternoon!,greeting
+Good evening,greeting
+Good evening!,greeting
+Namaste,greeting
+Namaste!,greeting
+Greetings,greeting
+Greetings!,greeting
+Hi,greeting
+Hi!,greeting
+Hello there,greeting
+Hello there!,greeting
+Hey there,greeting
+Hey there!,greeting
+Howdy,greeting
+Howdy!,greeting
+What's up,greeting
+What's up!,greeting
+How are you,greeting
+How are you!,greeting
+How are you doing,greeting
+How are you doing!,greeting
+Nice to meet you,greeting
+Nice to meet you!,greeting
+"Hello, how can you help",greeting
+"Hello, how can you help!",greeting
+"Hi, I need some help",greeting
+"Hi, I need some help!",greeting
+"Hey, can you assist me",greeting
+"Hey, can you assist me!",greeting
+Good day,greeting
+Good day!,greeting
+Hello everyone,greeting
+Hello everyone!,greeting
+"Hi there, I have a question",greeting
+"Hi there, I have a question!",greeting
+"Greetings, I need information",greeting
+"Greetings, I need information!",greeting
+"Hey, good to see you",greeting
+"Hey, good to see you!",greeting
+"Hello, I'm new here",greeting
+"Hello, I'm new here!",greeting
+"Hi, I'm looking for college information",greeting
+"Hi, I'm looking for college information!",greeting
+"Namaste, can you help me",greeting
+"Namaste, can you help me!",greeting
+"Hello, I want to ask about colleges",greeting
+"Hello, I want to ask about colleges!",greeting
+"Hey, I need your assistance",greeting
+"Hey, I need your assistance!",greeting
+"Good morning, I have some questions",greeting
+"Good morning, I have some questions!",greeting
+"Hello, is anyone there",greeting
+"Hello, is anyone there!",greeting
+"Hi, I want to know about engineering colleges",greeting
+"Hi, I want to know about engineering colleges!",greeting
+"Hey, I need guidance",greeting
+"Hey, I need guidance!",greeting
+"Hello, can you guide me",greeting
+"Hello, can you guide me!",greeting
+"Greetings, I'm a student",greeting
+"Greetings, I'm a student!",greeting
+"Hi, I'm interested in engineering",greeting
+"Hi, I'm interested in engineering!",greeting
+"Hello, I need college recommendations",greeting
+"Hello, I need college recommendations!",greeting
+"Hey, what's happening",greeting
+"Hey, what's happening!",greeting
+"Good afternoon, I need some information",greeting
+"Good afternoon, I need some information!",greeting
+"Hi there, can you help me find a college",greeting
+"Hi there, can you help me find a college!",greeting
+"Hello, I'm looking for admission information",greeting
+"Hello, I'm looking for admission information!",greeting
+"Namaste, I need your help",greeting
+"Namaste, I need your help!",greeting
+"Hi, this is my first time here",greeting
+"Hi, this is my first time here!",greeting
+"Hello, nice chatbot",greeting
+"Hello, nice chatbot!",greeting
+"Hey, can we talk",greeting
+"Hey, can we talk!",greeting
+"Good evening, I have queries",greeting
+"Good evening, I have queries!",greeting
+"Hello, I'm preparing for admission",greeting
+"Hello, I'm preparing for admission!",greeting
+"Hi, I want to explore colleges",greeting
+"Hi, I want to explore colleges!",greeting
+"Greetings, help me please",greeting
+"Greetings, help me please!",greeting
+"Hello, I'm a +2 graduate",greeting
+"Hello, I'm a +2 graduate!",greeting
+"Hey, I completed my school",greeting
+"Hey, I completed my school!",greeting
+Recommend me a good engineering college,recommendation
+Recommend me a good engineering college?,recommendation
+Which college should I join for computer engineering,recommendation
+Which college should I join for computer engineering?,recommendation
+Suggest some top colleges in Nepal,recommendation
+Suggest some top colleges in Nepal?,recommendation
+What is the best college for civil engineering,recommendation
+What is the best college for civil engineering?,recommendation
+Can you recommend private colleges in Kathmandu,recommendation
+Can you recommend private colleges in Kathmandu?,recommendation
+Which university is best for mechanical engineering,recommendation
+Which university is best for mechanical engineering?,recommendation
+Suggest me colleges with good placement,recommendation
+Suggest me colleges with good placement?,recommendation
+What are the top 5 engineering colleges,recommendation
+What are the top 5 engineering colleges?,recommendation
+Which college has best faculty for electronics,recommendation
+Which college has best faculty for electronics?,recommendation
+Recommend colleges with hostel facility,recommendation
+Recommend colleges with hostel facility?,recommendation
+Best colleges for architecture in Nepal,recommendation
+Best colleges for architecture in Nepal?,recommendation
+Which private college is best for BBA,recommendation
+Which private college is best for BBA?,recommendation
+Suggest colleges with good scholarship programs,recommendation
+Suggest colleges with good scholarship programs?,recommendation
+What is the best public college for engineering,recommendation
+What is the best public college for engineering?,recommendation
+Recommend me a college in Pokhara,recommendation
+Recommend me a college in Pokhara?,recommendation
+Which college should I choose for electrical engineering,recommendation
+Which college should I choose for electrical engineering?,recommendation
+Suggest top IOE affiliated colleges,recommendation
+Suggest top IOE affiliated colleges?,recommendation
+Best colleges for MBA program,recommendation
+Best colleges for MBA program?,recommendation
+Which is the best college for IT,recommendation
+Which is the best college for IT?,recommendation
+Recommend affordable engineering colleges,recommendation
+Recommend affordable engineering colleges?,recommendation
+What are good colleges for computer science,recommendation
+What are good colleges for computer science?,recommendation
+Suggest me a college with good infrastructure,recommendation
+Suggest me a college with good infrastructure?,recommendation
+Which engineering college has best labs,recommendation
+Which engineering college has best labs?,recommendation
+Recommend colleges near Kathmandu,recommendation
+Recommend colleges near Kathmandu?,recommendation
+Best colleges for BIM course,recommendation
+Best colleges for BIM course?,recommendation
+Which college offers best internship opportunities,recommendation
+Which college offers best internship opportunities?,recommendation
+Suggest colleges with high success rate,recommendation
+Suggest colleges with high success rate?,recommendation
+What is the best private engineering college,recommendation
+What is the best private engineering college?,recommendation
+Recommend government colleges for engineering,recommendation
+Recommend government colleges for engineering?,recommendation
+Which is better for computer engineering,recommendation
+Which is better for computer engineering?,recommendation
+Suggest me colleges in Lalitpur,recommendation
+Suggest me colleges in Lalitpur?,recommendation
+Best ranked engineering college in Nepal,recommendation
+Best ranked engineering college in Nepal?,recommendation
+Which college has best computer engineering program,recommendation
+Which college has best computer engineering program?,recommendation
+Recommend colleges for students from outside valley,recommendation
+Recommend colleges for students from outside valley?,recommendation
+What is the top college for civil engineering,recommendation
+What is the top college for civil engineering?,recommendation
+Suggest colleges with good rating,recommendation
+Suggest colleges with good rating?,recommendation
+Best engineering college for me,recommendation
+Best engineering college for me?,recommendation
+Which college should I prefer,recommendation
+Which college should I prefer?,recommendation
+Recommend me the best option,recommendation
+Recommend me the best option?,recommendation
+What college do you suggest,recommendation
+What college do you suggest?,recommendation
+Which is your top pick for engineering,recommendation
+Which is your top pick for engineering?,recommendation
+Suggest a college with low fee,recommendation
+Suggest a college with low fee?,recommendation
+Best value for money college,recommendation
+Best value for money college?,recommendation
+Which college has best outcomes,recommendation
+Which college has best outcomes?,recommendation
+Recommend based on my marks,recommendation
+Recommend based on my marks?,recommendation
+Which is the most reputed college,recommendation
+Which is the most reputed college?,recommendation
+Suggest colleges that are easy to get into,recommendation
+Suggest colleges that are easy to get into?,recommendation
+Best options for engineering admission,recommendation
+Best options for engineering admission?,recommendation
+Which college would you recommend for my son,recommendation
+Which college would you recommend for my son?,recommendation
+Suggest some new good colleges,recommendation
+Suggest some new good colleges?,recommendation
+Compare Pulchowk and Thapathali campus,comparison
+Compare Pulchowk and Thapathali campus?,comparison
+Which is better NCIT or Sagarmatha,comparison
+Which is better NCIT or Sagarmatha?,comparison
+Pulchowk vs Kathmandu Engineering College,comparison
+Pulchowk vs Kathmandu Engineering College?,comparison
+Difference between IOE and KU engineering,comparison
+Difference between IOE and KU engineering?,comparison
+Compare private and public colleges,comparison
+Compare private and public colleges?,comparison
+NCIT or NEC which one is better,comparison
+NCIT or NEC which one is better?,comparison
+Compare fees of different colleges,comparison
+Compare fees of different colleges?,comparison
+Which has better placement Pulchowk or KEC,comparison
+Which has better placement Pulchowk or KEC?,comparison
+Difference between computer and IT engineering,comparison
+Difference between computer and IT engineering?,comparison
+Compare Himalaya and Kantipur college,comparison
+Compare Himalaya and Kantipur college?,comparison
+Which is better civil or computer engineering,comparison
+Which is better civil or computer engineering?,comparison
+Compare scholarship options at different colleges,comparison
+Compare scholarship options at different colleges?,comparison
+Pulchowk or WRC Pokhara which is better,comparison
+Pulchowk or WRC Pokhara which is better?,comparison
+Difference between BCA and BSc CSIT,comparison
+Difference between BCA and BSc CSIT?,comparison
+Compare hostel facilities of colleges,comparison
+Compare hostel facilities of colleges?,comparison
+Which is better for mechanical engineering,comparison
+Which is better for mechanical engineering?,comparison
+NCIT vs Herald which should I choose,comparison
+NCIT vs Herald which should I choose?,comparison
+Compare admission process of IOE and KU,comparison
+Compare admission process of IOE and KU?,comparison
+Which is better Apex or Islington,comparison
+Which is better Apex or Islington?,comparison
+Difference in fee structure of public and private,comparison
+Difference in fee structure of public and private?,comparison
+Compare cutoff ranks of top colleges,comparison
+Compare cutoff ranks of top colleges?,comparison
+Which has better faculty Pulchowk or Thapathali,comparison
+Which has better faculty Pulchowk or Thapathali?,comparison
+Compare internship opportunities at different colleges,comparison
+Compare internship opportunities at different colleges?,comparison
+NEC or NCIT for computer engineering,comparison
+NEC or NCIT for computer engineering?,comparison
+Which is more affordable private or public,comparison
+Which is more affordable private or public?,comparison
+Compare rating of engineering colleges,comparison
+Compare rating of engineering colleges?,comparison
+Sagarmatha vs Himalaya which is better,comparison
+Sagarmatha vs Himalaya which is better?,comparison
+Difference between MBA and BBA programs,comparison
+Difference between MBA and BBA programs?,comparison
+Which has better infrastructure NCIT or NEC,comparison
+Which has better infrastructure NCIT or NEC?,comparison
+Compare duration of different engineering programs,comparison
+Compare duration of different engineering programs?,comparison
+Pulchowk or Khwopa which should I join,comparison
+Pulchowk or Khwopa which should I join?,comparison
+Which is better for girls hostel facility,comparison
+Which is better for girls hostel facility?,comparison
+Compare eligibility criteria of different colleges,comparison
+Compare eligibility criteria of different colleges?,comparison
+NCIT or Advanced College which is better,comparison
+NCIT or Advanced College which is better?,comparison
+Difference between electrical and electronics,comparison
+Difference between electrical and electronics?,comparison
+Compare seat availability in colleges,comparison
+Compare seat availability in colleges?,comparison
+Which has better reviews Softwarica or Herald,comparison
+Which has better reviews Softwarica or Herald?,comparison
+Compare scholarship percentage at colleges,comparison
+Compare scholarship percentage at colleges?,comparison
+NEC vs Kathmandu Engineering which to choose,comparison
+NEC vs Kathmandu Engineering which to choose?,comparison
+Which is better for research Pulchowk or TU,comparison
+Which is better for research Pulchowk or TU?,comparison
+Compare faculty qualifications at colleges,comparison
+Compare faculty qualifications at colleges?,comparison
+Difference between architecture at different colleges,comparison
+Difference between architecture at different colleges?,comparison
+Which is better for job prospects,comparison
+Which is better for job prospects?,comparison
+Compare overall experience at colleges,comparison
+Compare overall experience at colleges?,comparison
+KUSOM or Apex for MBA which is better,comparison
+KUSOM or Apex for MBA which is better?,comparison
+Difference in course structure,comparison
+Difference in course structure?,comparison
+Compare practical training at colleges,comparison
+Compare practical training at colleges?,comparison
+Which college has better campus,comparison
+Which college has better campus?,comparison
+Compare admission difficulty of colleges,comparison
+Compare admission difficulty of colleges?,comparison
+Which is more recognized by employers,comparison
+Which is more recognized by employers?,comparison
+What is the fee for computer engineering at Pulchowk,direct_question
+How much does civil engineering cost at NCIT,direct_question
+Tell me the tuition fee for mechanical engineering,direct_question
+What are the charges for BBA at Apex,direct_question
+Fee structure for architecture at Khwopa,direct_question
+How expensive is computer engineering,direct_question
+What is the total cost for 4 years at NCIT,direct_question
+Tell me about scholarship and fee at IOE,direct_question
+What is the semester fee at Thapathali,direct_question
+How much is the admission fee at Himalaya,direct_question
+Fee for MBA at KUSOM,direct_question
+What is the hostel fee at Pulchowk,direct_question
+Exam fee for engineering colleges,direct_question
+What is annual fee at private colleges,direct_question
+Monthly fee at Sagarmatha engineering,direct_question
+Where is Pulchowk Campus located,direct_question
+Location of NCIT college,direct_question
+Address of Sagarmatha Engineering College,direct_question
+Where can I find Thapathali Campus,direct_question
+How far is Khwopa from Kathmandu,direct_question
+Is there a college in Pokhara,direct_question
+Location of NEC college,direct_question
+Where is Himalaya College,direct_question
+Address of Herald College,direct_question
+Which district is Pulchowk in,direct_question
+Is NCIT in Balkumari,direct_question
+Distance of WRC from Pokhara city,direct_question
+How to reach Kathmandu Engineering College,direct_question
+Location of engineering colleges in Lalitpur,direct_question
+Where is Apex College situated,direct_question
+Is there hostel at Pulchowk,direct_question
+Hostel availability at NCIT,direct_question
+Does Sagarmatha have hostel facility,direct_question
+Is hostel available at private colleges,direct_question
+Tell me about hostel at Thapathali,direct_question
+Accommodation facilities at engineering colleges,direct_question
+Is there girls hostel at IOE,direct_question
+Hostel charges at Himalaya College,direct_question
+Do they provide hostel at NEC,direct_question
+Room availability at college hostels,direct_question
+Is hostel mandatory at WRC,direct_question
+Hostel facilities for outstation students,direct_question
+Hostel at Khwopa Engineering,direct_question
+Is there mess facility at hostel,direct_question
+Single room hostel at colleges,direct_question
+How to apply for admission at Pulchowk,direct_question
+Admission process for NCIT,direct_question
+When is the admission deadline,direct_question
+How can I enroll in engineering college,direct_question
+Application process for IOE entrance,direct_question
+Admission dates for engineering 2024,direct_question
+How to get admission in Thapathali,direct_question
+Is there direct admission at private colleges,direct_question
+Entrance exam for engineering admission,direct_question
+Merit based admission at NCIT,direct_question
+Online admission process at colleges,direct_question
+Documents required for admission,direct_question
+Admission fee at engineering colleges,direct_question
+Last date for admission form,direct_question
+How to apply for scholarship admission,direct_question
+What is the rating of Pulchowk Campus,direct_question
+How is NCIT ranked,direct_question
+Rating of computer engineering at IOE,direct_question
+Is Sagarmatha a good college,direct_question
+Reviews of Thapathali Campus,direct_question
+How is the reputation of NEC,direct_question
+Rating of private engineering colleges,direct_question
+Is Himalaya College well rated,direct_question
+What do students say about NCIT,direct_question
+Ranking of engineering colleges in Nepal,direct_question
+Is Khwopa a good engineering college,direct_question
+Reviews of Herald College,direct_question
+How is WRC Pokhara rated,direct_question
+Reputation of KU engineering,direct_question
+Is Apex College highly rated,direct_question
+What courses are offered at Pulchowk,direct_question
+List of programs at NCIT,direct_question
+Does Sagarmatha offer civil engineering,direct_question
+Available branches at Thapathali,direct_question
+Engineering programs at IOE colleges,direct_question
+Is there architecture at Khwopa,direct_question
+Courses available at Himalaya College,direct_question
+Does NEC have mechanical engineering,direct_question
+List of BBA specializations at Apex,direct_question
+What programs does Herald offer,direct_question
+Is computer engineering available at WRC,direct_question
+Syllabus for civil engineering,direct_question
+Course structure for electronics,direct_question
+What subjects are in first year,direct_question
+Elective courses at engineering colleges,direct_question
+What facilities are at Pulchowk,direct_question
+Lab facilities at NCIT,direct_question
+Library at Sagarmatha Engineering,direct_question
+Sports facilities at engineering colleges,direct_question
+Computer lab at Thapathali,direct_question
+Infrastructure at private colleges,direct_question
+Canteen facility at Himalaya,direct_question
+Does NEC have good labs,direct_question
+Wifi facility at NCIT,direct_question
+Parking at engineering colleges,direct_question
+Reading room at Khwopa,direct_question
+Gym facility at colleges,direct_question
+Auditorium at Pulchowk,direct_question
+Workshop facilities at IOE,direct_question
+Medical facility at colleges,direct_question
+What is cutoff for Pulchowk,direct_question
+Cutoff rank for computer engineering,direct_question
+Minimum marks for NCIT admission,direct_question
+Last year cutoff for civil engineering,direct_question
+Cutoff for architecture at IOE,direct_question
+What rank is needed for Thapathali,direct_question
+Cutoff for electrical engineering,direct_question
+Minimum score for mechanical engineering,direct_question
+Cutoff rank for electronics,direct_question
+What percentage needed for admission,direct_question
+Cutoff for government colleges,direct_question
+Expected cutoff for 2024 admission,direct_question
+Cutoff at WRC Pokhara,direct_question
+Minimum rank for Khwopa,direct_question
+Previous year cutoff trends,direct_question
+Scholarship at Pulchowk Campus,direct_question
+Is there scholarship at NCIT,direct_question
+Scholarship percentage at private colleges,direct_question
+Merit scholarship at engineering colleges,direct_question
+How to get scholarship at IOE,direct_question
+Need based scholarship at colleges,direct_question
+Scholarship for girls at engineering,direct_question
+100% scholarship at private colleges,direct_question
+Scholarship criteria at Himalaya,direct_question
+Government scholarship for engineering,direct_question
+Scholarship at NEC college,direct_question
+Fee waiver at NCIT,direct_question
+Scholarship for toppers at IOE,direct_question
+Financial aid at engineering colleges,direct_question
+Scholarship renewal criteria,direct_question
+Internship opportunities at Pulchowk,direct_question
+Is internship mandatory at NCIT,direct_question
+Internship program at IOE colleges,direct_question
+Industrial training at engineering colleges,direct_question
+Internship partners of Sagarmatha,direct_question
+Internship duration at computer engineering,direct_question
+Paid internship at Thapathali,direct_question
+Internship at software companies,direct_question
+Internship for civil engineering students,direct_question
+Are there internship at NEC,direct_question
+Internship opportunities at private colleges,direct_question
+Summer internship at engineering colleges,direct_question
+Internship experience at NCIT,direct_question
+How is internship arranged at IOE,direct_question
+Internship credits at colleges,direct_question
+Placement at Pulchowk Campus,direct_question
+Job placement at NCIT,direct_question
+Campus recruitment at IOE colleges,direct_question
+Average package at engineering colleges,direct_question
+Which companies recruit from Pulchowk,direct_question
+Placement percentage at NCIT,direct_question
+Job prospects after civil engineering,direct_question
+Salary after computer engineering,direct_question
+Placement cell at Sagarmatha,direct_question
+Employment rate at private colleges,direct_question
+Career opportunities after engineering,direct_question
+Highest package at IOE colleges,direct_question
+Placement record of NEC,direct_question
+Jobs after mechanical engineering,direct_question
+Placement assistance at colleges,direct_question
+Eligibility for Pulchowk admission,direct_question
+Criteria for engineering admission,direct_question
+Am I eligible for NCIT,direct_question
+Requirements for IOE entrance,direct_question
+Eligibility for scholarship,direct_question
+Minimum marks for engineering,direct_question
+Age limit for engineering admission,direct_question
+Eligibility for lateral entry,direct_question
+Who can apply for architecture,direct_question
+Requirements for MBA admission,direct_question
+Eligibility criteria for BBA,direct_question
+Can PCL biology apply for engineering,direct_question
+Gap year eligibility for admission,direct_question
+Eligibility for foreign students,direct_question
+Minimum percentage for admission,direct_question
+Duration of computer engineering,direct_question
+How many years for civil engineering,direct_question
+Semester system at IOE,direct_question
+How long is architecture course,direct_question
+Duration of MBA at KUSOM,direct_question
+Semester duration at NCIT,direct_question
+How many semesters in engineering,direct_question
+Duration of BBA course,direct_question
+Time to complete mechanical engineering,direct_question
+How long is the course at Pulchowk,direct_question
+Duration of internship period,direct_question
+Course completion time at private colleges,direct_question
+How many years for electronics,direct_question
+Semester length at engineering colleges,direct_question
+Duration of final year project,direct_question
+How many seats at Pulchowk,direct_question
+Seat capacity for computer engineering,direct_question
+Available seats at NCIT,direct_question
+Intake at IOE colleges,direct_question
+Seats for civil engineering,direct_question
+How many students at Sagarmatha,direct_question
+Seat limit for architecture,direct_question
+Vacancy at private colleges,direct_question
+Seats at Thapathali Campus,direct_question
+How many seats for mechanical,direct_question
+Student intake at NEC,direct_question
+Available seats at Himalaya,direct_question
+Seat availability for electronics,direct_question
+How many students per batch,direct_question
+Seats reserved for quota,direct_question
+Faculty at Pulchowk Campus,direct_question
+Teachers at NCIT,direct_question
+Quality of faculty at IOE,direct_question
+Professor list at Sagarmatha,direct_question
+Faculty qualification at Thapathali,direct_question
+Best teachers at engineering colleges,direct_question
+Faculty to student ratio at NCIT,direct_question
+Visiting faculty at colleges,direct_question
+PhD faculty at Pulchowk,direct_question
+Teaching staff at NEC,direct_question
+Faculty members at Himalaya,direct_question
+Experienced teachers at IOE,direct_question
+Faculty information at Khwopa,direct_question
+Guest lecturers at colleges,direct_question
+Faculty reviews at engineering colleges,direct_question
+HOD of computer department at Pulchowk,direct_question
+Department head at NCIT,direct_question
+Dean of engineering at IOE,direct_question
+Department information at Sagarmatha,direct_question
+Civil department at Thapathali,direct_question
+Electronics department at colleges,direct_question
+Department structure at NCIT,direct_question
+Mechanical department at Khwopa,direct_question
+Department facilities at IOE,direct_question
+Architecture department at Pulchowk,direct_question
+IT department at NEC,direct_question
+Department labs at colleges,direct_question
+Software department at Himalaya,direct_question
+Department research at Pulchowk,direct_question
+Department activities at colleges,direct_question
+Contact number of Pulchowk,direct_question
+Email of NCIT,direct_question
+How to contact Sagarmatha,direct_question
+Phone number of admission office,direct_question
+Contact details of Thapathali,direct_question
+Email address of IOE,direct_question
+How to reach NEC office,direct_question
+Contact for admission inquiry,direct_question
+Phone of Himalaya College,direct_question
+Official email of colleges,direct_question
+How to contact hostel office,direct_question
+Admission helpline number,direct_question
+Contact of exam department,direct_question
+Email for scholarship inquiry,direct_question
+How to call engineering colleges,direct_question
+Tell me about Pulchowk Campus,direct_question
+Information about NCIT,direct_question
+What is Sagarmatha Engineering,direct_question
+About Thapathali Campus,direct_question
+Tell me about IOE colleges,direct_question
+Information about NEC,direct_question
+What is Himalaya College,direct_question
+About engineering colleges in Nepal,direct_question
+Tell me about private colleges,direct_question
+What are affiliated colleges,direct_question
+Information about WRC Pokhara,direct_question
+About Khwopa Engineering,direct_question
+Tell me about government colleges,direct_question
+What is IOE affiliation,direct_question
+About computer engineering program,direct_question

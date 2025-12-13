@@ -1,0 +1,362 @@
+text,intent
+"Hello!",Greeting
+"Hi there",Greeting
+"Good morning",Greeting
+"Good afternoon",Greeting
+"Good evening",Greeting
+"Hey",Greeting
+"Hi, how are you?",Greeting
+"Hello, can you help me?",Greeting
+"Namaste",Greeting
+"Greetings",Greeting
+"Hey there!",Greeting
+"Hi, I need some help",Greeting
+"Hello friend",Greeting
+"Good day",Greeting
+"Where is Sagarmatha Engineering College?",College_location
+"Location of Pulchowk Campus",College_location
+"What is the address of NCIT?",College_location
+"Where can I find Kantipur Engineering College?",College_location
+"Address of Thapathali Campus",College_location
+"Location of ACE College",College_location
+"Where is Himalaya College situated?",College_location
+"What is the location of Nepal Engineering College?",College_location
+"Where is Islington College?",College_location
+"Address of Softwarica College",College_location
+"Location of Herald College",College_location
+"Where is Apex College located?",College_location
+"What is the address of Prime College?",College_location
+"Where can I find KUSOM?",College_location
+"Location of Western Regional Campus",College_location
+"Where is Khwopa Engineering College?",College_location
+"What is the fee for computer engineering?",Course_fee
+"How much does civil engineering cost?",Course_fee
+"Fee structure of Pulchowk Campus",Course_fee
+"What are the fees at Sagarmatha College?",Course_fee
+"Cost of BBA program",Course_fee
+"MBA program fees",Course_fee
+"What is the tuition for electrical engineering?",Course_fee
+"How expensive is mechanical engineering?",Course_fee
+"Fee for architecture course",Course_fee
+"What is the cost of BSc CSIT?",Course_fee
+"BIM program fees",Course_fee
+"How much does BCA cost?",Course_fee
+"Electronics engineering fee",Course_fee
+"What are the fees for software engineering?",Course_fee
+"Cost of information technology program",Course_fee
+"What is the fee at NCIT?",Course_fee
+"Contact number of Sagarmatha College",College_contact
+"Phone number of Pulchowk Campus",College_contact
+"Email of NCIT",College_contact
+"How can I contact Kantipur College?",College_contact
+"Contact details of Thapathali Campus",College_contact
+"Phone number of ACE College",College_contact
+"Email address of Himalaya College",College_contact
+"Contact information for NEC",College_contact
+"How to reach Islington College?",College_contact
+"Contact of Softwarica College",College_contact
+"Phone number of Herald College",College_contact
+"Email of Apex College",College_contact
+"Contact details of Prime College",College_contact
+"How can I call KUSOM?",College_contact
+"Phone number of WRC Pokhara",College_contact
+"Recommend best engineering colleges",Recommend
+"Suggest good colleges for computer engineering",Recommend
+"Which college is best for civil engineering?",Recommend
+"Recommend colleges in Kathmandu",Recommend
+"Suggest affordable engineering colleges",Recommend
+"Which college should I choose for BBA?",Recommend
+"Recommend top MBA programs",Recommend
+"Best colleges for architecture",Recommend
+"Suggest colleges with good placement",Recommend
+"Which college has best faculty?",Recommend
+"Recommend colleges with hostel facility",Recommend
+"Suggest colleges under IOE",Recommend
+"Which TU affiliated college is best?",Recommend
+"Recommend KU affiliated colleges",Recommend
+"Suggest colleges near Kathmandu",Recommend
+"Best engineering colleges in Nepal",Best
+"Top computer engineering colleges",Best
+"Best civil engineering programs",Best
+"Top ranked colleges in Kathmandu",Best
+"Best affordable colleges",Best
+"Top BBA colleges in Nepal",Best
+"Best MBA programs",Best
+"Top architecture colleges",Best
+"Best colleges with placement",Best
+"Top rated engineering colleges",Best
+"Best IOE affiliated colleges",Best
+"Top TU colleges",Best
+"Best KU affiliated programs",Best
+"Top colleges for electronics",Best
+"Best mechanical engineering colleges",Best
+"What courses are offered at Pulchowk?",Course_list
+"List of programs at Sagarmatha College",Course_list
+"Available courses at NCIT",Course_list
+"What programs does Kantipur offer?",Course_list
+"Courses at Thapathali Campus",Course_list
+"What degrees are available at ACE?",Course_list
+"Programs offered by Himalaya College",Course_list
+"What courses can I study at NEC?",Course_list
+"Available programs at Islington",Course_list
+"Courses at Softwarica College",Course_list
+"What programs does Herald offer?",Course_list
+"List of courses at Apex College",Course_list
+"Available degrees at Prime College",Course_list
+"Programs at KUSOM",Course_list
+"What courses are at WRC?",Course_list
+"Admission process at Pulchowk",Admission_process
+"How to apply at Sagarmatha College?",Admission_process
+"Application procedure for NCIT",Admission_process
+"Admission requirements at Kantipur",Admission_process
+"How to get admission at Thapathali?",Admission_process
+"Application process at ACE College",Admission_process
+"How to join Himalaya College?",Admission_process
+"Admission procedure for NEC",Admission_process
+"How to apply at Islington?",Admission_process
+"Application process at Softwarica",Admission_process
+"How to get admission at Herald?",Admission_process
+"Admission requirements at Apex",Admission_process
+"How to apply at Prime College?",Admission_process
+"Admission process at KUSOM",Admission_process
+"How to join WRC Pokhara?",Admission_process
+"Does Pulchowk have hostel?",Hostel_availability
+"Hostel facility at Sagarmatha College",Hostel_availability
+"Is hostel available at NCIT?",Hostel_availability
+"Accommodation at Kantipur College",Hostel_availability
+"Does Thapathali have hostel?",Hostel_availability
+"Hostel at ACE College",Hostel_availability
+"Is there hostel at Himalaya College?",Hostel_availability
+"Accommodation facility at NEC",Hostel_availability
+"Does Islington have hostel?",Hostel_availability
+"Hostel availability at Softwarica",Hostel_availability
+"Is hostel available at Herald?",Hostel_availability
+"Accommodation at Apex College",Hostel_availability
+"Does Prime College have hostel?",Hostel_availability
+"Hostel facility at KUSOM",Hostel_availability
+"Is accommodation available at WRC?",Hostel_availability
+"What is the cutoff for computer engineering?",Course_cutoff
+"Cutoff marks for civil engineering",Course_cutoff
+"Entrance cutoff at Pulchowk",Course_cutoff
+"What marks are needed for electrical?",Course_cutoff
+"Cutoff for mechanical engineering",Course_cutoff
+"Required marks for architecture",Course_cutoff
+"What is the cutoff at IOE?",Course_cutoff
+"Entrance marks needed for electronics",Course_cutoff
+"Cutoff for software engineering",Course_cutoff
+"What marks for BBA admission?",Course_cutoff
+"MBA entrance cutoff",Course_cutoff
+"Cutoff marks at Sagarmatha College",Course_cutoff
+"Required score for NCIT",Course_cutoff
+"What is the cutoff at Kantipur?",Course_cutoff
+"Entrance cutoff at Thapathali",Course_cutoff
+"How many seats in computer engineering?",Course_seats
+"Number of seats for civil engineering",Course_seats
+"Total seats at Pulchowk Campus",Course_seats
+"How many students in electrical?",Course_seats
+"Seats available for mechanical",Course_seats
+"Number of seats in architecture",Course_seats
+"How many seats at IOE?",Course_seats
+"Total intake for electronics",Course_seats
+"Seats for software engineering",Course_seats
+"How many BBA seats?",Course_seats
+"MBA seats available",Course_seats
+"Number of seats at Sagarmatha",Course_seats
+"How many seats at NCIT?",Course_seats
+"Total seats at Kantipur College",Course_seats
+"Number of seats at Thapathali",Course_seats
+"Scholarship at Pulchowk Campus",Scholarship_info
+"Scholarship opportunities at Sagarmatha",Scholarship_info
+"Does NCIT offer scholarship?",Scholarship_info
+"Financial aid at Kantipur College",Scholarship_info
+"Scholarship at Thapathali Campus",Scholarship_info
+"Are there scholarships at ACE?",Scholarship_info
+"Scholarship programs at Himalaya",Scholarship_info
+"Financial assistance at NEC",Scholarship_info
+"Does Islington offer scholarship?",Scholarship_info
+"Scholarship at Softwarica College",Scholarship_info
+"Financial aid at Herald College",Scholarship_info
+"Scholarship opportunities at Apex",Scholarship_info
+"Does Prime College offer scholarship?",Scholarship_info
+"Scholarship at KUSOM",Scholarship_info
+"Financial aid at WRC",Scholarship_info
+"Placement at Pulchowk Campus",Placement_info
+"Job placement at Sagarmatha College",Placement_info
+"Career opportunities after NCIT",Placement_info
+"Placement record at Kantipur",Placement_info
+"Job placement at Thapathali",Placement_info
+"Career prospects at ACE College",Placement_info
+"Placement statistics at Himalaya",Placement_info
+"Job opportunities after NEC",Placement_info
+"Placement at Islington College",Placement_info
+"Career placement at Softwarica",Placement_info
+"Job placement at Herald College",Placement_info
+"Placement record at Apex",Placement_info
+"Career opportunities at Prime",Placement_info
+"Placement at KUSOM",Placement_info
+"Job placement at WRC",Placement_info
+"Internship at Pulchowk Campus",Internship_opportunities
+"Internship opportunities at Sagarmatha",Internship_opportunities
+"Does NCIT provide internship?",Internship_opportunities
+"Internship program at Kantipur",Internship_opportunities
+"Internship at Thapathali Campus",Internship_opportunities
+"Internship opportunities at ACE",Internship_opportunities
+"Does Himalaya offer internship?",Internship_opportunities
+"Internship program at NEC",Internship_opportunities
+"Internship at Islington College",Internship_opportunities
+"Internship opportunities at Softwarica",Internship_opportunities
+"Does Herald provide internship?",Internship_opportunities
+"Internship program at Apex",Internship_opportunities
+"Internship at Prime College",Internship_opportunities
+"Internship opportunities at KUSOM",Internship_opportunities
+"Does WRC offer internship?",Internship_opportunities
+"Faculty at Pulchowk Campus",Faculty_info
+"Teachers at Sagarmatha College",Faculty_info
+"Faculty members at NCIT",Faculty_info
+"Professors at Kantipur College",Faculty_info
+"Faculty at Thapathali Campus",Faculty_info
+"Teachers at ACE College",Faculty_info
+"Faculty information at Himalaya",Faculty_info
+"Professors at NEC",Faculty_info
+"Faculty at Islington College",Faculty_info
+"Teachers at Softwarica",Faculty_info
+"Faculty members at Herald",Faculty_info
+"Professors at Apex College",Faculty_info
+"Faculty at Prime College",Faculty_info
+"Teachers at KUSOM",Faculty_info
+"Faculty information at WRC",Faculty_info
+"Eligibility for computer engineering",Eligibility_criteria
+"Requirements for civil engineering admission",Eligibility_criteria
+"Eligibility criteria at Pulchowk",Eligibility_criteria
+"What are requirements for electrical?",Eligibility_criteria
+"Eligibility for mechanical engineering",Eligibility_criteria
+"Requirements for architecture admission",Eligibility_criteria
+"Eligibility criteria at IOE",Eligibility_criteria
+"What are requirements for electronics?",Eligibility_criteria
+"Eligibility for software engineering",Eligibility_criteria
+"Requirements for BBA admission",Eligibility_criteria
+"MBA eligibility criteria",Eligibility_criteria
+"Eligibility at Sagarmatha College",Eligibility_criteria
+"Requirements for NCIT admission",Eligibility_criteria
+"What are eligibility criteria at Kantipur?",Eligibility_criteria
+"Requirements at Thapathali",Eligibility_criteria
+"Duration of computer engineering course",Course_duration
+"How long is civil engineering program?",Course_duration
+"Course duration at Pulchowk",Course_duration
+"How many years for electrical?",Course_duration
+"Duration of mechanical engineering",Course_duration
+"How long is architecture program?",Course_duration
+"Course duration at IOE",Course_duration
+"How many years for electronics?",Course_duration
+"Duration of software engineering",Course_duration
+"How long is BBA program?",Course_duration
+"MBA course duration",Course_duration
+"Duration of BSc CSIT",Course_duration
+"How many years for BIM?",Course_duration
+"Course duration at BCA",Course_duration
+"How long is the program?",Course_duration
+"Rating of Pulchowk Campus",Course_rating
+"Review of Sagarmatha College",Course_rating
+"Rating of NCIT",Course_rating
+"Student reviews of Kantipur",Course_rating
+"Rating of Thapathali Campus",Course_rating
+"Reviews of ACE College",Course_rating
+"Rating of Himalaya College",Course_rating
+"Student feedback at NEC",Course_rating
+"Rating of Islington College",Course_rating
+"Reviews of Softwarica",Course_rating
+"Rating of Herald College",Course_rating
+"Student reviews of Apex",Course_rating
+"Rating of Prime College",Course_rating
+"Reviews of KUSOM",Course_rating
+"Rating of WRC Pokhara",Course_rating
+"Tell me about Pulchowk Campus",College_basic_info
+"Information about Sagarmatha College",College_basic_info
+"Details about NCIT",College_basic_info
+"Tell me about Kantipur College",College_basic_info
+"Information about Thapathali Campus",College_basic_info
+"Details about ACE College",College_basic_info
+"Tell me about Himalaya College",College_basic_info
+"Information about NEC",College_basic_info
+"Details about Islington College",College_basic_info
+"Tell me about Softwarica",College_basic_info
+"Information about Herald College",College_basic_info
+"Details about Apex College",College_basic_info
+"Tell me about Prime College",College_basic_info
+"Information about KUSOM",College_basic_info
+"Details about WRC Pokhara",College_basic_info
+"Computer engineering department at Pulchowk",Department_info
+"Civil department at Sagarmatha",Department_info
+"Electronics department at NCIT",Department_info
+"Electrical department at Kantipur",Department_info
+"Mechanical department at Thapathali",Department_info
+"Architecture department at ACE",Department_info
+"IT department at Himalaya College",Department_info
+"Computer department at NEC",Department_info
+"Software department at Islington",Department_info
+"CS department at Softwarica",Department_info
+"Management department at Herald",Department_info
+"BBA department at Apex",Department_info
+"MBA department at Prime",Department_info
+"Business department at KUSOM",Department_info
+"Engineering department at WRC",Department_info
+"Head of computer department at Pulchowk",Department_head
+"Civil department head at Sagarmatha",Department_head
+"Head of electronics at NCIT",Department_head
+"Electrical department head at Kantipur",Department_head
+"Head of mechanical at Thapathali",Department_head
+"Architecture department head at ACE",Department_head
+"IT department head at Himalaya",Department_head
+"Head of computer at NEC",Department_head
+"Software department head at Islington",Department_head
+"CS department head at Softwarica",Department_head
+"Management department head at Herald",Department_head
+"BBA department head at Apex",Department_head
+"MBA department head at Prime",Department_head
+"Business department head at KUSOM",Department_head
+"Engineering department head at WRC",Department_head
+"Tell me about computer engineering course",Course_specific_info
+"Details of civil engineering program",Course_specific_info
+"Information about electrical engineering",Course_specific_info
+"Tell me about mechanical engineering",Course_specific_info
+"Details of architecture program",Course_specific_info
+"Information about electronics engineering",Course_specific_info
+"Tell me about software engineering",Course_specific_info
+"Details of BBA program",Course_specific_info
+"Information about MBA course",Course_specific_info
+"Tell me about BSc CSIT",Course_specific_info
+"Details of BIM program",Course_specific_info
+"Information about BCA course",Course_specific_info
+"Tell me about IT program",Course_specific_info
+"Details of aerospace engineering",Course_specific_info
+"Information about biomedical engineering",Course_specific_info
+"Colleges near Kathmandu",Nearest
+"Engineering colleges near me",Nearest
+"Nearest college to Lalitpur",Nearest
+"Colleges near Bhaktapur",Nearest
+"Nearest engineering college in Pokhara",Nearest
+"Colleges near Chitwan",Nearest
+"Nearest college to Butwal",Nearest
+"Engineering colleges near Biratnagar",Nearest
+"Colleges near Dharan",Nearest
+"Nearest college to Hetauda",Nearest
+"Engineering colleges near Birgunj",Nearest
+"Colleges near Nepalgunj",Nearest
+"Nearest college to Dhangadhi",Nearest
+"Engineering colleges near Itahari",Nearest
+"Colleges near Bharatpur",Nearest
+"Compare computer and civil engineering",Compare_courses
+"Difference between BBA and BIM",Compare_courses
+"Compare electrical and electronics",Compare_courses
+"Difference between BSc CSIT and BCA",Compare_courses
+"Compare mechanical and aerospace",Compare_courses
+"Difference between software and IT",Compare_courses
+"Compare Pulchowk and Thapathali",Compare_courses
+"Difference between IOE and KU",Compare_courses
+"Compare TU and Pokhara University",Compare_courses
+"Difference between private and government",Compare_courses
+"Compare Sagarmatha and Kantipur",Compare_courses
+"Difference between NCIT and NEC",Compare_courses
+"Compare architecture and civil",Compare_courses
+"Difference between MBA and MBS",Compare_courses
+"Compare engineering and management",Compare_courses

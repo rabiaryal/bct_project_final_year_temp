@@ -1,0 +1,2362 @@
+[
+  {
+    "CollegeId": 1,
+    "Name": "PULCHOWK ENGINEERING CAMPUS",
+    "Location": "PULCHOWK, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "015421260",
+    "Email": "admission@pcampus.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6755,
+    "Longitude": 85.3205,
+    "Departments": [
+      {
+        "DepartmentId": 1,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 1,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 200,
+            "Fee": 90000.00,
+            "TotalSeats": 192,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 95,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 5.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 2,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 2,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 650,
+            "Fee": 90000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 93,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.8
+          }
+        ]
+      },
+      {
+        "DepartmentId": 3,
+        "Name": "ELECTRONICS AND COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 3,
+            "Name": "BE ELECTRONICS AND COMPUTER ENGINEERING",
+            "AverageCutoffRank": 350,
+            "Fee": 90000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 92,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 4,
+        "Name": "MECHANICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 4,
+            "Name": "BE MECHANICAL ENGINEERING",
+            "AverageCutoffRank": 700,
+            "Fee": 90000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 90,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.7
+          }
+        ]
+      },
+      {
+        "DepartmentId": 5,
+        "Name": "ARCHITECTURE",
+        "Courses": [
+          {
+            "CourseId": 5,
+            "Name": "B. ARCHITECTURE",
+            "AverageCutoffRank": 900,
+            "Fee": 95000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 2,
+    "Name": "THAPATHALI ENGINEERING CAMPUS",
+    "Location": "THAPATHALI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01542030",
+    "Email": "info@thc.tu.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6943,
+    "Longitude": 85.3140,
+    "Departments": [
+      {
+        "DepartmentId": 6,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 6,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 1200,
+            "Fee": 85000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 88,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      },
+      {
+        "DepartmentId": 7,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 7,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 1600,
+            "Fee": 85000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 87,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      },
+      {
+        "DepartmentId": 8,
+        "Name": "ELECTRONICS AND COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 8,
+            "Name": "BE ELECTRONICS AND COMPUTER ENGINEERING",
+            "AverageCutoffRank": 1400,
+            "Fee": 85000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 88,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      },
+      {
+        "DepartmentId": 9,
+        "Name": "MECHANICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 9,
+            "Name": "BE MECHANICAL ENGINEERING",
+            "AverageCutoffRank": 1800,
+            "Fee": 85000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "MERIT BASED SCHOLARSHIP",
+            "TotalQuotas": 15,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 3,
+    "Name": "PURWANCHAL ENGINEERING CAMPUS",
+    "Location": "DHARAN, SUNSARI, KOSHI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01520120",
+    "Email": "contact@purwanchal.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 26.8121,
+    "Longitude": 87.2830,
+    "Departments": [
+      {
+        "DepartmentId": 10,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 10,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2500,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 11,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 11,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 2700,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 12,
+        "Name": "ELECTRONICS AND COMMUNICATION ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 12,
+            "Name": "BE ELECTRONICS AND COMMUNICATION ENGINEERING",
+            "AverageCutoffRank": 2600,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 13,
+        "Name": "MECHANICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 13,
+            "Name": "BE MECHANICAL ENGINEERING",
+            "AverageCutoffRank": 3000,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 4,
+    "Name": "PASHCHIMANCHAL ENGINEERING CAMPUS",
+    "Location": "LAMACHAUR, POKHARA, KASKI, GANDAKI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01443457",
+    "Email": "info@pwest.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 28.2414,
+    "Longitude": 83.9930,
+    "Departments": [
+      {
+        "DepartmentId": 14,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 14,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2300,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 15,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 15,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 2500,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 16,
+        "Name": "ELECTRONICS AND COMMUNICATION ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 16,
+            "Name": "BE ELECTRONICS AND COMMUNICATION ENGINEERING",
+            "AverageCutoffRank": 2400,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 17,
+        "Name": "MECHANICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 17,
+            "Name": "BE MECHANICAL ENGINEERING",
+            "AverageCutoffRank": 2800,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 5,
+    "Name": "CHITWAN ENGINEERING CAMPUS",
+    "Location": "RAMPUR, CHITWAN, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01591847",
+    "Email": "contact@cec.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6398,
+    "Longitude": 84.3500,
+    "Departments": [
+      {
+        "DepartmentId": 18,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 18,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2200,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 87,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 19,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 19,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 2400,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 20,
+        "Name": "ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 20,
+            "Name": "BE ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 2450,
+            "Fee": 80000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 10,
+            "SemesterScholarship": "REGIONAL MERIT SCHOLARSHIP",
+            "TotalQuotas": 12,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 6,
+    "Name": "ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT",
+    "Location": "KALANKI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015234288",
+    "Email": "info@acem.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7060,
+    "Longitude": 85.3030,
+    "Departments": [
+      {
+        "DepartmentId": 21,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 21,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3000,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      },
+      {
+        "DepartmentId": 22,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 22,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3500,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 23,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 23,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 3600,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 7,
+    "Name": "KANTIPUR ENGINEERING COLLEGE",
+    "Location": "DHAPAKHEL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015234858",
+    "Email": "info@kec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6429,
+    "Longitude": 85.3268,
+    "Departments": [
+      {
+        "DepartmentId": 24,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 24,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 2800,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 83,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      },
+      {
+        "DepartmentId": 25,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 25,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3200,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 26,
+        "Name": "ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 26,
+            "Name": "BE ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 3300,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 8,
+    "Name": "NATIONAL COLLEGE OF ENGINEERING",
+    "Location": "TALSIKHEL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015548585",
+    "Email": "info@nec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6542,
+    "Longitude": 85.3193,
+    "Departments": [
+      {
+        "DepartmentId": 27,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 27,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3100,
+            "Fee": 700000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 28,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 28,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3400,
+            "Fee": 700000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 29,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 29,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 3500,
+            "Fee": 700000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 9,
+    "Name": "HIMALAYA COLLEGE OF ENGINEERING",
+    "Location": "CHYASAL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015440555",
+    "Email": "info@hcoe.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6768,
+    "Longitude": 85.3323,
+    "Departments": [
+      {
+        "DepartmentId": 30,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 30,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 2900,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      },
+      {
+        "DepartmentId": 31,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 31,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3300,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 32,
+        "Name": "ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 32,
+            "Name": "BE ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 3200,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 10,
+    "Name": "SAGARMATHA ENGINEERING COLLEGE",
+    "Location": "SANEPA, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015427274",
+    "Email": "info@sagarmatha.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6872,
+    "Longitude": 85.3001,
+    "Departments": [
+      {
+        "DepartmentId": 33,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 33,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3600,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 34,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 34,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3800,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      },
+      {
+        "DepartmentId": 35,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 35,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 3900,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 11,
+    "Name": "LALITPUR ENGINEERING COLLEGE",
+    "Location": "CHAKUPAT, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015268216",
+    "Email": "info@lec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6735,
+    "Longitude": 85.3221,
+    "Departments": [
+      {
+        "DepartmentId": 36,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 36,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3700,
+            "Fee": 620000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 37,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 37,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4000,
+            "Fee": 620000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      },
+      {
+        "DepartmentId": 38,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 38,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 4100,
+            "Fee": 620000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 12,
+    "Name": "KATHFORD INTERNATIONAL COLLEGE OF ENGINEERING AND MANAGEMENT",
+    "Location": "BALKUMARI, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015201241",
+    "Email": "info@kathford.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6690,
+    "Longitude": 85.3360,
+    "Departments": [
+      {
+        "DepartmentId": 39,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 39,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3000,
+            "Fee": 680000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 83,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      },
+      {
+        "DepartmentId": 40,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 40,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3400,
+            "Fee": 680000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 41,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 41,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 3500,
+            "Fee": 680000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 13,
+    "Name": "KATHMANDU ENGINEERING COLLEGE",
+    "Location": "KALIMATI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015372833",
+    "Email": "info@kecktm.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6991,
+    "Longitude": 85.2945,
+    "Departments": [
+      {
+        "DepartmentId": 42,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 42,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 1500,
+            "Fee": 900000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.01,
+            "PassPercentage": 87,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 45,
+            "SemesterScholarship": "SEMESTER TOPPER 100%",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 43,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 43,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2200,
+            "Fee": 900000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.01,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 45,
+            "SemesterScholarship": "SEMESTER TOPPER 100%",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.7
+          }
+        ]
+      },
+      {
+        "DepartmentId": 44,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 44,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 2300,
+            "Fee": 900000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.01,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 45,
+            "SemesterScholarship": "SEMESTER TOPPER 100%",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 14,
+    "Name": "KHWOPA COLLEGE OF ENGINEERING",
+    "Location": "LIBALI, BHAKTAPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015122094",
+    "Email": "info@khwopa.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6710,
+    "Longitude": 85.4280,
+    "Departments": [
+      {
+        "DepartmentId": 45,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 45,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2800,
+            "Fee": 580000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 46,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 46,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 3000,
+            "Fee": 580000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 47,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 47,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 2600,
+            "Fee": 580000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 83,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 15,
+    "Name": "JANAKPUR ENGINEERING COLLEGE",
+    "Location": "TATHALI, BHAKTAPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "01548876",
+    "Email": "info@jec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6732,
+    "Longitude": 85.4489,
+    "Departments": [
+      {
+        "DepartmentId": 48,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 48,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4200,
+            "Fee": 550000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      },
+      {
+        "DepartmentId": 49,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 49,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4500,
+            "Fee": 550000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      },
+      {
+        "DepartmentId": 50,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 50,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 4700,
+            "Fee": 550000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 35,
+            "SemesterScholarship": "SEMESTER MERIT SCHOLARSHIP",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "IOE ENTRANCE",
+            "Rating": 3.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 16,
+    "Name": "POKHARA UNIVERSITY SCHOOL OF ENGINEERING",
+    "Location": "POKHARA, KASKI, GANDAKI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01561698",
+    "Email": "info@pu.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 28.2096,
+    "Longitude": 83.9856,
+    "Departments": [
+      {
+        "DepartmentId": 51,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 51,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 1800,
+            "Fee": 700000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      },
+      {
+        "DepartmentId": 52,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 52,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 1600,
+            "Fee": 750000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 87,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 4.3
+          }
+        ]
+      },
+      {
+        "DepartmentId": 53,
+        "Name": "ELECTRICAL AND ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 53,
+            "Name": "BE ELECTRICAL AND ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 2000,
+            "Fee": 700000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 17,
+    "Name": "COLLEGE OF ENGINEERING AND MANAGEMENT",
+    "Location": "SHITALNAGAR, NEPALGUNJ, LUMBINI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "01536086",
+    "Email": "info@coem.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 28.0500,
+    "Longitude": 81.6167,
+    "Departments": [
+      {
+        "DepartmentId": 54,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 54,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4000,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.7
+          }
+        ]
+      },
+      {
+        "DepartmentId": 55,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 55,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3800,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 18,
+    "Name": "COSMOS COLLEGE OF MANAGEMENT AND TECHNOLOGY",
+    "Location": "TUTEPANI, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015151419",
+    "Email": "info@cosmoscollege.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6734,
+    "Longitude": 85.3850,
+    "Departments": [
+      {
+        "DepartmentId": 56,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 56,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4200,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      },
+      {
+        "DepartmentId": 57,
+        "Name": "ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 57,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3900,
+            "Fee": 620000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 19,
+    "Name": "CRIMSON COLLEGE OF TECHNOLOGY",
+    "Location": "BUTWAL, RUPANDEHI, LUMBINI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015385034",
+    "Email": "info@crimson.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7000,
+    "Longitude": 83.4500,
+    "Departments": [
+      {
+        "DepartmentId": 58,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 58,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4100,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 20,
+    "Name": "EVEREST ENGINEERING COLLEGE",
+    "Location": "SANOTHIMI, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015385755",
+    "Email": "info@eemc.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6795,
+    "Longitude": 85.3900,
+    "Departments": [
+      {
+        "DepartmentId": 59,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 59,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4300,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      },
+      {
+        "DepartmentId": 60,
+        "Name": "ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 60,
+            "Name": "BE ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 4400,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 77,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 21,
+    "Name": "GANDAKI COLLEGE OF ENGINEERING AND SCIENCE",
+    "Location": "LAMACHOUR, POKHARA, GANDAKI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015784839",
+    "Email": "info@gces.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 28.2414,
+    "Longitude": 83.9930,
+    "Departments": [
+      {
+        "DepartmentId": 61,
+        "Name": "SOFTWARE ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 61,
+            "Name": "BE SOFTWARE ENGINEERING",
+            "AverageCutoffRank": 3500,
+            "Fee": 700000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      },
+      {
+        "DepartmentId": 62,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 62,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3600,
+            "Fee": 700000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 82,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.9
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 22,
+    "Name": "LUMBINI ENGINEERING MANAGEMENT AND SCIENCE COLLEGE",
+    "Location": "TILOTTAMA-7, RUPANDEHI, LUMBINI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "01561030",
+    "Email": "lumbiniec@gmail.com",
+    "HostelAvailability": false,
+    "Latitude": 27.7000,
+    "Longitude": 83.4500,
+    "Departments": [
+      {
+        "DepartmentId": 63,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 63,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4500,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 23,
+    "Name": "MADAN BHANDARI MEMORIAL ACADEMY",
+    "Location": "POKHARA, KASKI, GANDAKI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "015644059",
+    "Email": "info@mbman.org",
+    "HostelAvailability": true,
+    "Latitude": 28.2330,
+    "Longitude": 83.9820,
+    "Departments": [
+      {
+        "DepartmentId": 64,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 64,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3000,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      },
+      {
+        "DepartmentId": 65,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 65,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3200,
+            "Fee": 650000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 81,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 24,
+    "Name": "POKHARA ENGINEERING COLLEGE",
+    "Location": "POKHARA, KASKI, GANDAKI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "016581209",
+    "Email": "info@pec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 28.2415,
+    "Longitude": 83.9837,
+    "Departments": [
+      {
+        "DepartmentId": 66,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 66,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4100,
+            "Fee": 580000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 25,
+    "Name": "UNIVERSAL ENGINEERING & SCIENCE COLLEGE",
+    "Location": "CHAKUPAT, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015559686",
+    "Email": "info@uesc.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6718,
+    "Longitude": 85.3235,
+    "Departments": [
+      {
+        "DepartmentId": 67,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 67,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4200,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      },
+      {
+        "DepartmentId": 68,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 68,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4300,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 77,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PU ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "POKHARA UNIVERSITY ENTRANCE",
+            "Rating": 3.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 26,
+    "Name": "KATHMANDU UNIVERSITY SCHOOL OF ENGINEERING",
+    "Location": "DHULIKHEL, KAVREPALANCHOK, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01661399",
+    "Email": "info@ku.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6190,
+    "Longitude": 85.5421,
+    "Departments": [
+      {
+        "DepartmentId": 69,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 69,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 900,
+            "Fee": 850000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 88,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 20,
+            "SemesterScholarship": "KU ENTRANCE MERIT",
+            "TotalQuotas": 10,
+            "DurationInYears": 4,
+            "AdmissionProcess": "KU ENTRANCE",
+            "Rating": 4.4
+          }
+        ]
+      },
+      {
+        "DepartmentId": 70,
+        "Name": "ELECTRICAL AND ELECTRONICS ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 70,
+            "Name": "BE ELECTRICAL AND ELECTRONICS ENGINEERING",
+            "AverageCutoffRank": 1100,
+            "Fee": 850000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 87,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 20,
+            "SemesterScholarship": "KU ENTRANCE MERIT",
+            "TotalQuotas": 10,
+            "DurationInYears": 4,
+            "AdmissionProcess": "KU ENTRANCE",
+            "Rating": 4.3
+          }
+        ]
+      },
+      {
+        "DepartmentId": 71,
+        "Name": "MECHANICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 71,
+            "Name": "BE MECHANICAL ENGINEERING",
+            "AverageCutoffRank": 1300,
+            "Fee": 850000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 20,
+            "SemesterScholarship": "KU ENTRANCE MERIT",
+            "TotalQuotas": 10,
+            "DurationInYears": 4,
+            "AdmissionProcess": "KU ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      },
+      {
+        "DepartmentId": 72,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 72,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 1250,
+            "Fee": 850000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 86,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 20,
+            "SemesterScholarship": "KU ENTRANCE MERIT",
+            "TotalQuotas": 10,
+            "DurationInYears": 4,
+            "AdmissionProcess": "KU ENTRANCE",
+            "Rating": 4.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 27,
+    "Name": "PURBANCHAL UNIVERSITY SCHOOL OF ENGINEERING",
+    "Location": "GOTHGAUN, MORANG, KOSHI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "015294849",
+    "Email": "info@pusoe.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 26.6610,
+    "Longitude": 87.2718,
+    "Departments": [
+      {
+        "DepartmentId": 73,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 73,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 2000,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 84,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 25,
+            "SemesterScholarship": "PURBANCHAL ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 4.0
+          }
+        ]
+      },
+      {
+        "DepartmentId": 74,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 74,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 1800,
+            "Fee": 650000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 85,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 25,
+            "SemesterScholarship": "PURBANCHAL ENTRANCE MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 4.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 28,
+    "Name": "ACME ENGINEERING COLLEGE",
+    "Location": "SITAPAILA, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015282962",
+    "Email": "info@acme.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7190,
+    "Longitude": 85.2600,
+    "Departments": [
+      {
+        "DepartmentId": 75,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 75,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3500,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 80,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.7
+          }
+        ]
+      },
+      {
+        "DepartmentId": 76,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 76,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 3600,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 29,
+    "Name": "CENTRAL ENGINEERING COLLEGE",
+    "Location": "IMAOL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015384939",
+    "Email": "info@centralec.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7000,
+    "Longitude": 85.3333,
+    "Departments": [
+      {
+        "DepartmentId": 77,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 77,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3700,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 30,
+    "Name": "COLLEGE OF BIOMEDICAL ENGINEERING AND APPLIED SCIENCE ",
+    "Location": "HANDIGAUN, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015493929",
+    "Email": "info@biomedical.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7140,
+    "Longitude": 85.3440,
+    "Departments": [
+      {
+        "DepartmentId": 78,
+        "Name": "BIOMEDICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 78,
+            "Name": "BE BIOMEDICAL ENGINEERING",
+            "AverageCutoffRank": 4200,
+            "Fee": 700000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 77,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 31,
+    "Name": "COLLEGE OF INFORMATION TECHNOLOGY AND ENGINEERING",
+    "Location": "SUBIDHANAGAR, TINKUNE, KATHMANDU",
+    "Type": "PRIVATE",
+    "ContactNumber": "015334857",
+    "Email": "info@cite.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6850,
+    "Longitude": 85.3450,
+    "Departments": [
+      {
+        "DepartmentId": 79,
+        "Name": "INFORMATION TECHNOLOGY",
+        "Courses": [
+          {
+            "CourseId": 79,
+            "Name": "BSC INFORMATION TECHNOLOGY",
+            "AverageCutoffRank": 3800,
+            "Fee": 550000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 79,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 32,
+    "Name": "HILLSIDE COLLEGE OF ENGINEERING",
+    "Location": "BALKUMARI, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015389876",
+    "Email": "info@hillside.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7000,
+    "Longitude": 85.3333,
+    "Departments": [
+      {
+        "DepartmentId": 80,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 80,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4000,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 33,
+    "Name": "HIMALAYAN INSTITUTE OF SCIENCE AND TECHNOLOGY ",
+    "Location": "SHANKHAMUL, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015726463",
+    "Email": "info@hist.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6855,
+    "Longitude": 85.3360,
+    "Departments": [
+      {
+        "DepartmentId": 81,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 81,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 3900,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 34,
+    "Name": "KANTIPUR CITY COLLEGE",
+    "Location": "PUTALISADAK, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015749322",
+    "Email": "info@kcc.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7030,
+    "Longitude": 85.3200,
+    "Departments": [
+      {
+        "DepartmentId": 82,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 82,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4100,
+            "Fee": 620000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 77,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 35,
+    "Name": "KANTIPUR INTERNATIONAL COLLEGE",
+    "Location": "NEW BANESHWOR, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015728374",
+    "Email": "info@kic.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.6935,
+    "Longitude": 85.3421,
+    "Departments": [
+      {
+        "DepartmentId": 83,
+        "Name": "CIVIL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 83,
+            "Name": "BE CIVIL ENGINEERING",
+            "AverageCutoffRank": 4300,
+            "Fee": 600000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 76,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.4
+          }
+        ]
+      },
+      {
+        "DepartmentId": 84,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 84,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4400,
+            "Fee": 600000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 76,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CollegeId": 36,
+    "Name": "MORGAN ENGINEERING AND MANAGEMENT COLLEGE",
+    "Location": "BASUNDHARA, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "ContactNumber": "015739483",
+    "Email": "info@morgan.edu.np",
+    "HostelAvailability": false,
+    "Latitude": 27.7388,
+    "Longitude": 85.3265,
+    "Departments": [
+      {
+        "DepartmentId": 85,
+        "Name": "COMPUTER ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 85,
+            "Name": "BE COMPUTER ENGINEERING",
+            "AverageCutoffRank": 4000,
+            "Fee": 590000.00,
+            "TotalSeats": 96,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 78,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.6
+          }
+        ]
+      },
+      {
+        "DepartmentId": 86,
+        "Name": "ELECTRICAL ENGINEERING",
+        "Courses": [
+          {
+            "CourseId": 86,
+            "Name": "BE ELECTRICAL ENGINEERING",
+            "AverageCutoffRank": 4200,
+            "Fee": 590000.00,
+            "TotalSeats": 48,
+            "FacultyToStudentRatio": 0.02,
+            "PassPercentage": 77,
+            "InternshipOpportunities": true,
+            "GeneralScholarship": 30,
+            "SemesterScholarship": "PURBANCHAL AFFILIATED MERIT",
+            "TotalQuotas": 2,
+            "DurationInYears": 4,
+            "AdmissionProcess": "PURBANCHAL UNIVERSITY ENTRANCE",
+            "Rating": 3.5
+          }
+        ]
+      }
+    ]
+  }
+]
