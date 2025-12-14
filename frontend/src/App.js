@@ -1,4 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {
+    Search,
+    Filter,
+    Home,
+    BookOpen,
+    Building2,
+    DollarSign,
+    Send,
+    X,
+    Menu,
+    MapPin,
+    GraduationCap,
+    Wifi,
+    WifiOff,
+    Loader,
+    Bot,
+    User,
+    MessageCircle
+} from 'lucide-react';
 import './index.css';
 
 const App = () => {
@@ -7,6 +26,7 @@ const App = () => {
     const [isConnected, setIsConnected] = useState(false);
     const [isConnecting, setIsConnecting] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     // Filter states
     const [selectedLocation, setSelectedLocation] = useState('');
@@ -23,14 +43,13 @@ const App = () => {
     // Filter options
     const locations = ['Kathmandu', 'Lalitpur', 'Bhaktapur', 'Pokhara', 'Chitwan', 'Dharan', 'Butwal', 'Dhulikhel'];
     const courses = ['Civil Engineering', 'Computer Engineering', 'Electronics Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Architecture'];
-    const collegeTypes = ['Public', 'Private'];
 
     useEffect(() => {
         connectWebSocket();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         return () => {
             if (wsRef.current) wsRef.current.close();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -39,10 +58,7 @@ const App = () => {
 
     const connectWebSocket = () => {
         setIsConnecting(true);
-
-        // Determine WebSocket URL - force localhost for development
         const wsUrl = 'ws://localhost:8000/ws';
-
         console.log('Attempting to connect to:', wsUrl);
 
         try {
@@ -87,7 +103,6 @@ const App = () => {
                 setIsTyping(false);
                 console.log('❌ WebSocket disconnected:', event.code, event.reason);
 
-                // Auto-reconnect after 3 seconds
                 setTimeout(() => {
                     if (!isConnected) {
                         console.log('🔄 Attempting to reconnect...');
@@ -161,6 +176,15 @@ const App = () => {
         }));
     };
 
+    const clearFilters = () => {
+        setSelectedLocation('');
+        setSelectedCourse('');
+        setSelectedCollegeType('');
+        setMaxFee(1500000);
+        setNeedsHostel(false);
+        setNeedsScholarship(false);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         sendMessage();
@@ -179,11 +203,23 @@ const App = () => {
 
     const getConnectionStatus = () => {
         if (isConnected) {
-            return { text: "🟢 Connected", className: "status-connected" };
+            return {
+                text: "Connected",
+                icon: <Wifi size={16} />,
+                className: "status-connected"
+            };
         } else if (isConnecting) {
-            return { text: "🟡 Connecting...", className: "status-connecting" };
+            return {
+                text: "Connecting...",
+                icon: <Loader size={16} className="animate-spin" />,
+                className: "status-connecting"
+            };
         } else {
-            return { text: "🔴 Disconnected", className: "status-disconnected" };
+            return {
+                text: "Disconnected",
+                icon: <WifiOff size={16} />,
+                className: "status-disconnected"
+            };
         }
     };
 
@@ -197,100 +233,136 @@ const App = () => {
 
     return (
         <div className="app">
-            <div className="chat-container">
-                {/* Header */}
-                <div className="chat-header">
-                    <h1>🎓 College Recommendation Chatbot</h1>
-                    <p>Powered by XGBoost & AI</p>
+            {/* Side Panel for Filters */}
+            <div className={`filters-panel ${isSidebarOpen ? 'open' : 'collapsed'}`}>
+                <div className="filters-header">
+                    <Filter size={20} />
+                    {isSidebarOpen && <span>Filters</span>}
+                    {isSidebarOpen && (
+                        <button
+                            className="clear-filters-btn"
+                            onClick={clearFilters}
+                            title="Clear all filters"
+                        >
+                            <X size={16} />
+                        </button>
+                    )}
                 </div>
 
-                {/* Connection Status */}
-                <div className={`connection-status ${connectionStatus.className}`}>
-                    {connectionStatus.text}
-                </div>
+                {isSidebarOpen && (
+                    <div className="filters-content">
+                        <div className="filters-row">
+                            <div className="filter-group">
+                                <label><MapPin size={16} /> Location</label>
+                                <select
+                                    value={selectedLocation}
+                                    onChange={(e) => setSelectedLocation(e.target.value)}
+                                >
+                                    <option value="">Any Location</option>
+                                    {locations.map(loc => (
+                                        <option key={loc} value={loc}>{loc}</option>
+                                    ))}
+                                </select>
+                            </div>
 
-                {/* Filter Panel */}
-                <div className="filters-panel">
-                    <div className="filters-row">
-                        <div className="filter-group">
-                            <label>📍 Location</label>
-                            <select
-                                value={selectedLocation}
-                                onChange={(e) => setSelectedLocation(e.target.value)}
-                            >
-                                <option value="">Any Location</option>
-                                {locations.map(loc => (
-                                    <option key={loc} value={loc}>{loc}</option>
-                                ))}
-                            </select>
+                            <div className="filter-group">
+                                <label><BookOpen size={16} /> Course</label>
+                                <select
+                                    value={selectedCourse}
+                                    onChange={(e) => setSelectedCourse(e.target.value)}
+                                >
+                                    <option value="">Any Course</option>
+                                    {courses.map(course => (
+                                        <option key={course} value={course}>{course}</option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <div className="filter-group">
+                                <label><Building2 size={16} /> Type</label>
+                                <select
+                                    value={selectedCollegeType}
+                                    onChange={(e) => setSelectedCollegeType(e.target.value)}
+                                >
+                                    <option value="">Any Type</option>
+                                    <option value="Public">Public</option>
+                                    <option value="Private">Private</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div className="filter-group">
-                            <label>📚 Course</label>
-                            <select
-                                value={selectedCourse}
-                                onChange={(e) => setSelectedCourse(e.target.value)}
-                            >
-                                <option value="">Any Course</option>
-                                {courses.map(course => (
-                                    <option key={course} value={course}>{course}</option>
-                                ))}
-                            </select>
+                        <div className="filters-row">
+                            <div className="filter-group fee-filter">
+                                <label><DollarSign size={16} /> Max Fee: ₹{(maxFee / 100000).toFixed(1)} Lakh</label>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="1500000"
+                                    step="50000"
+                                    value={maxFee}
+                                    onChange={(e) => setMaxFee(Number(e.target.value))}
+                                    className="fee-slider"
+                                />
+                                <div className="fee-labels">
+                                    <span>₹0</span>
+                                    <span>₹15L</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="filter-group">
-                            <label>🏛️ Type</label>
-                            <select
-                                value={selectedCollegeType}
-                                onChange={(e) => setSelectedCollegeType(e.target.value)}
+                        <div className="filters-row">
+                            <div className="filter-group checkbox-group">
+                                <label className="checkbox-label">
+                                    <input
+                                        type="checkbox"
+                                        checked={needsHostel}
+                                        onChange={(e) => setNeedsHostel(e.target.checked)}
+                                    />
+                                    <span className="checkmark"></span>
+                                    <Home size={16} /> Hostel Required
+                                </label>
+                                <label className="checkbox-label">
+                                    <input
+                                        type="checkbox"
+                                        checked={needsScholarship}
+                                        onChange={(e) => setNeedsScholarship(e.target.checked)}
+                                    />
+                                    <span className="checkmark"></span>
+                                    <GraduationCap size={16} /> Scholarship Available
+                                </label>
+                            </div>
+
+                            <button
+                                className="recommend-btn"
+                                onClick={handleRecommendClick}
+                                disabled={!isConnected}
                             >
-                                <option value="">Any Type</option>
-                                <option value="Public">Public</option>
-                                <option value="Private">Private</option>
-                            </select>
+                                <Search size={16} />
+                                Get Recommendations
+                            </button>
                         </div>
                     </div>
+                )}
+            </div>
 
-                    <div className="filters-row">
-                        <div className="filter-group fee-filter">
-                            <label>💰 Max Fee: ₹{(maxFee / 100000).toFixed(1)} Lakh</label>
-                            <input
-                                type="range"
-                                min="0"
-                                max="1500000"
-                                step="50000"
-                                value={maxFee}
-                                onChange={(e) => setMaxFee(Number(e.target.value))}
-                                className="fee-slider"
-                            />
-                        </div>
-
-                        <div className="filter-group checkbox-group">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    checked={needsHostel}
-                                    onChange={(e) => setNeedsHostel(e.target.checked)}
-                                />
-                                🏠 Hostel
-                            </label>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    checked={needsScholarship}
-                                    onChange={(e) => setNeedsScholarship(e.target.checked)}
-                                />
-                                🎓 Scholarship
-                            </label>
-                        </div>
-
-                        <button
-                            className="recommend-btn"
-                            onClick={handleRecommendClick}
-                            disabled={!isConnected}
-                        >
-                            🔍 Get Recommendations
-                        </button>
+            {/* Main Chat Area */}
+            <div className="main-chat-area">
+                {/* Header */}
+                <div className="chat-header-main">
+                    <button
+                        className="sidebar-toggle"
+                        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                    >
+                        {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                    <GraduationCap size={28} className="header-icon" />
+                    <div className="header-text">
+                        <h1>College Recommendation System</h1>
+                        <p>Find your perfect college in Nepal</p>
+                    </div>
+                    <div className={`connection-status ${connectionStatus.className}`}>
+                        {connectionStatus.icon}
+                        <span>{connectionStatus.text}</span>
                     </div>
                 </div>
 
@@ -301,6 +373,16 @@ const App = () => {
                             key={message.id}
                             className={`message message-${message.type}`}
                         >
+                            <div className="message-header">
+                                {message.type === 'bot' ? (
+                                    <Bot size={20} className="message-icon bot-icon" />
+                                ) : (
+                                    <User size={20} className="message-icon user-icon" />
+                                )}
+                                <span className="message-time">
+                                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                </span>
+                            </div>
                             <div className="message-content">
                                 {formatMessage(message.content)}
                             </div>
@@ -310,8 +392,17 @@ const App = () => {
                     {/* Typing indicator */}
                     {isTyping && (
                         <div className="message typing-indicator">
+                            <div className="message-header">
+                                <Bot size={20} className="message-icon bot-icon" />
+                                <span className="message-time">now</span>
+                            </div>
                             <div className="message-content">
-                                Bot is typing...
+                                <div className="typing-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                Thinking...
                             </div>
                         </div>
                     )}
@@ -322,24 +413,27 @@ const App = () => {
                 {/* Input */}
                 <div className="input-container">
                     <form onSubmit={handleSubmit} className="input-form">
-                        <textarea
-                            ref={inputRef}
-                            value={inputMessage}
-                            onChange={(e) => setInputMessage(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            placeholder={isConnected ? "Ask about colleges, courses, fees..." : "Connecting to chatbot..."}
-                            className="input-field"
-                            disabled={!isConnected}
-                            rows={1}
-                        />
-                        <button
-                            type="submit"
-                            disabled={!isConnected || !inputMessage.trim()}
-                            className="send-button"
-                            title="Send message"
-                        >
-                            ➤
-                        </button>
+                        <div className="input-wrapper">
+                            <MessageCircle size={20} className="input-icon" />
+                            <textarea
+                                ref={inputRef}
+                                value={inputMessage}
+                                onChange={(e) => setInputMessage(e.target.value)}
+                                onKeyPress={handleKeyPress}
+                                placeholder={isConnected ? "Ask about colleges, courses, fees, or anything else..." : "Connecting to chatbot..."}
+                                className="input-field"
+                                disabled={!isConnected}
+                                rows={1}
+                            />
+                            <button
+                                type="submit"
+                                disabled={!isConnected || !inputMessage.trim()}
+                                className="send-button"
+                                title="Send message"
+                            >
+                                <Send size={16} />
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
