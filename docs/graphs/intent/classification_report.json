@@ -1,0 +1,153 @@
+{
+  "Admission_process": {
+    "precision": 0.7894736842105263,
+    "recall": 0.9375,
+    "f1-score": 0.8571428571428571,
+    "support": 16.0
+  },
+  "Affirmation": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3.0
+  },
+  "Clarification": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2.0
+  },
+  "GET_COLLEGE_INFO": {
+    "precision": 0.7857142857142857,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.8461538461538461,
+    "support": 12.0
+  },
+  "GET_fee_info": {
+    "precision": 0.6956521739130435,
+    "recall": 0.9411764705882353,
+    "f1-score": 0.8,
+    "support": 17.0
+  },
+  "GET_program_info": {
+    "precision": 0.9285714285714286,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.896551724137931,
+    "support": 15.0
+  },
+  "Get_admission_info": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 2.0
+  },
+  "Get_college_location": {
+    "precision": 1.0,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.9,
+    "support": 11.0
+  },
+  "Get_contact_info": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 3.0
+  },
+  "Get_hostel_availability_info": {
+    "precision": 0.5,
+    "recall": 0.6363636363636364,
+    "f1-score": 0.56,
+    "support": 11.0
+  },
+  "Get_pass_percentage_info": {
+    "precision": 0.6666666666666666,
+    "recall": 0.75,
+    "f1-score": 0.7058823529411765,
+    "support": 8.0
+  },
+  "Get_scholorship_info": {
+    "precision": 0.5,
+    "recall": 0.45454545454545453,
+    "f1-score": 0.47619047619047616,
+    "support": 11.0
+  },
+  "Goodbye": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2.0
+  },
+  "Greeting": {
+    "precision": 0.7,
+    "recall": 0.875,
+    "f1-score": 0.7777777777777778,
+    "support": 8.0
+  },
+  "Negation": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2.0
+  },
+  "Recommend_college": {
+    "precision": 0.75,
+    "recall": 0.7894736842105263,
+    "f1-score": 0.7692307692307693,
+    "support": 19.0
+  },
+  "Search_college_by_fee": {
+    "precision": 0.8333333333333334,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.7692307692307693,
+    "support": 7.0
+  },
+  "Search_college_by_location": {
+    "precision": 0.5,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.4,
+    "support": 9.0
+  },
+  "Search_college_by_program": {
+    "precision": 0.6666666666666666,
+    "recall": 0.75,
+    "f1-score": 0.7058823529411765,
+    "support": 8.0
+  },
+  "Search_college_by_seats": {
+    "precision": 0.5714285714285714,
+    "recall": 0.5,
+    "f1-score": 0.5333333333333333,
+    "support": 8.0
+  },
+  "Search_college_by_type": {
+    "precision": 0.8333333333333334,
+    "recall": 0.7142857142857143,
+    "f1-score": 0.7692307692307693,
+    "support": 7.0
+  },
+  "Thank_you": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1-score": 0.5,
+    "support": 2.0
+  },
+  "Unknown": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2.0
+  },
+  "accuracy": 0.7297297297297297,
+  "macro avg": {
+    "precision": 0.6617756584277328,
+    "recall": 0.6230788040200477,
+    "f1-score": 0.6275336389120674,
+    "support": 185.0
+  },
+  "weighted avg": {
+    "precision": 0.713889571166459,
+    "recall": 0.7297297297297297,
+    "f1-score": 0.7125159903902297,
+    "support": 185.0
+  }
+}

@@ -1,0 +1,29 @@
+RoBERTa Entity Classification - Detailed Results
+============================================================
+
+Training Date: 2025-12-16 10:08:33
+Total Token Predictions: 7040
+Number of Active Entity Labels: 13
+Total Possible Labels: 25
+
+Classification Report:
+----------------------------------------
+                        precision    recall  f1-score   support
+
+                     O       1.00      1.00      1.00      6720
+         B-AFFILIATION       1.00      1.00      1.00        10
+B-APPLICATION_DEADLINE       0.00      0.00      0.00         5
+        B-COLLEGE_NAME       0.94      0.93      0.93       122
+        B-COLLEGE_TYPE       1.00      0.93      0.97        15
+        B-CONTACT_INFO       0.00      0.00      0.00         2
+          B-DEPARTMENT       0.00      0.00      0.00         2
+            B-FACILITY       1.00      0.60      0.75         5
+                 B-FEE       1.00      1.00      1.00         8
+            B-LOCATION       0.87      1.00      0.93        52
+             B-PROGRAM       0.95      0.99      0.97        76
+              B-RATING       1.00      0.77      0.87        22
+           B-RECOMMEND       0.00      0.00      0.00         1
+
+              accuracy                           0.99      7040
+             macro avg       0.67      0.63      0.65      7040
+          weighted avg       0.99      0.99      0.99      7040

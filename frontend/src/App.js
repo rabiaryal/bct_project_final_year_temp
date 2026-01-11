@@ -27,6 +27,7 @@ const App = () => {
     const [isConnecting, setIsConnecting] = useState(false);
     const [isTyping, setIsTyping] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [sessionId, setSessionId] = useState(null);
 
     // Filter states
     const [selectedLocation, setSelectedLocation] = useState('');
@@ -37,96 +38,55 @@ const App = () => {
     const [needsScholarship, setNeedsScholarship] = useState(false);
 
     const messagesEndRef = useRef(null);
-    const wsRef = useRef(null);
     const inputRef = useRef(null);
+
+    // API Base URL
+    const API_BASE_URL = 'http://localhost:8000';
 
     // Filter options
     const locations = ['Kathmandu', 'Lalitpur', 'Bhaktapur', 'Pokhara', 'Chitwan', 'Dharan', 'Butwal', 'Dhulikhel'];
     const courses = ['Civil Engineering', 'Computer Engineering', 'Electronics Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Architecture'];
 
     useEffect(() => {
-        connectWebSocket();
-        return () => {
-            if (wsRef.current) wsRef.current.close();
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        checkConnection();
+        generateSessionId();
+
+        // Set up periodic connection check
+        const interval = setInterval(checkConnection, 30000); // Check every 30 seconds
+        return () => clearInterval(interval);
     }, []);
 
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
 
-    const connectWebSocket = () => {
-        setIsConnecting(true);
-        const wsUrl = 'ws://localhost:8000/ws';
-        console.log('Attempting to connect to:', wsUrl);
-
-        try {
-            wsRef.current = new WebSocket(wsUrl);
-
-            wsRef.current.onopen = () => {
-                setIsConnected(true);
-                setIsConnecting(false);
-                console.log('✅ WebSocket connected successfully');
-            };
-
-            wsRef.current.onmessage = (event) => {
-                try {
-                    const data = JSON.parse(event.data);
-                    console.log('Received message:', data);
-
-                    if (data.type === 'typing') {
-                        setIsTyping(true);
-                        return;
-                    }
-
-                    setIsTyping(false);
-
-                    const newMessage = {
-                        id: Date.now() + Math.random(),
-                        type: data.type,
-                        content: data.message,
-                        timestamp: new Date(),
-                        userQuery: data.user_query,
-                        metadata: data.metadata || {}
-                    };
-
-                    setMessages(prev => [...prev, newMessage]);
-                } catch (error) {
-                    console.error('Error parsing message:', error);
-                }
-            };
-
-            wsRef.current.onclose = (event) => {
-                setIsConnected(false);
-                setIsConnecting(false);
-                setIsTyping(false);
-                console.log('❌ WebSocket disconnected:', event.code, event.reason);
-
-                setTimeout(() => {
-                    if (!isConnected) {
-                        console.log('🔄 Attempting to reconnect...');
-                        connectWebSocket();
-                    }
-                }, 3000);
-            };
-
-            wsRef.current.onerror = (error) => {
-                console.error('❌ WebSocket error:', error);
-                setIsConnected(false);
-                setIsConnecting(false);
-            };
-
-        } catch (error) {
-            console.error('Error creating WebSocket:', error);
-            setIsConnecting(false);
-        }
+    const generateSessionId = () => {
+        const newSessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        setSessionId(newSessionId);
     };
 
-    const sendMessage = (messageText = null) => {
+    const checkConnection = async () => {
+        setIsConnecting(true);
+        try {
+            const response = await fetch(`${API_BASE_URL}/api/v1/health`);
+            if (response.ok) {
+                setIsConnected(true);
+                console.log('✅ Backend connected successfully');
+            } else {
+                setIsConnected(false);
+                console.log('❌ Backend health check failed');
+            }
+        } catch (error) {
+            setIsConnected(false);
+            console.error('❌ Backend connection error:', error);
+        }
+        setIsConnecting(false);
+    };
+
+    const sendMessage = async (messageText = null) => {
         const textToSend = messageText || inputMessage.trim();
 
-        if (!textToSend || !isConnected || !wsRef.current) {
+        if (!textToSend || !isConnected) {
             return;
         }
 
@@ -138,12 +98,61 @@ const App = () => {
         };
 
         setMessages(prev => [...prev, userMessage]);
-        wsRef.current.send(JSON.stringify({ message: textToSend }));
         setInputMessage('');
+        setIsTyping(true);
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/api/v1/chat`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: textToSend,
+                    session_id: sessionId
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Received response:', data);
+
+            const botMessage = {
+                id: Date.now() + 1,
+                type: 'bot',
+                content: data.message,
+                timestamp: new Date(),
+                intent: data.intent,
+                entities: data.entities,
+                confidence: data.confidence,
+                metadata: {
+                    intent: data.intent,
+                    confidence: data.confidence,
+                    entities: data.entities
+                }
+            };
+
+            setMessages(prev => [...prev, botMessage]);
+        } catch (error) {
+            console.error('Error sending message:', error);
+            const errorMessage = {
+                id: Date.now() + 1,
+                type: 'bot',
+                content: 'Sorry, I encountered an error processing your message. Please try again.',
+                timestamp: new Date(),
+                metadata: { error: true }
+            };
+            setMessages(prev => [...prev, errorMessage]);
+        } finally {
+            setIsTyping(false);
+        }
     };
 
     const handleRecommendClick = () => {
-        if (!isConnected || !wsRef.current) return;
+        if (!isConnected) return;
 
         let queryParts = ['recommend colleges'];
         if (selectedCourse) queryParts.push(`for ${selectedCourse}`);
@@ -154,26 +163,7 @@ const App = () => {
         if (needsScholarship) queryParts.push('with scholarship');
 
         const query = queryParts.join(' ');
-
-        const userMessage = {
-            id: Date.now(),
-            type: 'user',
-            content: `🔍 ${query}`,
-            timestamp: new Date()
-        };
-
-        setMessages(prev => [...prev, userMessage]);
-        wsRef.current.send(JSON.stringify({
-            message: query,
-            filters: {
-                location: selectedLocation || null,
-                course: selectedCourse || null,
-                college_type: selectedCollegeType || null,
-                max_fee: maxFee,
-                hostel_required: needsHostel,
-                scholarship_needed: needsScholarship
-            }
-        }));
+        sendMessage(`🔍 ${query}`);
     };
 
     const clearFilters = () => {
@@ -201,22 +191,34 @@ const App = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const clearChat = () => {
+        setMessages([]);
+        generateSessionId(); // Generate new session for fresh start
+    };
+
+    const formatTimestamp = (timestamp) => {
+        return new Date(timestamp).toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    };
+
     const getConnectionStatus = () => {
         if (isConnected) {
             return {
-                text: "Connected",
+                text: "Backend Ready",
                 icon: <Wifi size={16} />,
                 className: "status-connected"
             };
         } else if (isConnecting) {
             return {
-                text: "Connecting...",
+                text: "Checking...",
                 icon: <Loader size={16} className="animate-spin" />,
                 className: "status-connecting"
             };
         } else {
             return {
-                text: "Disconnected",
+                text: "Backend Offline",
                 icon: <WifiOff size={16} />,
                 className: "status-disconnected"
             };
@@ -374,10 +376,10 @@ const App = () => {
                             className={`message message-${message.type}`}
                         >
                             <div className="message-header">
-                                {message.type === 'bot' ? (
-                                    <Bot size={20} className="message-icon bot-icon" />
-                                ) : (
+                                {message.type === 'user' ? (
                                     <User size={20} className="message-icon user-icon" />
+                                ) : (
+                                    <Bot size={20} className="message-icon bot-icon" />
                                 )}
                                 <span className="message-time">
                                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}

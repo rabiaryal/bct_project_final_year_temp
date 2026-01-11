@@ -60,11 +60,10 @@ frontend/yarn-debug.log*
 frontend/yarn-error.log*
 
 # Model checkpoints (keep main models, ignore checkpoints)
-models/entity_model/checkpoint-*/
-models/intent_model/checkpoint-*/
-models/primary_intent_model/checkpoint-*/
-models/sub_intent_model/checkpoint-*/
-
+models/bert_intent_model
+models/roberta_entity_model
+models/faiss_index
+# models/
 # Keras/TensorFlow
 *.h5
 !item_encoder.h5
@@ -87,3 +86,5 @@ temp/
 # Cache
 .cache/
 *.cache
+# OS
+.DS_Store

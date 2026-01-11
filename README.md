@@ -1,189 +1,106 @@
-# College Recommendation System 🎓
+# College Recommendation Dialogue System
 
-A full-stack web application that helps students find the perfect engineering college using AI-powered recommendations and FAISS vector search.
+A production-ready AI dialogue system for college information and recommendations, built with FastAPI and following Rasa/DeepPavlov architecture patterns.
 
 ## 🏗️ Architecture
 
 ```
-┌────────────┐        WebSocket        ┌──────────────┐
-│   React    │  <-------------------> │   FastAPI     │
-│  Frontend  │                        │   Backend     │
-└────────────┘                        └──────┬───────┘
-                                              │
-                                              │ Python call
-                                              ▼
-                                     ┌──────────────────┐
-                                     │   AI Model       │
-                                     │ (Embeddings/RAG) │
-                                     └──────────────────┘
-                                              │
-                                              ▼
-                                     ┌──────────────────┐
-                                     │ Vector DB / JSON │
-                                     │ (FAISS + Data)   │
-                                     └──────────────────┘
+backend/app/                  # Main application
+├── api/                      # FastAPI routes (chat, health)
+├── nlu/                      # Natural Language Understanding
+│   ├── intent/              # BERT intent classification
+│   └── entity/              # RoBERTa entity extraction
+├── context/                  # Dialogue state tracking
+├── policy/                   # Rule-based dialogue policy
+├── actions/                  # Action handlers (college search, etc.)
+├── services/                 # Business logic layer
+├── repositories/             # Data access layer (MongoDB)
+├── response/                 # Response formatting & templates
+├── schemas/                  # Pydantic data models
+├── utils/                    # Configuration, logging, constants
+├── dialogue_manager.py       # Main orchestrator
+└── main.py                   # FastAPI entry point
+
+data/                         # Training data
+├── entity/                   # Entity training data
+├── intent/                   # Intent training data
+└── full_data.json           # College dataset
+
+models/                       # Trained ML models
+├── bert_intent_model/        # BERT intent classifier
+├── roberta_entity_model/     # RoBERTa entity extractor
+└── faiss_index/             # Vector similarity search
+
+frontend/                     # React frontend (optional)
 ```
-
-## ✨ Features
-
-- **🤖 AI-Powered Chatbot**: Natural language processing with FAISS vector search
-- **📊 Smart Recommendations**: Personalized college suggestions based on preferences  
-- **💬 Real-time Chat**: WebSocket-based instant messaging
-- **🔍 Comprehensive Search**: Query colleges by location, fees, courses, ratings, and more
-- **📱 Responsive Design**: Works on desktop and mobile devices
-- **⚡ Fast Performance**: Sub-second response times with vector similarity search
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8+ 
-- Node.js 16+
-- npm or yarn
+- Python 3.11+
+- Conda environment: `bctproject`
+- MongoDB Atlas connection
 
-### One-Command Setup
-```bash
-chmod +x setup.sh && ./setup.sh
-```
+### Running the Backend
 
-### Manual Setup
-
-#### Backend
 ```bash
 cd backend
-pip3 install -r requirements.txt
-pip3 install faiss-cpu sentence-transformers pandas scikit-learn
-python3 main.py
+conda activate bctproject
+python -m app.main
 ```
 
-#### Frontend  
+The API will be available at:
+- **Main API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/api/v1/health
+
+### API Endpoints
+
+#### Chat
 ```bash
-cd frontend
-npm install
-npm start
+POST /api/v1/chat
+{
+    "message": "Tell me about Kathmandu University",
+    "session_id": "optional_session_id"
+}
 ```
 
-### Access the Application
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8000
-- **API Docs**: http://localhost:8000/docs
-
-## 🎯 Usage Examples
-
-### Chat Queries
-- "Where is Sagarmatha Engineering College located?"
-- "Engineering colleges in Kathmandu under 10 lakhs"  
-- "Does Pulchowk have hostel facilities?"
-- "Email of Kathmandu University"
-- "Scholarship opportunities at IOE"
-
-### API Usage
-```python
-import requests
-
-response = requests.post("http://localhost:8000/chat", 
-                        json={"message": "Best engineering colleges in Nepal"})
-print(response.json())
-```
-
-## 🛠️ Technology Stack
-
-### Backend
-- **FastAPI**: High-performance web framework
-- **WebSockets**: Real-time bidirectional communication  
-- **FAISS**: Vector similarity search (782 documents)
-- **SentenceTransformers**: Text embeddings (all-MiniLM-L6-v2)
-- **Python**: Core logic and AI model integration
-
-### Frontend
-- **React 18**: Modern UI library
-- **WebSocket API**: Real-time messaging
-- **CSS3**: Custom responsive styling
-- **JavaScript ES6+**: Modern frontend development
-
-### AI/Data
-- **FAISS Vector Database**: 782 indexed documents
-- **Sentence Transformers**: Semantic search capabilities
-- **College Dataset**: 36+ colleges with comprehensive course information
-- **RAG Architecture**: Retrieval-Augmented Generation for accurate responses
-
-## 📊 Data Coverage
-
-- **36+ Engineering Colleges** across Nepal
-- **86+ Course Programs** with detailed information
-- **Comprehensive Data**: Locations, fees, ratings, scholarships, internships
-- **Contact Information**: Phone numbers, email addresses
-- **Academic Details**: Pass rates, faculty ratios, admission processes
-
-## 🚀 Performance
-
-- **Sub-second Response Times**: Optimized FAISS indexing
-- **782 Document Search**: Comprehensive knowledge base
-- **Real-time Updates**: WebSocket-based instant messaging
-- **Scalable Architecture**: Ready for production deployment
-
-## 📁 Project Structure
-
-```
-college-recommendation-system/
-├── backend/
-│   ├── main.py              # FastAPI server with WebSocket
-│   └── requirements.txt     # Python dependencies
-├── frontend/
-│   ├── src/
-│   │   ├── App.js          # Main React component
-│   │   ├── index.js        # React entry point
-│   │   └── index.css       # Styling
-│   ├── public/
-│   │   └── index.html      # HTML template
-│   └── package.json        # Node dependencies
-├── stand_alone.py          # AI chatbot core logic
-├── full_data.json          # College dataset
-└── setup.sh               # Automated setup script
-```
-
-## 🔧 Development
-
-### Run Backend in Development
+#### Health Check
 ```bash
-cd backend
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+GET /api/v1/health/detailed
 ```
 
-### Run Frontend in Development  
-```bash
-cd frontend
-npm start
-```
+## 🧠 Dialogue Flow
 
-## 🌐 Deployment
+The system follows a clean **Rasa-inspired architecture**:
 
-### Backend (Production)
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000
-```
+1. **NLU Processing** → Intent + Entity extraction
+2. **Context Tracking** → Session state management  
+3. **Policy Planning** → Action selection
+4. **Action Execution** → College search, information retrieval
+5. **Response Generation** → Natural language responses
 
-### Frontend (Build)
-```bash
-cd frontend
-npm run build
-```
+## 📊 Models
 
-## 🤝 Contributing
+- **Intent Classification**: BERT with 23 intent classes
+- **Entity Extraction**: RoBERTa with 25 entity types
+- **College Database**: 36 colleges in MongoDB Atlas
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## 🔧 Configuration
 
-## 📄 License
+Configuration is managed through `backend/app/utils/config.py`:
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **Database**: MongoDB connection settings
+- **Models**: Model paths and confidence thresholds  
+- **API**: CORS, ports, workers
+- **Dialogue**: Session timeout, max turns
 
-## 🎓 About
+## 📝 Development
 
-Developed as a final year project for BCT (Bachelor of Computer Technology) program. This system demonstrates the integration of modern web technologies with AI/ML for practical educational applications.
-
----
-
-**Built with ❤️ for students seeking quality engineering education in Nepal**
+The codebase follows clean architecture principles:
+- **Separation of Concerns**: Each layer has specific responsibilities
+- **Dependency Injection**: Services receive dependencies
+- **Type Safety**: Full Pydantic schema validation
+- **Async Support**: Non-blocking operations
+- **Error Handling**: Comprehensive error management
+- **Logging**: Structured logging throughout

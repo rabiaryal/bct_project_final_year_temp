@@ -4,6 +4,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env.mongodb'))
 
 from app.api import chat, health
 from app.dialogue_manager import dialogue_manager
