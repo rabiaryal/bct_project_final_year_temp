@@ -71,11 +71,27 @@ class DialogueState(BaseModel):
     last_action: Optional[str] = None
     context: Dict[str, Any] = Field(default_factory=dict)
 
+class RetrievalResult(BaseModel):
+    """College retrieval result schema"""
+    college_name: str = Field(..., description="Name of the college")
+    similarity_score: float = Field(..., ge=0.0, le=1.0, description="Semantic similarity score")
+    college_data: Dict[str, Any] = Field(default_factory=dict, description="Full college information")
+    match_reason: str = Field(..., description="Reason for this match")
+
+class RetrievalData(BaseModel):
+    """Complete retrieval results"""
+    query: str = Field(..., description="Original query")
+    results: List[RetrievalResult] = Field(default_factory=list)
+    entities_found: Dict[str, Any] = Field(default_factory=dict)
+    search_strategy: str = Field(..., description="Search strategy used")
+    total_results: int = Field(default=0)
+
 class ActionRequest(BaseModel):
     """Action execution request"""
     action: str
     slots: Dict[str, Any] = Field(default_factory=dict)
     session_id: str
+    retrieval_data: Optional[RetrievalData] = None
 
 class ActionResponse(BaseModel):
     """Action execution response"""
@@ -83,6 +99,7 @@ class ActionResponse(BaseModel):
     slots_updated: Dict[str, Any] = Field(default_factory=dict)
     success: bool = True
     metadata: Dict[str, Any] = Field(default_factory=dict)
+    retrieval_results: Optional[List[RetrievalResult]] = Field(default=None)
 
 class HealthStatus(BaseModel):
     """Health check status"""

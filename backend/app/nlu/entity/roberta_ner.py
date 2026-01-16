@@ -39,9 +39,8 @@ class RoBERTaEntityExtractor:
             if os.path.exists(mapping_path):
                 with open(mapping_path, 'r') as f:
                     mapping_data = json.load(f)
-                    # Use id2label mapping for prediction decoding
                     self.label_mapping = mapping_data.get("id2label", {})
-                logger.info(f"Loaded label mapping with {len(self.label_mapping)} labels: {list(self.label_mapping.values())}")
+                logger.info(f"Loaded label mapping with {len(self.label_mapping)} labels")
             else:
                 logger.warning(f"Label mapping file not found at {mapping_path}")
                 self.label_mapping = {}
@@ -50,107 +49,161 @@ class RoBERTaEntityExtractor:
             logger.error(f"Failed to load RoBERTa model: {e}")
             raise
     
-    async def extract(self, text: str) -> Dict[str, Any]:
+    def predict_with_confidence(self, text: str, threshold: float = 0.3) -> List[Dict[str, Any]]:
         """
-        Extract entities from text
+        Predict entities with confidence scores using entity-level thresholding
         
+        Args:
+            text: Input text
+            threshold: Confidence threshold (default: 0.3)
+            
         Returns:
-            Dictionary of extracted entities
+            List of top 3 entities with confidence scores
         """
         try:
-            logger.debug(f"Extracting entities from: '{text}'")
-            
             # Tokenize input
             inputs = self.tokenizer(
                 text,
                 return_tensors="pt",
                 truncation=True,
-                padding=True,
-                max_length=512
+                padding='max_length',
+                max_length=128,
+                is_split_into_words=False
             )
-            inputs = {k: v.to(self.device) for k, v in inputs.items()}
             
-            logger.debug(f"Tokenized input shape: {inputs['input_ids'].shape}")
+            input_ids = inputs['input_ids'].to(self.device)
+            attention_mask = inputs['attention_mask'].to(self.device)
             
-            # Predict
+            # Get predictions with probabilities
             with torch.no_grad():
-                outputs = self.model(**inputs)
-                predictions = torch.nn.functional.softmax(outputs.logits, dim=-1)
-                predicted_token_class_ids = predictions.argmax(-1)
+                outputs = self.model(input_ids, attention_mask=attention_mask)
+                logits = outputs.logits
             
-            # Decode predictions
-            tokens = self.tokenizer.convert_ids_to_tokens(inputs["input_ids"][0])
-            entities = self._decode_entities(tokens, predicted_token_class_ids[0])
+            # Get probabilities and predictions
+            probs = torch.softmax(logits, dim=-1)[0]
+            preds = torch.argmax(logits, dim=-1)[0]
             
-            logger.info(f"Entity extraction result: {entities}")
-            return entities
+            tokens = self.tokenizer.convert_ids_to_tokens(input_ids[0])
+            labels = [self.label_mapping.get(str(p.item()), 'O') for p in preds]
+            
+            # Remove special tokens and get token-level confidence scores
+            filtered = [
+                (t, l, probs[i][preds[i]].item())
+                for i, (t, l) in enumerate(zip(tokens, labels))
+                if t not in [self.tokenizer.cls_token, self.tokenizer.sep_token, self.tokenizer.pad_token]
+            ]
+            
+            if not filtered:
+                return []
+            
+            tokens, labels, scores = zip(*filtered)
+            
+            # 🔹 Build spans FIRST (without token-level thresholding)
+            spans = self._post_process_entities_with_confidence(tokens, labels, scores)
+            
+            # 🔹 Apply threshold at ENTITY LEVEL
+            threshold_filtered_entities = [
+                e for e in spans
+                if e["confidence"] >= threshold
+            ]
+            
+            # Sort by confidence and return top 3
+            threshold_filtered_entities.sort(key=lambda x: x['confidence'], reverse=True)
+            return threshold_filtered_entities[:3]
             
         except Exception as e:
-            logger.error(f"Entity extraction error: {e}")
-            return {}
+            logger.error(f"Confidence prediction error: {e}")
+            return []
     
-    def _decode_entities(self, tokens: List[str], predictions: torch.Tensor) -> Dict[str, Any]:
-        """Decode token predictions to entities"""
-        entities = {}
-        current_entity = ""
-        current_type = ""
+    def _post_process_entities_with_confidence(self, tokens, labels, scores):
+        """
+        Post-process entities with confidence scores (entity-level thresholding safe).
         
-        logger.debug(f"Decoding {len(tokens)} tokens with {len(self.label_mapping)} labels")
-        logger.debug(f"Available labels: {list(self.label_mapping.values()) if self.label_mapping else 'No labels loaded'}")
+        Args:
+            tokens: List of tokens from tokenizer
+            labels: List of predicted BIO labels  
+            scores: List of confidence scores per token
         
-        for i, (token, pred_id) in enumerate(zip(tokens, predictions)):
-            if token in ["<s>", "</s>", "<pad>"]:
-                continue
+        Returns:
+            List of entities with confidence scores calculated at entity level
+        """
+        if not tokens:
+            return []
+
+        # Step 1: Merge subword tokens based on RoBERTa's 'Ġ' prefix
+        merged_tokens = []
+        merged_labels = []
+        merged_scores = []
+        
+        for token, label, score in zip(tokens, labels, scores):
+            if token.startswith('Ġ'):
+                # Start of a new word
+                merged_tokens.append(token[1:])
+                merged_labels.append(label)
+                merged_scores.append(score)
+            elif merged_tokens:
+                # Continuation of the previous word - merge with previous
+                merged_tokens[-1] += token
+                # Keep the previous label (don't change it)
+                # Average the scores for merged tokens
+                merged_scores[-1] = (merged_scores[-1] + score) / 2
+            else:
+                # First token doesn't have a 'Ġ' prefix (unusual but handle it)
+                merged_tokens.append(token)
+                merged_labels.append(label)
+                merged_scores.append(score)
+
+        # Step 2: Extract entities from merged tokens using BIO logic
+        entities = []
+        current_entity_tokens = []
+        current_entity_label = None
+        current_entity_scores = []
+
+        for token, label, score in zip(merged_tokens, merged_labels, merged_scores):
+            if label.startswith('B-'):
+                # If there's a current entity, save it before starting a new one
+                if current_entity_tokens:
+                    entity_text = " ".join(current_entity_tokens)
+                    # Calculate entity confidence as average of token scores
+                    entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
+                    entities.append({
+                        'text': entity_text, 
+                        'type': current_entity_label,
+                        'confidence': entity_confidence
+                    })
+
+                # Start a new entity
+                current_entity_tokens = [token]
+                current_entity_label = label[2:]  # Remove B- prefix
+                current_entity_scores = [score]
                 
-            label = self.label_mapping.get(str(pred_id.item()), "O")
-            logger.debug(f"Token '{token}' -> prediction_id: {pred_id.item()} -> label: '{label}'")
-            
-            if label.startswith("B-"):
-                # Begin new entity - save previous entity first
-                if current_entity and current_type:
-                    entity_key = current_type.lower() + "_mentioned"
-                    entities[entity_key] = current_entity.strip()
-                    logger.debug(f"Completed entity: {entity_key} = '{current_entity.strip()}'")
-                
-                # Start new entity
-                entity_type = label[2:]  # Remove "B-" prefix
-                current_type = entity_type
-                current_entity = token.replace("Ġ", " ").strip()
-                logger.debug(f"Started new entity: {current_type} with '{current_entity}'")
-                
-            elif label.startswith("I-") and current_type:
-                # Continue current entity - check if entity type matches
-                entity_type = label[2:]  # Remove "I-" prefix
-                if entity_type == current_type:
-                    # Add token to current entity
-                    token_text = token.replace("Ġ", " ")
-                    current_entity += token_text
-                    logger.debug(f"Continuing entity: {current_type} with '{token}' -> '{current_entity}'")
-                else:
-                    # Different entity type, save previous and start new
-                    if current_entity and current_type:
-                        entity_key = current_type.lower() + "_mentioned"
-                        entities[entity_key] = current_entity.strip()
-                        logger.debug(f"Completed entity (type mismatch): {entity_key} = '{current_entity.strip()}'")
-                    
-                    current_type = entity_type
-                    current_entity = token.replace("Ġ", " ").strip()
-                    logger.debug(f"Started new entity from I-: {current_type} with '{current_entity}'")
+            elif label.startswith('I-') and current_entity_label == label[2:]:
+                # Continue the current entity
+                current_entity_tokens.append(token)
+                current_entity_scores.append(score)
                 
             else:
-                # Outside entity or O label - save current entity if exists
-                if current_entity and current_type:
-                    entity_key = current_type.lower() + "_mentioned"
-                    entities[entity_key] = current_entity.strip()
-                    logger.debug(f"Finished entity: {entity_key} = '{current_entity.strip()}'")
-                current_entity = ""
-                current_type = ""
-        
-        # Add final entity if exists
-        if current_entity and current_type:
-            entity_key = current_type.lower() + "_mentioned"
-            entities[entity_key] = current_entity.strip()
-            logger.debug(f"Final entity: {entity_key} = '{current_entity.strip()}'")
-        
-        logger.info(f"Final extracted entities: {entities}")
+                # Not an entity token or different entity - close current one
+                if current_entity_tokens:
+                    entity_text = " ".join(current_entity_tokens)
+                    entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
+                    entities.append({
+                        'text': entity_text,
+                        'type': current_entity_label,
+                        'confidence': entity_confidence
+                    })
+                current_entity_tokens = []
+                current_entity_label = None
+                current_entity_scores = []
+
+        # Add the last entity if it exists
+        if current_entity_tokens:
+            entity_text = " ".join(current_entity_tokens)
+            entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
+            entities.append({
+                'text': entity_text,
+                'type': current_entity_label, 
+                'confidence': entity_confidence
+            })
+
         return entities

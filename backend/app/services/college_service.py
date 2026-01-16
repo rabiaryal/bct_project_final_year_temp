@@ -43,6 +43,24 @@ class CollegeService:
                 "count": 0
             }
     
+    async def search_by_name(self, college_name: str) -> Dict[str, Any]:
+        """Search for a college by name"""
+        try:
+            if not self.mongo_repo:
+                return None
+                
+            # Search for college by name (case-insensitive)
+            query = {"Name": {"$regex": college_name, "$options": "i"}}
+            colleges = await self.mongo_repo.find_colleges(query, limit=1)
+            
+            if colleges:
+                return colleges[0]  # Return first match
+            return None
+            
+        except Exception as e:
+            logger.error(f"Error searching college by name: {e}")
+            return None
+    
     async def get_college_details(self, college_name: str) -> Dict[str, Any]:
         """Get detailed information about a specific college"""
         try:

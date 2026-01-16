@@ -1,176 +1,175 @@
-"""Dialogue State Tracking"""
+"""
+Backwards Compatibility DialogueTracker
+Simple wrapper around the new ContextManager for backwards compatibility
+"""
 
-from typing import Dict, Any, Optional
+from typing import Dict, List, Any, Optional, TYPE_CHECKING
+from dataclasses import dataclass
 from datetime import datetime
-from dataclasses import dataclass, field
 
-from app.utils.logger import get_logger
-from app.schemas import DialogueState
+from .context_manager import context_manager
 
-logger = get_logger(__name__)
+if TYPE_CHECKING:
+    from app.policy.entity_roles import Entity
+
 
 @dataclass
 class Turn:
-    """Represents a dialogue turn"""
+    """Represents a single turn in the dialogue"""
+    turn_id: int
     user_input: str
-    intent: str
-    entities: Dict[str, Any]
-    action: str
-    response: str
-    timestamp: datetime = field(default_factory=datetime.now)
+    intent: Optional[str] = None
+    entities: List[Dict[str, Any]] = None
+    response: Optional[str] = None
+    timestamp: str = None
+    
+    def __post_init__(self):
+        if self.entities is None:
+            self.entities = []
+        if self.timestamp is None:
+            self.timestamp = datetime.utcnow().isoformat()
+
 
 class DialogueTracker:
     """
-    Tracks dialogue state across conversation turns.
-    Follows Rasa's tracker pattern for state management.
+    Backwards compatibility wrapper around ContextManager
+    Maintains the old interface while using the new context system
     """
     
     def __init__(self, session_id: str):
         self.session_id = session_id
-        self.slots = {}
-        self.intent = None
-        self.entities = {}
-        self.turns = []
-        self.messages = []  # Track message history
-        self.last_action = None
-        self.context = {}
+        self.turns: List[Turn] = []
         self.created_at = datetime.now()
         
-    def update_from_nlu(self, intent: str, entities: Dict[str, Any], confidence: float):
-        """Update tracker state from NLU results"""
-        self.intent = intent
-        self.entities = entities
-        
-        # Map entities to slots with enhanced mapping
-        for entity_type, value in entities.items():
-            if entity_type == "college_mentioned":
-                self.slots["college_name"] = value
-            elif entity_type == "course_mentioned":
-                self.slots["course_name"] = value
-            elif entity_type == "location_mentioned":
-                self.slots["location"] = value
-            elif entity_type == "fee_mentioned":
-                self.slots["fee_type"] = value
-            elif entity_type == "facility_mentioned":
-                self.slots["facility"] = value
-            else:
-                # Direct mapping for other entities
-                slot_name = entity_type.replace("_mentioned", "_name") if "_mentioned" in entity_type else entity_type
-                self.slots[slot_name] = value
-        
-        # Store confidence in context
-        self.context["last_intent_confidence"] = confidence
-        
-        logger.debug(f"Updated tracker - Intent: {intent}, Slots: {self.slots}")
-    
-    def add_turn(self, user_input: str, action: str, response: str):
-        """Add a completed dialogue turn"""
+    def add_turn(self, user_input: str, intent: Optional[str] = None, 
+                entities: List[Dict[str, Any]] = None, response: Optional[str] = None) -> Turn:
+        """Add a new turn to the dialogue"""
+        turn_id = len(self.turns)
         turn = Turn(
+            turn_id=turn_id,
             user_input=user_input,
-            intent=self.intent,
-            entities=self.entities.copy(),
-            action=action,
+            intent=intent,
+            entities=entities or [],
             response=response
         )
+        
         self.turns.append(turn)
-        self.last_action = action
         
-        logger.debug(f"Added turn {len(self.turns)}: {action}")
-    
-    def get_slot(self, slot_name: str) -> Any:
-        """Get slot value"""
-        return self.slots.get(slot_name)
-    
-    def set_slot(self, slot_name: str, value: Any):
-        """Set slot value"""
-        self.slots[slot_name] = value
-        logger.debug(f"Set slot {slot_name}={value}")
-    
-    def get_latest_message(self) -> Optional[Dict[str, Any]]:
-        """Get latest user message with NLU results"""
-        if not self.turns:
-            return None
+        # Update context manager
+        if intent:
+            context_manager.update_intent(self.session_id, intent, 1.0)
         
-        latest_turn = self.turns[-1]
+        if entities:
+            # Convert to Entity objects
+            entity_objects = []
+            for entity_dict in entities:
+                try:
+                    # Import Entity at runtime to avoid circular import
+                    from app.policy.entity_roles import Entity
+                    entity = Entity(
+                        type=entity_dict.get("entity", entity_dict.get("type", "UNKNOWN")),
+                        value=entity_dict.get("value", ""),
+                        confidence=entity_dict.get("confidence", 1.0)
+                    )
+                    entity_objects.append(entity)
+                except Exception as e:
+                    print(f"Warning: Could not convert entity {entity_dict}: {e}")
+            
+            if entity_objects:
+                context_manager.update_entities(self.session_id, entity_objects)
+        
+        return turn
+
+    def add_user_message(self, message: str) -> None:
+        """Add user message to tracker"""
+        # Create new turn if needed or update current
+        if not self.turns or (self.turns[-1].user_input and self.turns[-1].response):
+             # New turn
+             self.add_turn(user_input=message)
+        else:
+             # Update existing turn if we just created it without input? 
+             # Simpler: always create new turn for user message
+             self.add_turn(user_input=message)
+
+    def update_intent(self, intent_name: str, confidence: float, metadata: Dict[str, Any] = None) -> None:
+        """Update intent for the current turn"""
+        if self.turns:
+            self.turns[-1].intent = intent_name
+            # No place to store confidence in simple Turn object currently, but that's fine for now
+            # Sync with context manager
+            context_manager.update_intent(self.session_id, intent_name, confidence)
+
+    def update_entities(self, entities: Dict[str, Any]) -> None:
+        """Update entities for the current turn"""
+        if self.turns:
+            # entities coming in as flattened dict {type: val} or {type: [vals]}
+            # Convert to list of dicts for Turn object
+            entity_list = []
+            for etype, value in entities.items():
+                if isinstance(value, list):
+                    for v in value:
+                        entity_list.append({"type": etype, "value": v})
+                else:
+                    entity_list.append({"type": etype, "value": value})
+            
+            self.turns[-1].entities = entity_list
+
+    @property
+    def slots(self) -> Dict[str, Any]:
+        """Get current slots (compatibility property)"""
+        context = context_manager.get_context(self.session_id)
         return {
-            "text": latest_turn.user_input,
-            "intent": latest_turn.intent,
-            "entities": latest_turn.entities
+            "filled": context.slots.filled,
+            "missing": context.slots.missing
         }
+
+    @property
+    def messages(self) -> List[Any]:
+        """Get messages list (compatibility property)"""
+        return self.turns
+
+    def add_bot_message(self, message: str, action_name: str = None) -> None:
+        """Add bot response to the current turn"""
+        if self.turns:
+            current_turn = self.turns[-1]
+            current_turn.response = message
+            
+    def get_current_state(self) -> Dict[str, Any]:
+        """Get current conversation state"""
+        return self.get_context_summary()
+    
+    def get_current_turn(self) -> Optional[Turn]:
+        """Get the current turn"""
+        return self.turns[-1] if self.turns else None
     
     def get_turn_count(self) -> int:
-        """Get number of turns in conversation"""
+        """Get total number of turns"""
         return len(self.turns)
     
-    def get_current_state(self) -> Dict[str, Any]:
-        """Get current dialogue state"""
-        return self.to_dict()
+    def get_context_summary(self) -> Dict[str, Any]:
+        """Get context summary from new context manager"""
+        return context_manager.get_context_summary(self.session_id)
     
-    def update_intent(self, intent: str, confidence: float, metadata: Dict[str, Any] = None):
-        """Update intent with confidence and metadata"""
-        self.intent = intent
-        self.context["last_intent_confidence"] = confidence
-        if metadata:
-            self.context["intent_metadata"] = metadata
-        logger.debug(f"Updated intent: {intent} (confidence: {confidence})")
-    
-    def update_entities(self, entities: Dict[str, Any]):
-        """Update entities and map to slots"""
-        self.entities = entities
-        
-        # Map entities to slots
-        for entity_type, value in entities.items():
-            if entity_type == "college_mentioned":
-                self.slots["college_name"] = value
-            elif entity_type == "course_mentioned":
-                self.slots["course_name"] = value
-            elif entity_type == "location_mentioned":
-                self.slots["location"] = value
-            elif entity_type == "fee_mentioned":
-                self.slots["fee_type"] = value
-            elif entity_type == "facility_mentioned":
-                self.slots["facility"] = value
-            else:
-                # Direct mapping for other entities
-                slot_name = entity_type.replace("_mentioned", "_name") if "_mentioned" in entity_type else entity_type
-                self.slots[slot_name] = value
-        
-        logger.debug(f"Updated entities: {entities}, Slots: {self.slots}")
-    
-    def add_user_message(self, message: str):
-        """Add user message to turn history"""
-        self.context["last_user_message"] = message
-        self.context["last_message_time"] = datetime.now().isoformat()
-        logger.debug(f"Added user message: {message}")
-    
-    def add_bot_message(self, message: str, action: str):
-        """Add bot response to turn history"""
-        self.context["last_bot_message"] = message
-        self.context["last_action"] = action
-        self.last_action = action
-        logger.debug(f"Added bot message: {message} (action: {action})")
+    def reset(self):
+        """Reset the dialogue tracker"""
+        self.turns = []
+        context_manager.reset_conversation(self.session_id)
     
     def to_dict(self) -> Dict[str, Any]:
-        """Convert tracker to dictionary"""
+        """Convert to dictionary format"""
         return {
             "session_id": self.session_id,
-            "intent": self.intent,
-            "entities": self.entities,
-            "slots": self.slots,
             "turn_count": len(self.turns),
-            "last_action": self.last_action,
-            "context": self.context,
-            "created_at": self.created_at.isoformat()
+            "turns": [
+                {
+                    "turn_id": turn.turn_id,
+                    "user_input": turn.user_input,
+                    "intent": turn.intent,
+                    "entities": turn.entities,
+                    "response": turn.response,
+                    "timestamp": turn.timestamp
+                }
+                for turn in self.turns
+            ],
+            "context_summary": self.get_context_summary()
         }
-    
-    def to_dialogue_state(self) -> DialogueState:
-        """Convert to Pydantic DialogueState"""
-        return DialogueState(
-            session_id=self.session_id,
-            intent=self.intent or "unknown",
-            entities=self.entities,
-            slots=self.slots,
-            turn_count=len(self.turns),
-            last_action=self.last_action,
-            context=self.context
-        )

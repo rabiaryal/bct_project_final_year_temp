@@ -100,16 +100,16 @@ class MongoRepository:
             # College name search (exact + fuzzy)
             if college_name := query_params.get("college_name"):
                 mongo_query["$or"] = [
-                    {"name": {"$regex": college_name, "$options": "i"}},
-                    {"name": {"$regex": college_name.replace(" ", ".*"), "$options": "i"}}
+                    {"Name": {"$regex": college_name, "$options": "i"}},  # MongoDB uses "Name" with capital N
+                    {"Name": {"$regex": college_name.replace(" ", ".*"), "$options": "i"}}
                 ]
             
-            # Location search
+            # Location search  
             if location := query_params.get("location"):
                 if "$or" not in mongo_query:
                     mongo_query["$or"] = []
                 mongo_query["$or"].extend([
-                    {"location": {"$regex": location, "$options": "i"}},
+                    {"Location": {"$regex": location, "$options": "i"}},  # MongoDB uses "Location" with capital L
                     {"address": {"$regex": location, "$options": "i"}}
                 ])
             
@@ -136,6 +136,17 @@ class MongoRepository:
             
         except Exception as e:
             logger.error(f"College search error: {e}")
+            return []
+    
+    async def find_colleges(self, filters: Dict[str, Any] = None, limit: int = 10) -> List[Dict[str, Any]]:
+        """Find colleges with optional filters"""
+        try:
+            query = filters or {}
+            cursor = self.collection.find(query).limit(limit)
+            colleges = await cursor.to_list(length=limit)
+            return colleges
+        except Exception as e:
+            logger.error(f"Colleges search error: {e}")
             return []
     
     async def find_college_by_name(self, college_name: str) -> Optional[Dict[str, Any]]:
