@@ -1,0 +1,168 @@
+[
+    {
+        "text": "Find me a private college for BE Civil Engineering in Lalitpur",
+        "actual_intent": "search_college",
+        "actual_entities": {
+            "COURSE": "BE Civil Engineering",
+            "LOCATION": "Lalitpur",
+            "COLLEGE_TYPE": "private"
+        }
+    },
+    {
+        "text": "Show me public colleges for BE Computer Engineering in Kathmandu",
+        "actual_intent": "search_college",
+        "actual_entities": {
+            "COURSE": "BE Computer Engineering",
+            "LOCATION": "Kathmandu",
+            "COLLEGE_TYPE": "public"
+        }
+    },
+    {
+        "text": "Which is the best college for BE Civil Engineering in Lalitpur",
+        "actual_intent": "best_items_search",
+        "actual_entities": {
+            "COURSE": "BE Civil Engineering",
+            "LOCATION": "Lalitpur"
+        }
+    },
+    {
+        "text": "Top rated private colleges for BE Computer Engineering in Kathmandu",
+        "actual_intent": "best_items_search",
+        "actual_entities": {
+            "COURSE": "BE Computer Engineering",
+            "LOCATION": "Kathmandu",
+            "COLLEGE_TYPE": "private"
+        }
+    },
+    {
+        "text": "My IOE rank is 2500 and budget is 7 lakhs suggest BE Civil colleges",
+        "actual_intent": "personalized_recommendation",
+        "actual_entities": {
+            "RANK": "2500",
+            "BUDGET": "7 lakhs",
+            "COURSE": "BE Civil"
+        }
+    },
+    {
+        "text": "I have rank 3000 and can afford 6.5 lakhs for BE Computer Engineering in Lalitpur",
+        "actual_intent": "personalized_recommendation",
+        "actual_entities": {
+            "RANK": "3000",
+            "BUDGET": "6.5 lakhs",
+            "COURSE": "BE Computer Engineering",
+            "LOCATION": "Lalitpur"
+        }
+    },
+    {
+        "text": "Suggest colleges for BE Electrical Engineering in Bhaktapur with fee under 6 lakhs",
+        "actual_intent": "recommend_with_constraints",
+        "actual_entities": {
+            "COURSE": "BE Electrical Engineering",
+            "LOCATION": "Bhaktapur",
+            "BUDGET": "6 lakhs"
+        }
+    },
+    {
+        "text": "Find private colleges for BE Civil Engineering with rank below 3500 and budget 7 lakhs",
+        "actual_intent": "recommend_with_constraints",
+        "actual_entities": {
+            "COURSE": "BE Civil Engineering",
+            "COLLEGE_TYPE": "private",
+            "RANK": "3500",
+            "BUDGET": "7 lakhs"
+        }
+    },
+    {
+        "text": "Compare Pulchowk Engineering Campus and Kathford International College for BE Civil",
+        "actual_intent": "compare_colleges",
+        "actual_entities": {
+            "COLLEGE_NAME_1": "Pulchowk",
+            "COLLEGE_NAME_2": "Kathford",
+            "COURSE": "BE Civil"
+        }
+    },
+    {
+        "text": "Is Kantipur Engineering College better than Khwopa College of Engineering for BE Computer",
+        "actual_intent": "compare_colleges",
+        "actual_entities": {
+            "COLLEGE_NAME_1": "Kantipur",
+            "COLLEGE_NAME_2": "Khwopa",
+            "COURSE": "BE Computer"
+        }
+    },
+    {
+        "text": "What is the fee of BE Computer Engineering at Kathmandu Engineering College",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COLLEGE_NAME": "Kathmandu Engineering College",
+            "COURSE": "BE Computer Engineering"
+        }
+    },
+    {
+        "text": "What is the rating of BE Civil Engineering at Pulchowk Engineering Campus",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COLLEGE_NAME": "Pulchowk",
+            "COURSE": "BE Civil Engineering"
+        }
+    },
+    {
+        "text": "Tell me about Kantipur Engineering College",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COLLEGE_NAME": "Kantipur"
+        }
+    },
+    {
+        "text": "Give me all details of Kathford International College for BE Computer Engineering",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COLLEGE_NAME": "Kathford",
+            "COURSE": "BE Computer Engineering"
+        }
+    },
+    {
+        "text": "Which colleges in Lalitpur have hostel facility",
+        "actual_intent": "hostel_query",
+        "actual_entities": {
+            "LOCATION": "Lalitpur"
+        }
+    },
+    {
+        "text": "Do private colleges in Kathmandu provide hostel for engineering students",
+        "actual_intent": "hostel_query",
+        "actual_entities": {
+            "LOCATION": "Kathmandu",
+            "COLLEGE_TYPE": "private"
+        }
+    },
+    {
+        "text": "What is the contact number of Pulchowk Engineering Campus",
+        "actual_intent": "contact_query",
+        "actual_entities": {
+            "COLLEGE_NAME": "Pulchowk"
+        }
+    },
+    {
+        "text": "What is the admission process for BE Civil Engineering at Pulchowk Engineering Campus",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COLLEGE_NAME": "Pulchowk",
+            "COURSE": "BE Civil Engineering"
+        }
+    },
+    {
+        "text": "How can I get admitted to private colleges for BE Computer Engineering in Lalitpur",
+        "actual_intent": "college_details",
+        "actual_entities": {
+            "COURSE": "BE Computer Engineering",
+            "LOCATION": "Lalitpur",
+            "COLLEGE_TYPE": "private"
+        }
+    },
+    {
+        "text": "Goodbye thank you for helping me find a college",
+        "actual_intent": "goodbye",
+        "actual_entities": {}
+    }
+]

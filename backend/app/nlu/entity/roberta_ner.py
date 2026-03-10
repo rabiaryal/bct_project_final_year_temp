@@ -1,209 +1,160 @@
-"""RoBERTa Named Entity Recognition"""
+"""RoBERTa + CRF Named Entity Recognition – Inference"""
 
-import torch
-from transformers import RobertaTokenizer, RobertaForTokenClassification
-import json
 import os
-from typing import Dict, List, Any
+import json
+import torch
+import torch.nn as nn
+from torchcrf import CRF
+from transformers import RobertaModel, RobertaTokenizerFast
+from typing import List, Dict, Any, Tuple
 
 from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
+
+# ── Model architecture (must match train_with_crf.py) ─────────────────────
+class _RobertaCRFNER(nn.Module):
+    def __init__(self, num_labels, dropout=0.1):
+        super().__init__()
+        self.roberta    = RobertaModel.from_pretrained("roberta-base")
+        self.dropout    = nn.Dropout(dropout)
+        self.classifier = nn.Linear(self.roberta.config.hidden_size, num_labels)
+        self.crf        = CRF(num_labels, batch_first=True)
+
+    def forward(self, input_ids, attention_mask, labels=None):
+        outputs         = self.roberta(input_ids=input_ids, attention_mask=attention_mask)
+        sequence_output = self.dropout(outputs.last_hidden_state)
+        emissions       = self.classifier(sequence_output)
+        crf_mask        = attention_mask.bool()
+
+        if labels is not None:
+            crf_labels = labels.clone()
+            crf_labels[crf_labels == -100] = 0
+            return -self.crf(emissions, crf_labels, mask=crf_mask, reduction="mean")
+        return self.crf.decode(emissions, mask=crf_mask)
+
+
 class RoBERTaEntityExtractor:
-    """RoBERTa-based entity extraction"""
-    
+    """RoBERTa+CRF entity extractor (drop-in replacement)."""
+
     def __init__(self, model_path: str = None):
-        """Initialize RoBERTa entity extractor"""
         from app.utils.config import config
+
         self.model_path = model_path or config.models.entity_model_path
-        self.model = None
-        self.tokenizer = None
-        self.label_mapping = {}
-        self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+        self.device = torch.device(
+            "mps" if torch.backends.mps.is_available()
+            else "cuda" if torch.cuda.is_available()
+            else "cpu"
+        )
         self._load_model()
-    
+
     def _load_model(self):
-        """Load trained RoBERTa model"""
         try:
-            logger.info(f"Loading RoBERTa model from {self.model_path}")
-            
-            # Load tokenizer and model
-            self.tokenizer = RobertaTokenizer.from_pretrained(self.model_path)
-            self.model = RobertaForTokenClassification.from_pretrained(self.model_path)
+            logger.info(f"Loading RoBERTa+CRF NER model from {self.model_path}")
+
+            # Load checkpoint on CPU first to avoid MPS unaligned blit errors
+            checkpoint = torch.load(
+                os.path.join(self.model_path, "model.pt"),
+                map_location="cpu",
+            )
+            self.id2label = {int(k): v for k, v in checkpoint["id2label"].items()}
+            num_labels    = checkpoint["num_labels"]
+
+            self.model = _RobertaCRFNER(num_labels)
+            self.model.load_state_dict(checkpoint["model_state"])
             self.model.to(self.device)
             self.model.eval()
-            
-            # Load label mapping
-            mapping_path = os.path.join(self.model_path, "label_mappings.json")
-            if os.path.exists(mapping_path):
-                with open(mapping_path, 'r') as f:
-                    mapping_data = json.load(f)
-                    self.label_mapping = mapping_data.get("id2label", {})
-                logger.info(f"Loaded label mapping with {len(self.label_mapping)} labels")
-            else:
-                logger.warning(f"Label mapping file not found at {mapping_path}")
-                self.label_mapping = {}
-            
-        except Exception as e:
-            logger.error(f"Failed to load RoBERTa model: {e}")
+
+            self.tokenizer = RobertaTokenizerFast.from_pretrained(
+                self.model_path, add_prefix_space=True
+            )
+
+            logger.info(
+                f"RoBERTa+CRF NER model loaded with {num_labels} labels on {self.device}"
+            )
+        except Exception as exc:
+            logger.error(f"Failed to load RoBERTa+CRF NER model: {exc}")
             raise
-    
-    def predict_with_confidence(self, text: str, threshold: float = 0.3) -> List[Dict[str, Any]]:
+
+    async def predict(self, text: str) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         """
-        Predict entities with confidence scores using entity-level thresholding
-        
-        Args:
-            text: Input text
-            threshold: Confidence threshold (default: 0.3)
-            
+        Extract named entities from *text*.
+
         Returns:
-            List of top 3 entities with confidence scores
+            (entities, metadata)
+            entities – list of dicts: {type, value, confidence}
+            metadata – model info dict
         """
         try:
-            # Tokenize input
-            inputs = self.tokenizer(
+            encoding = self.tokenizer(
                 text,
                 return_tensors="pt",
                 truncation=True,
-                padding='max_length',
+                padding=True,
                 max_length=128,
-                is_split_into_words=False
+                return_offsets_mapping=True,
             )
-            
-            input_ids = inputs['input_ids'].to(self.device)
-            attention_mask = inputs['attention_mask'].to(self.device)
-            
-            # Get predictions with probabilities
+            offset_mapping = encoding.pop("offset_mapping")[0].tolist()
+            input_ids      = encoding["input_ids"].to(self.device)
+            attention_mask = encoding["attention_mask"].to(self.device)
+
             with torch.no_grad():
-                outputs = self.model(input_ids, attention_mask=attention_mask)
-                logits = outputs.logits
-            
-            # Get probabilities and predictions
-            probs = torch.softmax(logits, dim=-1)[0]
-            preds = torch.argmax(logits, dim=-1)[0]
-            
-            tokens = self.tokenizer.convert_ids_to_tokens(input_ids[0])
-            labels = [self.label_mapping.get(str(p.item()), 'O') for p in preds]
-            
-            # Remove special tokens and get token-level confidence scores
-            filtered = [
-                (t, l, probs[i][preds[i]].item())
-                for i, (t, l) in enumerate(zip(tokens, labels))
-                if t not in [self.tokenizer.cls_token, self.tokenizer.sep_token, self.tokenizer.pad_token]
-            ]
-            
-            if not filtered:
-                return []
-            
-            tokens, labels, scores = zip(*filtered)
-            
-            # 🔹 Build spans FIRST (without token-level thresholding)
-            spans = self._post_process_entities_with_confidence(tokens, labels, scores)
-            
-            # 🔹 Apply threshold at ENTITY LEVEL
-            threshold_filtered_entities = [
-                e for e in spans
-                if e["confidence"] >= threshold
-            ]
-            
-            # Sort by confidence and return top 3
-            threshold_filtered_entities.sort(key=lambda x: x['confidence'], reverse=True)
-            return threshold_filtered_entities[:3]
-            
-        except Exception as e:
-            logger.error(f"Confidence prediction error: {e}")
-            return []
-    
-    def _post_process_entities_with_confidence(self, tokens, labels, scores):
-        """
-        Post-process entities with confidence scores (entity-level thresholding safe).
-        
-        Args:
-            tokens: List of tokens from tokenizer
-            labels: List of predicted BIO labels  
-            scores: List of confidence scores per token
-        
-        Returns:
-            List of entities with confidence scores calculated at entity level
-        """
-        if not tokens:
-            return []
+                predictions = self.model(input_ids, attention_mask)  # CRF Viterbi decode
 
-        # Step 1: Merge subword tokens based on RoBERTa's 'Ġ' prefix
-        merged_tokens = []
-        merged_labels = []
-        merged_scores = []
-        
-        for token, label, score in zip(tokens, labels, scores):
-            if token.startswith('Ġ'):
-                # Start of a new word
-                merged_tokens.append(token[1:])
-                merged_labels.append(label)
-                merged_scores.append(score)
-            elif merged_tokens:
-                # Continuation of the previous word - merge with previous
-                merged_tokens[-1] += token
-                # Keep the previous label (don't change it)
-                # Average the scores for merged tokens
-                merged_scores[-1] = (merged_scores[-1] + score) / 2
-            else:
-                # First token doesn't have a 'Ġ' prefix (unusual but handle it)
-                merged_tokens.append(token)
-                merged_labels.append(label)
-                merged_scores.append(score)
+            pred_labels = [self.id2label.get(p, "O") for p in predictions[0]]
 
-        # Step 2: Extract entities from merged tokens using BIO logic
+            entities = self._decode_bio(text, pred_labels, offset_mapping)
+
+            metadata = {
+                "model": "roberta-crf",
+                "device": str(self.device),
+                "entity_count": len(entities),
+            }
+            return entities, metadata
+
+        except Exception as exc:
+            logger.error(f"Entity extraction error: {exc}")
+            return [], {"error": str(exc)}
+
+    def _decode_bio(
+        self,
+        text: str,
+        pred_labels: list,
+        offset_mapping: list,
+    ) -> List[Dict[str, Any]]:
+        """Convert CRF BIO label sequence to entity spans via character offsets."""
         entities = []
-        current_entity_tokens = []
-        current_entity_label = None
-        current_entity_scores = []
+        current: Dict[str, Any] = {}
 
-        for token, label, score in zip(merged_tokens, merged_labels, merged_scores):
-            if label.startswith('B-'):
-                # If there's a current entity, save it before starting a new one
-                if current_entity_tokens:
-                    entity_text = " ".join(current_entity_tokens)
-                    # Calculate entity confidence as average of token scores
-                    entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
-                    entities.append({
-                        'text': entity_text, 
-                        'type': current_entity_label,
-                        'confidence': entity_confidence
-                    })
+        def _flush():
+            nonlocal current
+            if current:
+                span = text[current["_s"]:current["_e"]].strip()
+                if span:
+                    current["value"] = span
+                    entities.append(
+                        {k: v for k, v in current.items() if not k.startswith("_")}
+                    )
+                current = {}
 
-                # Start a new entity
-                current_entity_tokens = [token]
-                current_entity_label = label[2:]  # Remove B- prefix
-                current_entity_scores = [score]
-                
-            elif label.startswith('I-') and current_entity_label == label[2:]:
-                # Continue the current entity
-                current_entity_tokens.append(token)
-                current_entity_scores.append(score)
-                
+        for label, (start, end) in zip(pred_labels, offset_mapping):
+            if start == end:          # special token ([CLS], [SEP], [PAD])
+                _flush()
+                continue
+
+            if label.startswith("B-"):
+                _flush()
+                current = {
+                    "type": label[2:],
+                    "confidence": 0.95,
+                    "_s": start,
+                    "_e": end,
+                }
+            elif label.startswith("I-") and current.get("type") == label[2:]:
+                current["_e"] = end
             else:
-                # Not an entity token or different entity - close current one
-                if current_entity_tokens:
-                    entity_text = " ".join(current_entity_tokens)
-                    entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
-                    entities.append({
-                        'text': entity_text,
-                        'type': current_entity_label,
-                        'confidence': entity_confidence
-                    })
-                current_entity_tokens = []
-                current_entity_label = None
-                current_entity_scores = []
+                _flush()
 
-        # Add the last entity if it exists
-        if current_entity_tokens:
-            entity_text = " ".join(current_entity_tokens)
-            entity_confidence = sum(current_entity_scores) / len(current_entity_scores)
-            entities.append({
-                'text': entity_text,
-                'type': current_entity_label, 
-                'confidence': entity_confidence
-            })
-
+        _flush()
         return entities

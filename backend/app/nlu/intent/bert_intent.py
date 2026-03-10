@@ -35,11 +35,13 @@ class BERTIntentClassifier:
             self.model.to(self.device)
             self.model.eval()
             
-            # Load label mapping
+            # Load label mapping  (file has {"label_to_id": {...}, "id_to_label": {...}})
             label_path = os.path.join(self.model_path, "label_mapping.json")
             with open(label_path, 'r') as f:
-                self.label_mapping = json.load(f)
-            
+                raw = json.load(f)
+            # Use id_to_label sub-dict so str(predicted_class_id) → intent name
+            self.label_mapping = raw.get("id_to_label", raw)
+
             logger.info(f"Model loaded successfully with {len(self.label_mapping)} intents")
             
         except Exception as e:

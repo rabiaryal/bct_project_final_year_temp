@@ -1,0 +1,240 @@
+[
+  {
+    "text": "Hello",
+    "actual_intent": "greeting",
+    "actual_entities": {},
+    "predicted_intent": "greeting",
+    "predicted_entities": {},
+    "system_response": "**Hello! Welcome to the College Recommendation System!**\n\nI can help you with:\n- Finding colleges by location, course, or type\n- Getting fee and rating information\n- Personalized recommendations based on rank and budget\n- Comparing two colleges side by side\n- Hostel availability and contact information\n\n**How can I help you today?**"
+  },
+  {
+    "text": "Show me engineering colleges in Kathmandu",
+    "actual_intent": "search_college",
+    "actual_entities": {
+      "LOCATION": "Kathmandu"
+    },
+    "predicted_intent": "search_college",
+    "predicted_entities": {},
+    "system_response": "**Colleges**\n\nFound 4 result(s):\n\n**1. PULCHOWK ENGINEERING CAMPUS**\n   Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE | Type: Public | Course: BE CIVIL ENGINEERING | Fee: NPR 90,000 | Rating: 5/5\n\n**2. THAPATHALI ENGINEERING CAMPUS**\n   Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE | Type: Public | Course: BE CIVIL ENGINEERING | Fee: NPR 85,000 | Rating: 4.2/5\n\n**3. PURWANCHAL ENGINEERING CAMPUS**\n   Location: DHARAN, SUNSARI, KOSHI PROVINCE | Type: Public | Course: BE CIVIL ENGINEERING | Fee: NPR 80,000 | Rating: 4/5\n\n**4. PASHCHIMANCHAL ENGINEERING CAMPUS**\n   Location: LAMACHAUR, POKHARA, KASKI, GANDAKI PROVINCE | Type: Public | Course: BE CIVIL ENGINEERING | Fee: NPR 80,000 | Rating: 4/5\n"
+  },
+  {
+    "text": "Which colleges offer BE Computer in Lalitpur?",
+    "actual_intent": "search_college",
+    "actual_entities": {
+      "COURSE": "BE Computer",
+      "LOCATION": "Lalitpur"
+    },
+    "predicted_intent": "search_college",
+    "predicted_entities": {
+      "COURSE": "BE Computer"
+    },
+    "system_response": "**Colleges offering BE Computer**\n\nFound 5 result(s):\n\n**1. ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Location: KALANKI, KATHMANDU, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Rating: 4.1/5\n\n**2. KANTIPUR ENGINEERING COLLEGE**\n   Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Rating: 4.2/5\n\n**3. NATIONAL COLLEGE OF ENGINEERING**\n   Location: TALSIKHEL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 700,000 | Rating: 4/5\n\n**4. HIMALAYA COLLEGE OF ENGINEERING**\n   Location: CHYASAL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Rating: 4.1/5\n\n**5. SAGARMATHA ENGINEERING COLLEGE**\n   Location: SANEPA, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Rating: 3.9/5\n"
+  },
+  {
+    "text": "Find private colleges in Pokhara",
+    "actual_intent": "search_college",
+    "actual_entities": {
+      "COLLEGE_TYPE": "private",
+      "LOCATION": "Pokhara"
+    },
+    "predicted_intent": "search_college",
+    "predicted_entities": {
+      "COLLEGE_TYPE": "private"
+    },
+    "system_response": "**Colleges**\n\nFound 5 result(s):\n\n**1. ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Location: KALANKI, KATHMANDU, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Rating: 4.1/5\n\n**2. KANTIPUR ENGINEERING COLLEGE**\n   Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Rating: 4.2/5\n\n**3. NATIONAL COLLEGE OF ENGINEERING**\n   Location: TALSIKHEL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 700,000 | Rating: 4/5\n\n**4. HIMALAYA COLLEGE OF ENGINEERING**\n   Location: CHYASAL, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Rating: 4.1/5\n\n**5. SAGARMATHA ENGINEERING COLLEGE**\n   Location: SANEPA, LALITPUR, BAGMATI PROVINCE | Type: Private | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Rating: 3.9/5\n"
+  },
+  {
+    "text": "What are the best colleges for civil engineering?",
+    "actual_intent": "best_items_search",
+    "actual_entities": {
+      "COURSE": "civil engineering"
+    },
+    "predicted_intent": "best_items_search",
+    "predicted_entities": {},
+    "system_response": "**Best-Rated Colleges**\n\n**1st. PULCHOWK ENGINEERING CAMPUS**\n   Rating: 5/5 | Course: BE CIVIL ENGINEERING | Fee: NPR 90,000 | Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE\n\n**2nd. KATHMANDU ENGINEERING COLLEGE**\n   Rating: 4.9/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 900,000 | Location: KALIMATI, KATHMANDU, BAGMATI PROVINCE\n\n**3rd. KANTIPUR ENGINEERING COLLEGE**\n   Rating: 4.2/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE\n\n**4th. THAPATHALI ENGINEERING CAMPUS**\n   Rating: 4.2/5 | Course: BE ELECTRONICS AND COMPUTER ENGINEERING | Fee: NPR 85,000 | Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE\n\n**5th. ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Rating: 4.1/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Location: KALANKI, KATHMANDU, BAGMATI PROVINCE\n"
+  },
+  {
+    "text": "Which college has the highest rating for BE Mechanical?",
+    "actual_intent": "best_items_search",
+    "actual_entities": {
+      "COURSE": "BE Mechanical"
+    },
+    "predicted_intent": "best_items_search",
+    "predicted_entities": {
+      "COURSE": "BE"
+    },
+    "system_response": "**Best-Rated Colleges for BE**\n\n**1st. PULCHOWK ENGINEERING CAMPUS**\n   Rating: 5/5 | Course: BE CIVIL ENGINEERING | Fee: NPR 90,000 | Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE\n\n**2nd. KATHMANDU ENGINEERING COLLEGE**\n   Rating: 4.9/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 900,000 | Location: KALIMATI, KATHMANDU, BAGMATI PROVINCE\n\n**3rd. THAPATHALI ENGINEERING CAMPUS**\n   Rating: 4.2/5 | Course: BE ELECTRONICS AND COMPUTER ENGINEERING | Fee: NPR 85,000 | Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE\n\n**4th. KANTIPUR ENGINEERING COLLEGE**\n   Rating: 4.2/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE\n\n**5th. ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Rating: 4.1/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Location: KALANKI, KATHMANDU, BAGMATI PROVINCE\n"
+  },
+  {
+    "text": "I got rank 500 and my budget is 5 lakhs, recommend me a college for BE Computer",
+    "actual_intent": "recommend_with_constraints",
+    "actual_entities": {
+      "RANK": "500",
+      "BUDGET": "5 lakhs",
+      "COURSE": "BE Computer"
+    },
+    "predicted_intent": "personalized_recommendation",
+    "predicted_entities": {
+      "RANK": "500",
+      "COURSE": "BE"
+    },
+    "system_response": "Based on your profile:\n  🎯 IOE Rank : 500\n  💰 Budget   : Rs.500,000\n  📚 Course   : BE\n\nI personally recommend these 3 colleges:\n\n  🟢 Safe: 3  🟡 Moderate: 0  🔴 Risky: 0\n\n───────────────────────────────────────────────────────\n  #1  PASHCHIMANCHAL ENGINEERING CAMPUS  🟢 SAFE CHOICE\n       📍 LAMACHAUR, POKHARA, KASKI, GANDAKI PROVINCE\n       🏛️  PUBLIC  |  🏠 Hostel: Yes\n       📚 BE CIVIL ENGINEERING\n       💰 Fee      : Rs. 80,000\n       🎯 Cutoff   : Rank 2300\n       ⭐ Rating   : 4 / 5.0\n       📊 Score    : 96.0 / 100\n       💡 Why for you:\n            • 🟢 Admission: SAFE — High chance of admission (rank gap: 1800)\n            • Well within your budget (Rs.80,000 vs your Rs.500,000)\n            • Good college — rated 4/5.0\n            • Hostel available — good if you are from outside\n            • Government college — strong industry reputation in Nepal\n\n───────────────────────────────────────────────────────\n  #2  PURWANCHAL ENGINEERING CAMPUS  🟢 SAFE CHOICE\n       📍 DHARAN, SUNSARI, KOSHI PROVINCE\n       🏛️  PUBLIC  |  🏠 Hostel: Yes\n       📚 BE CIVIL ENGINEERING\n       💰 Fee      : Rs. 80,000\n       🎯 Cutoff   : Rank 2500\n       ⭐ Rating   : 4 / 5.0\n       📊 Score    : 96.0 / 100\n       💡 Why for you:\n            • 🟢 Admission: SAFE — High chance of admission (rank gap: 2000)\n            • Well within your budget (Rs.80,000 vs your Rs.500,000)\n            • Good college — rated 4/5.0\n            • Hostel available — good if you are from outside\n            • Government college — strong industry reputation in Nepal\n\n───────────────────────────────────────────────────────\n  #3  CHITWAN ENGINEERING CAMPUS  🟢 SAFE CHOICE\n       📍 RAMPUR, CHITWAN, BAGMATI PROVINCE\n       🏛️  PUBLIC  |  🏠 Hostel: Yes\n       📚 BE CIVIL ENGINEERING\n       💰 Fee      : Rs. 80,000\n       🎯 Cutoff   : Rank 2200\n       ⭐ Rating   : 4 / 5.0\n       📊 Score    : 96.0 / 100\n       💡 Why for you:\n            • 🟢 Admission: SAFE — High chance of admission (rank gap: 1700)\n            • Well within your budget (Rs.80,000 vs your Rs.500,000)\n            • Good college — rated 4/5.0\n            • Hostel available — good if you are from outside\n            • Government college — strong industry reputation in Nepal\n"
+  },
+  {
+    "text": "Suggest a college for someone with rank 200 and budget 3 lakhs",
+    "actual_intent": "personalized_recommendation",
+    "actual_entities": {
+      "RANK": "200",
+      "BUDGET": "3 lakhs"
+    },
+    "predicted_intent": "personalized_recommendation",
+    "predicted_entities": {
+      "RANK": "200"
+    },
+    "system_response": "Which engineering course are you interested in? (e.g. Computer, Civil, Electrical)"
+  },
+  {
+    "text": "Compare Pulchowk Campus and Thapathali Campus",
+    "actual_intent": "compare_colleges",
+    "actual_entities": {
+      "COLLEGE_NAME_1": "Pulchowk Campus",
+      "COLLEGE_NAME_2": "Thapathali Campus"
+    },
+    "predicted_intent": "compare_colleges",
+    "predicted_entities": {
+      "COLLEGE_NAME_1": "Pulchowk",
+      "COLLEGE_NAME_2": "Thapathali"
+    },
+    "system_response": "**Comparison: Pulchowk vs Thapathali**\n\n**College A: Pulchowk**\n   Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE | Type: PUBLIC\n   Hostel: Yes | Contact: 015421260\n   Courses:\n     - BE CIVIL ENGINEERING  Fee: NPR 90,000 | Rating: 5/5 | Cutoff: 200\n     - BE ELECTRICAL ENGINEERING  Fee: NPR 90,000 | Rating: 4.8/5 | Cutoff: 650\n     - BE ELECTRONICS AND COMPUTER ENGINEERING  Fee: NPR 90,000 | Rating: 4.9/5 | Cutoff: 350\n     - BE MECHANICAL ENGINEERING  Fee: NPR 90,000 | Rating: 4.7/5 | Cutoff: 700\n     - B. ARCHITECTURE  Fee: NPR 95,000 | Rating: 4.6/5 | Cutoff: 900\n\n**College B: Thapathali**\n   Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE | Type: PUBLIC\n   Hostel: Yes | Contact: 01542030\n   Courses:\n     - BE CIVIL ENGINEERING  Fee: NPR 85,000 | Rating: 4.2/5 | Cutoff: 1200\n     - BE ELECTRICAL ENGINEERING  Fee: NPR 85,000 | Rating: 4.1/5 | Cutoff: 1600\n     - BE ELECTRONICS AND COMPUTER ENGINEERING  Fee: NPR 85,000 | Rating: 4.2/5 | Cutoff: 1400\n     - BE MECHANICAL ENGINEERING  Fee: NPR 85,000 | Rating: 4/5 | Cutoff: 1800"
+  },
+  {
+    "text": "Compare Kathford and Kantipur Engineering College",
+    "actual_intent": "compare_colleges",
+    "actual_entities": {
+      "COLLEGE_NAME_1": "Kathford",
+      "COLLEGE_NAME_2": "Kantipur Engineering College"
+    },
+    "predicted_intent": "compare_colleges",
+    "predicted_entities": {
+      "COLLEGE_NAME_1": "Kathford",
+      "COLLEGE_NAME_2": "Kantipur"
+    },
+    "system_response": "**Comparison: Kathford vs Kantipur**\n\n**College A: Kathford**\n   Location: BALKUMARI, LALITPUR, BAGMATI PROVINCE | Type: PRIVATE\n   Hostel: No | Contact: 015201241\n   Courses:\n     - BE COMPUTER ENGINEERING  Fee: NPR 680,000 | Rating: 4.1/5 | Cutoff: 3000\n     - BE CIVIL ENGINEERING  Fee: NPR 680,000 | Rating: 4/5 | Cutoff: 3400\n     - BE ELECTRICAL ENGINEERING  Fee: NPR 680,000 | Rating: 3.9/5 | Cutoff: 3500\n\n**College B: Kantipur**\n   Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE | Type: PRIVATE\n   Hostel: No | Contact: 015234858\n   Courses:\n     - BE COMPUTER ENGINEERING  Fee: NPR 650,000 | Rating: 4.2/5 | Cutoff: 2800\n     - BE CIVIL ENGINEERING  Fee: NPR 650,000 | Rating: 4/5 | Cutoff: 3200\n     - BE ELECTRONICS ENGINEERING  Fee: NPR 650,000 | Rating: 3.9/5 | Cutoff: 3300"
+  },
+  {
+    "text": "Tell me about Pulchowk Engineering Campus",
+    "actual_intent": "college_details",
+    "actual_entities": {
+      "COLLEGE_NAME": "Pulchowk Engineering Campus"
+    },
+    "predicted_intent": "college_details",
+    "predicted_entities": {
+      "COLLEGE_NAME": "Pulchowk"
+    },
+    "system_response": "**PULCHOWK ENGINEERING CAMPUS**\n\nLocation: PULCHOWK, LALITPUR, BAGMATI PROVINCE\nType: Public\nHostel: Available\nContact: 015421260\nEmail: admission@pcampus.edu.np\n\nPrograms Offered:\n   - BE CIVIL ENGINEERING  NPR 90,000 | Rating 5/5 | 192 seats\n   - BE ELECTRICAL ENGINEERING  NPR 90,000 | Rating 4.8/5 | 48 seats\n   - BE ELECTRONICS AND COMPUTER ENGINEERING  NPR 90,000 | Rating 4.9/5 | 48 seats\n   - BE MECHANICAL ENGINEERING  NPR 90,000 | Rating 4.7/5 | 48 seats\n   - B. ARCHITECTURE  NPR 95,000 | Rating 4.6/5 | 48 seats"
+  },
+  {
+    "text": "Give me details of Khwopa Engineering College",
+    "actual_intent": "college_details",
+    "actual_entities": {
+      "COLLEGE_NAME": "Khwopa Engineering College"
+    },
+    "predicted_intent": "college_details",
+    "predicted_entities": {
+      "COLLEGE_NAME": "Khwopa"
+    },
+    "system_response": "**KHWOPA COLLEGE OF ENGINEERING**\n\nLocation: LIBALI, BHAKTAPUR, BAGMATI PROVINCE\nType: Private\nHostel: Not Available\nContact: 015122094\nEmail: info@khwopa.edu.np\n\nPrograms Offered:\n   - BE CIVIL ENGINEERING  NPR 580,000 | Rating 4/5\n   - BE ELECTRICAL ENGINEERING  NPR 580,000 | Rating 3.9/5\n   - BE COMPUTER ENGINEERING  NPR 580,000 | Rating 4.1/5"
+  },
+  {
+    "text": "Does Thapathali Campus have hostel facility?",
+    "actual_intent": "hostel_query",
+    "actual_entities": {
+      "COLLEGE_NAME": "Thapathali Campus"
+    },
+    "predicted_intent": "hostel_query",
+    "predicted_entities": {
+      "COLLEGE_NAME": "Thapathali"
+    },
+    "system_response": "**Hostel Availability**\n\n**1. PULCHOWK ENGINEERING CAMPUS**\n   Hostel: Available | Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE\n\n**2. THAPATHALI ENGINEERING CAMPUS**\n   Hostel: Available | Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE\n\n**3. PURWANCHAL ENGINEERING CAMPUS**\n   Hostel: Available | Location: DHARAN, SUNSARI, KOSHI PROVINCE\n\n**4. PASHCHIMANCHAL ENGINEERING CAMPUS**\n   Hostel: Available | Location: LAMACHAUR, POKHARA, KASKI, GANDAKI PROVINCE\n\n**5. CHITWAN ENGINEERING CAMPUS**\n   Hostel: Available | Location: RAMPUR, CHITWAN, BAGMATI PROVINCE\n"
+  },
+  {
+    "text": "Which colleges in Lalitpur have hostel?",
+    "actual_intent": "hostel_query",
+    "actual_entities": {
+      "LOCATION": "Lalitpur"
+    },
+    "predicted_intent": "hostel_query",
+    "predicted_entities": {
+      "LOCATION": "Lalitpur"
+    },
+    "system_response": "**Hostel Availability**\n\n**1. KATHFORD INTERNATIONAL COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Hostel: Not Available | Location: BALKUMARI, LALITPUR, BAGMATI PROVINCE\n\n**2. LALITPUR ENGINEERING COLLEGE**\n   Hostel: Not Available | Location: CHAKUPAT, LALITPUR, BAGMATI PROVINCE\n\n**3. HIMALAYA COLLEGE OF ENGINEERING**\n   Hostel: Not Available | Location: CHYASAL, LALITPUR, BAGMATI PROVINCE\n\n**4. KANTIPUR ENGINEERING COLLEGE**\n   Hostel: Not Available | Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE\n\n**5. PULCHOWK ENGINEERING CAMPUS**\n   Hostel: Available | Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE\n"
+  },
+  {
+    "text": "What is the contact number of Pulchowk Campus?",
+    "actual_intent": "contact_query",
+    "actual_entities": {
+      "COLLEGE_NAME": "Pulchowk Campus"
+    },
+    "predicted_intent": "contact_query",
+    "predicted_entities": {
+      "COLLEGE_NAME": "Pulchowk"
+    },
+    "system_response": "**Contact Information for PULCHOWK ENGINEERING CAMPUS**\n\nLocation: PULCHOWK, LALITPUR, BAGMATI PROVINCE\nPhone: 015421260\nEmail: admission@pcampus.edu.np"
+  },
+  {
+    "text": "Give me the email of Kathford International College",
+    "actual_intent": "contact_query",
+    "actual_entities": {
+      "COLLEGE_NAME": "Kathford International College"
+    },
+    "predicted_intent": "contact_query",
+    "predicted_entities": {
+      "COLLEGE_NAME": "Kathford"
+    },
+    "system_response": "**Contact Information for KATHFORD INTERNATIONAL COLLEGE OF ENGINEERING AND MANAGEMENT**\n\nLocation: BALKUMARI, LALITPUR, BAGMATI PROVINCE\nPhone: 015201241\nEmail: info@kathford.edu.np"
+  },
+  {
+    "text": "Find me a public college with fee under 1 lakh",
+    "actual_intent": "search_college",
+    "actual_entities": {
+      "COLLEGE_TYPE": "public",
+      "BUDGET": "1 lakh"
+    },
+    "predicted_intent": "recommend_with_constraints",
+    "predicted_entities": {
+      "COLLEGE_TYPE": "public"
+    },
+    "system_response": "Which engineering course are you interested in? (e.g. Computer, Civil, Electrical)"
+  },
+  {
+    "text": "Which is the best college for architecture in Nepal?",
+    "actual_intent": "best_items_search",
+    "actual_entities": {
+      "COURSE": "architecture"
+    },
+    "predicted_intent": "best_items_search",
+    "predicted_entities": {},
+    "system_response": "**Best-Rated Colleges**\n\n**1st. PULCHOWK ENGINEERING CAMPUS**\n   Rating: 5/5 | Course: BE CIVIL ENGINEERING | Fee: NPR 90,000 | Location: PULCHOWK, LALITPUR, BAGMATI PROVINCE\n\n**2nd. KATHMANDU ENGINEERING COLLEGE**\n   Rating: 4.9/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 900,000 | Location: KALIMATI, KATHMANDU, BAGMATI PROVINCE\n\n**3rd. KANTIPUR ENGINEERING COLLEGE**\n   Rating: 4.2/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 650,000 | Location: DHAPAKHEL, LALITPUR, BAGMATI PROVINCE\n\n**4th. THAPATHALI ENGINEERING CAMPUS**\n   Rating: 4.2/5 | Course: BE ELECTRONICS AND COMPUTER ENGINEERING | Fee: NPR 85,000 | Location: THAPATHALI, KATHMANDU, BAGMATI PROVINCE\n\n**5th. ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT**\n   Rating: 4.1/5 | Course: BE COMPUTER ENGINEERING | Fee: NPR 600,000 | Location: KALANKI, KATHMANDU, BAGMATI PROVINCE\n"
+  },
+  {
+    "text": "I have rank 1000, what colleges can I get for BE Electrical?",
+    "actual_intent": "recommend_with_constraints",
+    "actual_entities": {
+      "RANK": "1000",
+      "COURSE": "BE Electrical"
+    },
+    "predicted_intent": "personalized_recommendation",
+    "predicted_entities": {
+      "COURSE": "BE"
+    },
+    "system_response": "What is your fee budget? (e.g. 700000 or 7 lakhs)"
+  },
+  {
+    "text": "Goodbye",
+    "actual_intent": "goodbye",
+    "actual_entities": {},
+    "predicted_intent": "goodbye",
+    "predicted_entities": {},
+    "system_response": "**Goodbye!**\n\nThank you for using the College Recommendation System.\nGood luck with your college search!\n\nFeel free to come back anytime."
+  }
+]

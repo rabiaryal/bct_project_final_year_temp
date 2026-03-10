@@ -40,8 +40,8 @@ const App = () => {
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    // API Base URL
-    const API_BASE_URL = 'http://localhost:8000';
+    // API Base URL - Empty string to use package.json proxy
+    const API_BASE_URL = '';
 
     // Filter options
     const locations = ['Kathmandu', 'Lalitpur', 'Bhaktapur', 'Pokhara', 'Chitwan', 'Dharan', 'Butwal', 'Dhulikhel'];
@@ -68,7 +68,16 @@ const App = () => {
     const checkConnection = async () => {
         setIsConnecting(true);
         try {
-            const response = await fetch(`${API_BASE_URL}/api/v1/health`);
+            // Add timeout of 5 seconds
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+            const response = await fetch(`${API_BASE_URL}/api/v1/health`, {
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
             if (response.ok) {
                 setIsConnected(true);
                 console.log('✅ Backend connected successfully');
@@ -78,7 +87,11 @@ const App = () => {
             }
         } catch (error) {
             setIsConnected(false);
-            console.error('❌ Backend connection error:', error);
+            if (error.name === 'AbortError') {
+                console.error('❌ Backend connection timed out');
+            } else {
+                console.error('❌ Backend connection error:', error);
+            }
         }
         setIsConnecting(false);
     };

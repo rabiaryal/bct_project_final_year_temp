@@ -4,42 +4,44 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
+import os
 
 from app.api import chat, health
-from app.dialogue_manager import dialogue_manager
 from app.utils.logger import setup_logger
 from app.utils.config import config
 
 # Setup logging
 logger = setup_logger("main")
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan manager"""
-    logger.info("Starting dialogue system...")
+    logger.info("🚀 Starting dialogue system...")
     
     try:
-        # Initialize dialogue manager
+        from app.dialogue_manager import dialogue_manager
         await dialogue_manager.initialize()
-        logger.info("Dialogue system initialized successfully")
+        app.state.dialogue_manager = dialogue_manager
+        logger.info("✅ Dialogue System initialized")
         
         yield
         
     except Exception as e:
-        logger.error(f"Failed to initialize dialogue system: {e}")
+        logger.error(f"❌ Failed to initialize: {e}")
         raise
     
     finally:
-        # Cleanup
-        logger.info("Shutting down dialogue system...")
-        await dialogue_manager.shutdown()
-        logger.info("Shutdown complete")
+        logger.info("🛑 Shutting down...")
+        if hasattr(app.state, 'dialogue_manager'):
+            await app.state.dialogue_manager.shutdown()
+        logger.info("✅ Shutdown complete")
 
 # Create FastAPI app
 app = FastAPI(
-    title="College Recommendation Dialogue System",
-    description="AI-powered dialogue system for college information and recommendations",
-    version="1.0.0",
+    title="College Recommendation System",
+    description="AI-powered college recommendation and information system",
+    version="2.0.0",
     lifespan=lifespan
 )
 
@@ -60,8 +62,8 @@ app.include_router(health.router, prefix="/api/v1", tags=["health"])
 async def root():
     """Root endpoint"""
     return {
-        "message": "College Recommendation Dialogue System API",
-        "version": "1.0.0",
+        "message": "College Recommendation System API",
+        "version": "2.0.0",
         "docs": "/docs"
     }
 
@@ -76,7 +78,7 @@ async def global_exception_handler(request, exc):
 
 if __name__ == "__main__":
     uvicorn.run(
-        "app.main:app",
+        "main:app",
         host=config.api.host,
         port=config.api.port,
         reload=config.api.reload

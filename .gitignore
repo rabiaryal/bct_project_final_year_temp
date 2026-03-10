@@ -63,6 +63,7 @@ frontend/yarn-error.log*
 models/bert_intent_model
 models/roberta_entity_model
 models/faiss_index
+models/
 # models/
 # Keras/TensorFlow
 *.h5
@@ -73,6 +74,7 @@ models/faiss_index
 .env
 .env.local
 *.env
+.env.mongodb
 
 # Logs
 *.log

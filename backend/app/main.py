@@ -21,22 +21,21 @@ logger = setup_logger("main")
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan manager"""
-    logger.info("Starting dialogue system...")
+    logger.info("🚀 Starting dialogue system...")
     
     try:
-        # Initialize dialogue manager
         await dialogue_manager.initialize()
-        logger.info("Dialogue system initialized successfully")
+        app.state.dialogue_manager = dialogue_manager
+        logger.info("✅ Dialogue system initialized successfully")
         
         yield
         
     except Exception as e:
-        logger.error(f"Failed to initialize dialogue system: {e}")
+        logger.error(f"❌ Failed to initialize dialogue system: {e}")
         raise
     
     finally:
-        # Cleanup
-        logger.info("Shutting down dialogue system...")
+        logger.info("🛑 Shutting down dialogue system...")
         await dialogue_manager.shutdown()
         logger.info("Shutdown complete")
 

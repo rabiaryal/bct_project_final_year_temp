@@ -1,0 +1,201 @@
+[
+  {
+    "CollegeId": 1,
+    "Name": "PULCHOWK ENGINEERING CAMPUS",
+    "Location": "PULCHOWK, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "015421260",
+    "Email": "admission@pcampus.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6755,
+    "Longitude": 85.3205,
+    "Departments": [
+      { "DeptId": 1, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE Civil Engineering", "Rank": 650, "Fee": 490000.0, "Seats": 192, "Rating": 5.0 }] },
+      { "DeptId": 2, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE Electrical Engineering", "Rank": 1350, "Fee": 490000.0, "Seats": 96, "Rating": 4.8 }] },
+      { "DeptId": 3, "Name": "ELECTRONICS AND COMPUTER ENGINEERING", "Courses": [{ "Name": "BE ELECTRONICS ENGINEERING", "Rank": 350, "Fee": 490000.0, "Seats": 48, "Rating": 4.9 }] },
+      { "DeptId": 4, "Name": "MECHANICAL ENGINEERING", "Courses": [{ "Name": "BE MECHANICAL ENGINEERING", "Rank": 700, "Fee": 490000.0, "Seats": 48, "Rating": 4.7 }] },
+      { "DeptId": 5, "Name": "COMPUTER ENGINEERING", "Courses": [{ "Name": "BE Computer Engineering", "Rank": 250, "Fee": 490000.0, "Seats": 96, "Rating": 4.9 }] }
+    ]
+  },
+  {
+    "CollegeId": 2,
+    "Name": "THAPATHALI ENGINEERING CAMPUS",
+    "Location": "THAPATHALI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01542030",
+    "Email": "info@thc.tu.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 27.6943,
+    "Longitude": 85.314,
+    "Departments": [
+      { "DeptId": 5, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE Civil Engineering", "Rank": 1500, "Fee": 490000.0, "Seats": 144, "Rating": 4.3 }] },
+      { "DeptId": 6, "Name": "ELECTRONICS AND COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 1400, "Fee": 490000.0, "Rating": 4.2 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 1400, "Fee": 490000.0, "Rating": 4.2 }] },
+      { "DeptId": 7, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 1600, "Fee": 490000.0, "Rating": 4.1 }] },
+      { "DeptId": 8, "Name": "AUTOMOBILE AND MECHANICAL ENGINEERING", "Courses": [{ "Name": "BE Mechanical Engineering", "Rank": 2500, "Fee": 490000.0, "Seats": 96, "Rating": 4.1 }] }
+    ]
+  },
+  {
+    "CollegeId": 3,
+    "Name": "PURWANCHAL ENGINEERING CAMPUS",
+    "Location": "DHARAN, SUNSARI, KOSHI PROVINCE",
+    "Type": "PUBLIC",
+    "ContactNumber": "01520120",
+    "Email": "contact@purwanchal.edu.np",
+    "HostelAvailability": true,
+    "Latitude": 26.8121,
+    "Longitude": 87.283,
+    "Departments": [
+      { "DeptId": 9, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 2500, "Fee": 490000.0, "Rating": 4.0 }] },
+      { "DeptId": 10, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 2700, "Fee": 490000.0, "Rating": 3.9 }] },
+      { "DeptId": 11, "Name": "ELECTRONICS AND COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 2600, "Fee": 490000.0, "Rating": 3.9 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3000, "Fee": 490000.0, "Rating": 3.7 }] },
+      { "DeptId": 12, "Name": "MECHANICAL ENGINEERING", "Courses": [{ "Name": "BE MECHANICAL ENGINEERING", "Rank": 3000, "Fee": 490000.0, "Rating": 3.8 }] }
+    ]
+  },
+  {
+    "CollegeId": 4,
+    "Name": "PASHCHIMANCHAL ENGINEERING CAMPUS",
+    "Location": "LAMACHAUR, POKHARA, GANDAKI PROVINCE",
+    "Type": "PUBLIC",
+    "HostelAvailability": true,
+    "Latitude": 28.2414,
+    "Longitude": 83.993,
+    "Departments": [
+      { "DeptId": 12, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 2300, "Fee": 490000.0, "Rating": 4.0 }] },
+      { "DeptId": 14, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 2500, "Fee": 490000.0, "Rating": 3.9 }] },
+      { "DeptId": 15, "Name": "ELECTRONICS AND COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 2400, "Fee": 490000.0, "Rating": 3.9 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 2800, "Fee": 490000.0, "Rating": 3.9 }] },
+      { "DeptId": 16, "Name": "MECHANICAL ENGINEERING", "Courses": [{ "Name": "BE MECHANICAL ENGINEERING", "Rank": 2800, "Fee": 490000.0, "Rating": 3.8 }] }
+    ]
+  },
+  {
+    "CollegeId": 5,
+    "Name": "CHITWAN ENGINEERING CAMPUS",
+    "Location": "RAMPUR, CHITWAN, BAGMATI PROVINCE",
+    "Type": "PUBLIC",
+    "HostelAvailability": true,
+    "Latitude": 27.6398,
+    "Longitude": 84.35,
+    "Departments": [
+      { "DeptId": 17, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 2200, "Fee": 490000.0, "Rating": 4.0 }] },
+      { "DeptId": 18, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 2400, "Fee": 490000.0, "Rating": 3.9 }] },
+      { "DeptId": 19, "Name": "ELECTRONICS ENGINEERING", "Courses": [{ "Name": "BE ELECTRONICS ENGINEERING", "Rank": 2450, "Fee": 490000.0, "Rating": 3.9 }] }
+    ]
+  },
+  {
+    "CollegeId": 6,
+    "Name": "ADVANCED COLLEGE OF ENGINEERING AND MANAGEMENT",
+    "Location": "KALANKI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Latitude": 27.6852,
+    "Longitude": 85.3145,
+    "Departments": [
+      { "DeptId": 20, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 3000, "Fee": 1350000.0, "Rating": 4.1 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 4000, "Fee": 1100000.0, "Rating": 4.3 }] },
+      { "DeptId": 21, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3500, "Fee": 1200000.0, "Rating": 4.0 }] },
+      { "DeptId": 22, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 3600, "Fee": 1250000.0, "Rating": 3.9 }] }
+    ]
+  },
+  {
+    "CollegeId": 7,
+    "Name": "KANTIPUR ENGINEERING COLLEGE",
+    "Location": "DHAPAKHEL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 23, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 2800, "Fee": 900000.0, "Rating": 4.2 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3300, "Fee": 750000.0, "Rating": 3.9 }] },
+      { "DeptId": 24, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3200, "Fee": 850000.0, "Rating": 4.0 }] }
+    ]
+  },
+  {
+    "CollegeId": 8,
+    "Name": "NATIONAL COLLEGE OF ENGINEERING",
+    "Location": "TALCHHIKHEL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 25, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 3100, "Fee": 1100000.0, "Rating": 4.0 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 5200, "Fee": 1150000.0, "Rating": 3.9 }] },
+      { "DeptId": 26, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3400, "Fee": 1100000.0, "Rating": 3.9 }] },
+      { "DeptId": 27, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 3500, "Fee": 900000.0, "Rating": 3.8 }] }
+    ]
+  },
+  {
+    "CollegeId": 9,
+    "Name": "HIMALAYA COLLEGE OF ENGINEERING",
+    "Location": "CHYASAL, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 28, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 2900, "Fee": 1250000.0, "Rating": 4.1 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3200, "Fee": 1150000.0, "Rating": 3.9 }] },
+      { "DeptId": 29, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3300, "Fee": 1250000.0, "Rating": 4.0 }] }
+    ]
+  },
+  {
+    "CollegeId": 10,
+    "Name": "SAGARMATHA ENGINEERING COLLEGE",
+    "Location": "SANEPA, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 30, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 3600, "Fee": 1200000.0, "Rating": 3.9 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3900, "Fee": 800000.0, "Rating": 3.7 }] },
+      { "DeptId": 31, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3800, "Fee": 1100000.0, "Rating": 3.8 }] }
+    ]
+  },
+  {
+    "CollegeId": 11,
+    "Name": "LALITPUR ENGINEERING COLLEGE",
+    "Location": "CHAKUPAT, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 32, "Name": "COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 3700, "Fee": 1200000.0, "Rating": 3.9 }] },
+      { "DeptId": 33, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 4000, "Fee": 1150000.0, "Rating": 3.8 }] }
+    ]
+  },
+  {
+    "CollegeId": 12,
+    "Name": "KATHFORD INTERNATIONAL COLLEGE",
+    "Location": "GWARKHO, LALITPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 34, "Name": "COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 3000, "Fee": 1300000.0, "Rating": 4.1 }] },
+      { "DeptId": 35, "Name": "ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3500, "Fee": 800000.0, "Rating": 3.9 }] },
+      { "DeptId": 36, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 3400, "Fee": 1200000.0, "Rating": 4.0 }] }
+    ]
+  },
+  {
+    "CollegeId": 13,
+    "Name": "KATHMANDU ENGINEERING COLLEGE",
+    "Location": "KALIMATI, KATHMANDU, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 37, "Name": "COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 1500, "Fee": 1250000.0, "Rating": 4.9 }] },
+      { "DeptId": 38, "Name": "ELECTRONICS ENGINEERING", "Courses": [{ "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3500, "Fee": 1350000.0, "Rating": 4.5 }] },
+      { "DeptId": 39, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 2200, "Fee": 1150000.0, "Rating": 4.7 }] },
+      { "DeptId": 40, "Name": "ELECTRICAL ENGINEERING", "Courses": [{ "Name": "BE ELECTRICAL ENGINEERING", "Rank": 2300, "Fee": 1050000.0, "Rating": 4.6 }] }
+    ]
+  },
+  {
+    "CollegeId": 14,
+    "Name": "KHWOPA COLLEGE OF ENGINEERING",
+    "Location": "LIBALI, BHAKTAPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 41, "Name": "COMPUTER ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 2600, "Fee": 840000.0, "Rating": 4.1 }] },
+      { "DeptId": 42, "Name": "ELECTRONICS ENGINEERING", "Courses": [{ "Name": "BE ELECTRONICS ENGINEERING", "Rank": 3000, "Fee": 496000.0, "Rating": 3.9 }] },
+      { "DeptId": 43, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 2800, "Fee": 824000.0, "Rating": 4.0 }] }
+    ]
+  },
+  {
+    "CollegeId": 15,
+    "Name": "JANAKPUR ENGINEERING COLLEGE",
+    "Location": "TATHALI, BHAKTAPUR, BAGMATI PROVINCE",
+    "Type": "PRIVATE",
+    "HostelAvailability": false,
+    "Departments": [
+      { "DeptId": 44, "Name": "COMPUTER AND ELECTRONIC ENGINEERING", "Courses": [{ "Name": "BE COMPUTER ENGINEERING", "Rank": 4200, "Fee": 950000.0, "Rating": 3.6 }, { "Name": "BE ELECTRONICS ENGINEERING", "Rank": 4700, "Fee": 820000.0, "Rating": 3.4 }] },
+      { "DeptId": 45, "Name": "CIVIL ENGINEERING", "Courses": [{ "Name": "BE CIVIL ENGINEERING", "Rank": 4500, "Fee": 850000.0, "Rating": 3.5 }] }
+    ]
+  }
+]

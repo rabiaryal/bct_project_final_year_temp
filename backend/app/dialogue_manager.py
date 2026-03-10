@@ -1,554 +1,398 @@
-"""Main Dialogue Manager"""
+"""
+Dialogue Manager — 10-Intent Aggregation Pipeline
 
-from typing import Dict, Any, Optional
+Pipeline:
+  1. NLU (BERT Intent + RoBERTa Entities)
+  2. Keyword Override (low-confidence correction)
+  3. Entity Fix (LOCATION -> COLLEGE_NAME reclassification)
+  4. Slot Manager (entity -> slot, normalize, context update)
+  5. Template Check (actionable?)
+     a. Static intent (greeting/goodbye) -> respond immediately
+     b. Missing required slots -> follow-up question
+     c. Actionable -> build pipeline -> aggregate -> format response
+"""
+
+from typing import Dict, List, Any, Optional
+from datetime import datetime
+import random
 import uuid
-from datetime import datetime, timedelta
+import logging
+import re
 
 from app.nlu import BERTIntentClassifier, RoBERTaEntityExtractor
-from app.context.tracker import DialogueTracker
-from app.policy.rule_policy import PolicyPlanner
-from app.actions import ActionRegistry
-from app.response.formatter import ResponseFormatter
+from app.context.slot_manager import SlotManager, DialogueContext
+from app.templates.intent_templates import get_template, INTENT_TEMPLATES
+from app.handlers.router import route_intent
+from app.utils.formatter import format_response
 from app.repositories.mongo_client import MongoRepository
-from app.services.college_service import CollegeService
-from app.services.college_retrieval_agent import CollegeRetrievalAgent
-from app.execution import execution_system
-from app.policy.query_orchestrator import query_orchestrator
-from app.schemas import ChatRequest, ChatResponse, ActionRequest
-from app.utils.logger import get_logger
+from app.schemas import ChatRequest, ChatResponse
 from app.utils.config import config
 
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
+
+
+# ============================================================================
+# KEYWORD -> INTENT OVERRIDE RULES
+# ============================================================================
+
+_KEYWORD_OVERRIDES = [
+    (re.compile(r"\b(recommend|suggest|help me choose|best college|which college should)\b", re.I),
+     "personalized_recommendation", 0.82),
+    (re.compile(r"\b(best|top|highest rated|top rated)\b", re.I),
+     "best_items_search", 0.78),
+    (re.compile(r"\b(compare|vs|versus|between|difference)\b", re.I),
+     "compare_colleges", 0.78),
+    (re.compile(r"\b(hostel|accommodation|dorm(?:itory)?|boarding|residential)\b", re.I),
+     "hostel_query", 0.78),
+    (re.compile(r"\b(contact|phone number|phone no|call|email|reach|helpline)\b", re.I),
+     "contact_query", 0.78),
+    (re.compile(r"\b(detail|details|info|information|about|tell me about)\b.*\b(college|campus|institute)\b", re.I),
+     "college_details", 0.72),
+    (re.compile(r"\b(find|search|show|list|colleges? in|which colleges?)\b", re.I),
+     "search_college", 0.72),
+]
+
+# College-name indicator words
+_COLLEGE_NAME_INDICATORS = re.compile(
+    r"\b(campus|college|institute|engineering|university|management|polytechnic)\b", re.I
+)
+
+
+# ============================================================================
+# TERMINAL COLORS
+# ============================================================================
+
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+
+
+def _print_header(session_id: str, message: str):
+    print(f"\n{Colors.BOLD}{Colors.HEADER}{'='*70}{Colors.END}", flush=True)
+    print(f"{Colors.BOLD}  PIPELINE - Session: {session_id[:12]}...{Colors.END}", flush=True)
+    print(f"{Colors.BOLD}  Message: {Colors.END}{message}", flush=True)
+    print(f"{Colors.HEADER}{'='*70}{Colors.END}", flush=True)
+
+
+def _print_nlu(intent: str, confidence: float, metadata: Dict, entities: List[Dict], extracted: Dict):
+    print(f"\n{Colors.CYAN}--- NLU ---{Colors.END}", flush=True)
+    print(f"  Intent: {Colors.GREEN}{intent}{Colors.END} ({confidence:.2%})", flush=True)
+    if metadata and 'top_predictions' in metadata:
+        for name, prob in metadata['top_predictions'][:3]:
+            print(f"    {name}: {prob:.2%}", flush=True)
+    print(f"  Entities: {extracted if extracted else '(none)'}", flush=True)
+
+
+def _print_slots(prev: Dict, ctx: Any):
+    print(f"\n{Colors.YELLOW}--- SLOTS ---{Colors.END}", flush=True)
+    if ctx.slots:
+        for k, v in ctx.slots.items():
+            marker = "(new)" if k not in prev else ("(upd)" if prev.get(k) != v else "")
+            print(f"  {k}: {v} {marker}", flush=True)
+    else:
+        print("  (empty)", flush=True)
+    print(f"  Missing: {ctx.missing_slots or '(none)'}", flush=True)
+    print(f"  Actionable: {'Yes' if ctx.is_actionable else 'No'}", flush=True)
+
+
+def _print_context(ctx: Any):
+    print(f"\n{Colors.BLUE}--- CONTEXT ---{Colors.END}", flush=True)
+    print(f"  Turn: {ctx.turn_count}", flush=True)
+    print(f"  Intent: {ctx.current_intent} (prev: {ctx.previous_intent or 'none'})", flush=True)
+    print(f"  Family: {ctx.intent_family}", flush=True)
+    if ctx.slots:
+        print(f"  Accumulated slots:", flush=True)
+        for k, v in ctx.slots.items():
+            print(f"    {k}: {v}", flush=True)
+    else:
+        print(f"  Accumulated slots: (empty)", flush=True)
+
+
+def _print_result(response_type: str, count: int = 0):
+    print(f"\n{Colors.GREEN}--- RESPONSE ({response_type}) ---{Colors.END}", flush=True)
+    if count:
+        print(f"  Results: {count}", flush=True)
+
+
+def _print_final(response: str, elapsed: float):
+    print(f"\n{Colors.BOLD}BOT:{Colors.END}", flush=True)
+    # Print just first 200 chars to avoid flooding terminal
+    preview = response[:200] + ("..." if len(response) > 200 else "")
+    print(f"  {preview}", flush=True)
+    print(f"  ({elapsed:.3f}s)\n", flush=True)
+
+
+# ============================================================================
+# DIALOGUE MANAGER
+# ============================================================================
 
 class DialogueManager:
-    """
-    Main dialogue management system orchestrating:
-    NLU → Context Tracking → Policy → Actions → Response Generation
-    
-    Follows Rasa/DeepPavlov architecture pattern
-    """
-    
+
     def __init__(self):
-        self.intent_classifier = None
-        self.entity_extractor = None
-        self.policy_planner = None
-        self.action_registry = None
-        self.response_formatter = None
-        self.mongo_repo = None
-        self.college_service = None
-        self.retrieval_agent = None  # New intelligent retrieval agent
-        self.execution_system = execution_system  # New execution system
-        self.query_orchestrator = query_orchestrator  # Complete pipeline orchestrator
-        self.active_sessions: Dict[str, DialogueTracker] = {}
-        self.session_timeout = timedelta(seconds=config.dialogue.session_timeout)
-        
+        self.intent_classifier: Optional[BERTIntentClassifier] = None
+        self.entity_extractor: Optional[RoBERTaEntityExtractor] = None
+        self.slot_manager = SlotManager()
+        self.mongo_repo: Optional[MongoRepository] = None
+        self._initialized = False
+
     async def initialize(self):
-        """Initialize all dialogue components"""
-        try:
-            logger.info("Initializing Dialogue Manager...")
-            
-            # Initialize NLU components
-            logger.info("Loading NLU models...")
-            self.intent_classifier = BERTIntentClassifier()
-            self.entity_extractor = RoBERTaEntityExtractor()
-            
-            # Initialize data layer
-            logger.info("Connecting to MongoDB...")
-            self.mongo_repo = MongoRepository()
-            try:
-                await self.mongo_repo.connect()
-                logger.info("MongoDB connected successfully")
-            except Exception as e:
-                logger.warning(f"MongoDB connection failed: {e}. Running in fallback mode.")
-                # Continue without MongoDB - system can still work with NLU only
-                self.mongo_repo = None
-            
-            # Initialize services
-            if self.mongo_repo:
-                self.college_service = CollegeService(self.mongo_repo)
-                
-                # Initialize intelligent retrieval agent
-                logger.info("Initializing Intelligent Retrieval Agent...")
-                try:
-                    self.retrieval_agent = CollegeRetrievalAgent(mongo_repo=self.mongo_repo)
-                    await self.retrieval_agent.initialize()
-                    logger.info("Intelligent Retrieval Agent initialized successfully")
-                except Exception as e:
-                    logger.warning(f"Retrieval agent initialization failed: {e}. Using fallback service.")
-                    self.retrieval_agent = None
-            else:
-                self.college_service = None
-                self.retrieval_agent = None
-                logger.warning("Services disabled - no MongoDB connection")
-            
-            # Initialize dialogue components
-            self.policy_planner = PolicyPlanner()
-            self.action_registry = ActionRegistry(self.college_service)
-            self.response_formatter = ResponseFormatter()
-            
-            # Initialize execution system
-            logger.info("Initializing Execution System...")
-            try:
-                await self.execution_system.initialize()
-                logger.info("Execution System initialized successfully")
-            except Exception as e:
-                logger.warning(f"Execution system initialization failed: {e}. Using fallback mode.")
-            
-            logger.info("Dialogue Manager initialized successfully")
-            
-        except Exception as e:
-            logger.error(f"Failed to initialize Dialogue Manager: {e}")
-            raise
-    
+        if self._initialized:
+            return
+        logger.info("Initializing Dialogue Manager...")
+
+        self.intent_classifier = BERTIntentClassifier()
+        self.entity_extractor = RoBERTaEntityExtractor()
+
+        self.mongo_repo = MongoRepository()
+        await self.mongo_repo.connect()
+
+        self._initialized = True
+        logger.info(f"Dialogue Manager ready ({len(INTENT_TEMPLATES)} intents)")
+
     async def shutdown(self):
-        """Cleanup resources"""
         if self.mongo_repo:
             await self.mongo_repo.disconnect()
-        self.active_sessions.clear()
-        logger.info("Dialogue Manager shutdown complete")
-    
-    async def process_message(self, request: ChatRequest) -> ChatResponse:
-        """
-        Process incoming message through full dialogue pipeline:
-        NLU → Context → Query Class → Entity Roles → Policy → Execution → Response
-        """
-        start_time = datetime.now()
-        try:
-            # Get or create session
-            session_id = request.session_id or self._generate_session_id()
-            tracker = self._get_or_create_session(session_id)
-            
-            logger.info(f"\n{'='*80}")
-            logger.info(f"🚀 NEW DIALOGUE TURN STARTING")
-            logger.info(f"{'='*80}")
-            logger.info(f"💬 Message: '{request.message}'")
-            logger.info(f"📱 Session: {session_id}")
-            logger.info(f"⏰ Timestamp: {start_time.strftime('%H:%M:%S')}")
-            logger.info(f"{'='*80}")
-            
-            # Step 1: NLU Processing
-            logger.info(f"\n{'='*80}")
-            logger.info(f"🧠 STAGE 1: NLU PROCESSING")
-            logger.info(f"{'='*80}")
-            
-            intent, intent_confidence, intent_metadata = await self.intent_classifier.predict(request.message)
-            entity_list = self.entity_extractor.predict_with_confidence(request.message, threshold=0.3)
-            
-            nlu_results = {
-                "intent": intent,
-                "intent_confidence": intent_confidence, 
-                "intent_metadata": intent_metadata,
-                "entities": entity_list
-            }
-            
-            logger.info(f"📍 Intent: {intent} (confidence: {intent_confidence:.3f})")
-            logger.info(f"🏷️ Entities: {len(entity_list)} found")
-            for entity in entity_list:
-                logger.info(f"   - {entity['type']}: '{entity['text']}' (conf: {entity['confidence']:.3f})")
-            
-            # Step 2: Use NEW Complete Pipeline with Execution System
-            logger.info(f"\n{'='*80}")
-            logger.info(f"🎯 STAGE 2: COMPLETE PIPELINE PROCESSING")
-            logger.info(f"{'='*80}")
-            
-            try:
-                # Process through complete pipeline: NLU → Context → Query Class → Entity Roles → Policy → Execution
-                pipeline_result = await self.query_orchestrator.process_complete_query(
-                    conversation_id=session_id,
-                    user_input=request.message,
-                    nlu_results=nlu_results
-                )
-                
-                if pipeline_result["status"] == "SUCCESS":
-                    logger.info(f"🎯 Query Class: {pipeline_result['query_class']}")
-                    logger.info(f"🏷️ Entity Roles: {len(pipeline_result['structured_entities'])} structured")
-                    logger.info(f"📋 Policy Decision: {pipeline_result['policy_decision']['decision']['action']}")
-                    
-                    policy_decision = pipeline_result["policy_decision"]
-                    
-                    # Step 3: Execute Database Queries if needed
-                    execution_result = None
-                    if policy_decision["decision"]["action"] == "EXECUTE_QUERY":
-                        logger.info(f"\n{'='*80}")
-                        logger.info(f"🚀 STAGE 3: DATABASE EXECUTION")
-                        logger.info(f"{'='*80}")
-                        
-                        try:
-                            execution_result = await self.execution_system.execute_policy_decision(policy_decision)
-                            
-                            logger.info(f"✅ Execution Status: {execution_result['status']}")
-                            logger.info(f"📊 Results Count: {execution_result.get('results_count', 0)}")
-                            logger.info(f"🎯 Criteria: {execution_result['criteria_type']}")
-                            
-                            if execution_result.get('results'):
-                                logger.info("🏫 Top Results:")
-                                for i, result in enumerate(execution_result['results'][:3], 1):
-                                    name = result.get('name', 'Unknown')
-                                    location = result.get('location', 'Unknown')
-                                    logger.info(f"   {i}. {name} - {location}")
-                        
-                        except Exception as e:
-                            logger.error(f"❌ Execution failed: {e}")
-                            execution_result = {
-                                "status": "ERROR",
-                                "error": str(e),
-                                "results_count": 0,
-                                "results": []
-                            }
-                    
-                    # Step 4: Update Context with pipeline results
-                    logger.info(f"\n{'='*80}")
-                    logger.info(f"📝 STAGE 4: CONTEXT UPDATE")
-                    logger.info(f"{'='*80}")
-                    
-                    # Convert entities for tracker compatibility
-                    entities_simplified = {}
-                    for entity in entity_list:
-                        entity_type = entity['type']
-                        entity_text = entity['text']
-                        
-                        if entity_type not in entities_simplified:
-                            entities_simplified[entity_type] = []
-                        entities_simplified[entity_type].append(entity_text)
-                    
-                    # Flatten single-item lists for compatibility
-                    for etype, eval_list in entities_simplified.items():
-                        if len(eval_list) == 1:
-                            entities_simplified[etype] = eval_list[0]
-                    
-                    tracker.update_intent(intent, intent_confidence, intent_metadata)
-                    tracker.update_entities(entities_simplified)
-                    tracker.add_user_message(request.message)
-                    
-                    logger.info(f"🔄 Session: {session_id}")
-                    logger.info(f"📊 Slots Updated: {tracker.slots}")
-                    logger.info(f"💬 Turn Count: {len(tracker.messages)}")
-                    
-                    # Step 5: Generate Response
-                    logger.info(f"\n{'='*80}")
-                    logger.info(f"💬 STAGE 5: RESPONSE GENERATION")
-                    logger.info(f"{'='*80}")
-                    
-                    if execution_result and execution_result.get('results'):
-                        # Use execution results for response
-                        response_text = self._format_execution_response(execution_result)
-                        action_taken = f"EXECUTED_{execution_result['criteria_type']}"
-                        
-                    elif policy_decision["decision"]["action"] != "EXECUTE_QUERY":
-                        # Handle non-query responses
-                        response_text = policy_decision["decision"].get("reason", "I understand your request.")
-                        action_taken = policy_decision["decision"]["action"]
-                        
-                    else:
-                        # Fallback response
-                        response_text = "I understand you're looking for college information. Could you provide more specific criteria?"
-                        action_taken = "PROVIDE_HELP"
-                    
-                    logger.info(f"📝 Response Type: {action_taken}")
-                    logger.info(f"📏 Response Length: {len(response_text)} characters")
-                    
-                else:
-                    # Pipeline processing failed
-                    logger.error(f"❌ Pipeline processing failed: {pipeline_result.get('error', 'Unknown error')}")
-                    response_text = "I'm having trouble processing your request. Could you please rephrase it?"
-                    action_taken = "CLARIFICATION_REQUEST"
-                
-            except Exception as e:
-                logger.error(f"❌ Pipeline processing error: {e}")
-                import traceback
-                traceback.print_exc()
-                
-                # Fallback to legacy processing
-                response_text = "I'm sorry, I'm having technical difficulties. Please try again."
-                action_taken = "ERROR_FALLBACK"
-            
-            # Store response in tracker
-            tracker.add_bot_message(response_text)
-            
-            # Step 6: Final Response
-            logger.info(f"\n{'='*80}")
-            logger.info(f"🎉 DIALOGUE TURN COMPLETED")
-            logger.info(f"{'='*80}")
-            logger.info(f"📱 Session: {session_id}")
-            logger.info(f"🎬 Final Action: {action_taken}")
-            logger.info(f"💬 Response Sent: {len(response_text)} chars")
-            
-            processing_time = (datetime.now() - start_time).total_seconds()
-            logger.info(f"⏱️  Processing Time: {processing_time:.3f}s")
-            logger.info(f"{'='*80}\n")
-            
-            # Create response
-            return ChatResponse(
-                message=response_text,
-                session_id=session_id,
-                intent=intent,
-                entities=entities_simplified if 'entities_simplified' in locals() else {},
-                confidence=intent_confidence,
-                timestamp=datetime.now(),
-                debug_info={
-                    "intent_metadata": intent_metadata,
-                    "action_taken": action_taken,
-                    "processing_time": processing_time,
-                    "pipeline_used": "NEW_EXECUTION_PIPELINE"
-                }
-            )
-            
-        except Exception as e:
-            logger.error(f"Dialogue processing error: {e}")
-            import traceback
-            traceback.print_exc()
-            
-            return ChatResponse(
-                message="I apologize, but I encountered an error processing your message. Please try again.",
-                session_id=session_id if 'session_id' in locals() else self._generate_session_id(),
-                intent="error",
-                entities={},
-                confidence=0.0,
-                timestamp=datetime.now(),
-                debug_info={"error": str(e)}
-            )
-    
-    def _format_execution_response(self, execution_result: Dict[str, Any]) -> str:
-        """Format execution results into user-friendly response"""
-        try:
-            status = execution_result.get('status', 'ERROR')
-            criteria_type = execution_result.get('criteria_type', 'UNKNOWN')
-            results = execution_result.get('results', [])
-            results_count = execution_result.get('results_count', 0)
-            
-            if status == "ERROR":
-                return "I'm sorry, I encountered an issue while searching for colleges. Please try rephrasing your query."
-            
-            if results_count == 0:
-                if criteria_type == "LOCATION":
-                    return "I couldn't find any colleges matching your location criteria. Could you try a different location or check the spelling?"
-                elif criteria_type == "FEE":
-                    return "I couldn't find colleges matching your fee requirements. You might want to adjust your budget range."
-                elif criteria_type == "LOCATION_AND_FEE":
-                    return "I couldn't find colleges that match both your location and fee criteria. Try expanding your search criteria."
-                else:
-                    return "I couldn't find any colleges matching your criteria. Could you provide more details?"
-            
-            # Generate response based on criteria type
-            if criteria_type == "LOCATION":
-                location_summary = execution_result.get('location_summary', {})
-                response_parts = [
-                    f"I found {results_count} colleges matching your location criteria:"
-                ]
-                
-            elif criteria_type == "FEE":
-                fee_summary = execution_result.get('fee_summary', {})
-                avg_fee = fee_summary.get('average_fee', 0)
-                response_parts = [
-                    f"I found {results_count} colleges matching your fee criteria:"
-                ]
-                if avg_fee > 0:
-                    response_parts.append(f"Average fees: NPR {avg_fee:,.0f}")
-                
-            elif criteria_type == "LOCATION_AND_FEE":
-                combined_insights = execution_result.get('combined_insights', {})
-                response_parts = [
-                    f"I found {results_count} colleges matching both your location and fee criteria:"
-                ]
-                
-                recommendation = combined_insights.get('recommendation', '')
-                if recommendation:
-                    response_parts.append(f"\n📋 {recommendation}")
-                
-            else:
-                response_parts = [f"Here are {results_count} colleges I found:"]
-            
-            # Add top results
-            response_parts.append("\n🏫 Top Results:")
-            for i, college in enumerate(results[:5], 1):
-                name = college.get('name', 'Unknown College')
-                location = college.get('location', 'Unknown Location')
-                fees = college.get('fees', 'Contact college')
-                
-                if criteria_type == "LOCATION":
-                    response_parts.append(f"{i}. {name} - {location}")
-                elif criteria_type == "FEE":
-                    response_parts.append(f"{i}. {name} - Fees: {fees}")
-                elif criteria_type == "LOCATION_AND_FEE":
-                    response_parts.append(f"{i}. {name}")
-                    response_parts.append(f"   📍 Location: {location}")
-                    response_parts.append(f"   💰 Fees: {fees}")
-                else:
-                    response_parts.append(f"{i}. {name} - {location}")
-            
-            # Add helpful suggestions
-            if results_count > 5:
-                response_parts.append(f"\n... and {results_count - 5} more colleges.")
-                response_parts.append("Would you like me to show more results or help you refine your search?")
-            
-            return "\n".join(response_parts)
-            
-        except Exception as e:
-            logger.error(f"Error formatting execution response: {e}")
-            return "I found some colleges for you, but I'm having trouble formatting the results. Please try your query again."
-    
-    async def get_session_state(self, session_id: str) -> Optional[Dict[str, Any]]:
-        """Get current session state"""
-        if session_id in self.active_sessions:
-            tracker = self.active_sessions[session_id]
-            return tracker.to_dict()
-        return None
-    
-    async def delete_session(self, session_id: str) -> bool:
-        """Delete a session"""
-        if session_id in self.active_sessions:
-            del self.active_sessions[session_id]
-            logger.info(f"Deleted session: {session_id}")
-            return True
-        return False
-    
-    async def health_check(self) -> Dict[str, Any]:
-        """Check health of all components"""
-        health_status = {
-            "dialogue_manager": "healthy",
-            "active_sessions": len(self.active_sessions),
-            "components": {}
-        }
-        
-        # Check NLU components
-        try:
-            if self.intent_classifier and self.entity_extractor:
-                health_status["components"]["nlu"] = "healthy"
-            else:
-                health_status["components"]["nlu"] = "not_initialized"
-        except Exception as e:
-            health_status["components"]["nlu"] = f"error: {e}"
-        
-        # Check MongoDB
-        if self.mongo_repo:
-            mongo_health = await self.mongo_repo.health_check()
-            health_status["components"]["mongodb"] = mongo_health["status"]
-        else:
-            health_status["components"]["mongodb"] = "disconnected"
-        
-        # Check other components
-        health_status["components"]["policy"] = "healthy" if self.policy_planner else "not_initialized"
-        health_status["components"]["actions"] = "healthy" if self.action_registry else "not_initialized"
-        health_status["components"]["response"] = "healthy" if self.response_formatter else "not_initialized"
-        
-        # Overall status
-        if any("error" in str(status) for status in health_status["components"].values()):
-            health_status["dialogue_manager"] = "degraded"
-        elif any(status == "not_initialized" for status in health_status["components"].values()):
-            health_status["dialogue_manager"] = "initializing"
-        
-        return health_status
-    
-    def _get_or_create_session(self, session_id: str) -> DialogueTracker:
-        """Get existing session or create new one"""
-        if session_id in self.active_sessions:
-            tracker = self.active_sessions[session_id]
-            # Check if session is not expired
-            if datetime.now() - tracker.created_at < self.session_timeout:
-                return tracker
-            else:
-                # Remove expired session
-                del self.active_sessions[session_id]
-        
-        # Create new session
-        tracker = DialogueTracker(session_id)
-        self.active_sessions[session_id] = tracker
-        logger.info(f"Created new session: {session_id}")
-        return tracker
-    
-    def _generate_session_id(self) -> str:
-        """Generate unique session ID"""
-        return f"session_{uuid.uuid4().hex[:12]}_{int(datetime.now().timestamp())}"
-    
-    def _cleanup_old_sessions(self):
-        """Remove expired sessions"""
-        current_time = datetime.now()
-        expired_sessions = []
-        
-        for session_id, tracker in self.active_sessions.items():
-            if current_time - tracker.created_at > self.session_timeout:
-                expired_sessions.append(session_id)
-        
-        for session_id in expired_sessions:
-            del self.active_sessions[session_id]
-            logger.debug(f"Cleaned up expired session: {session_id}")
-        
-        if expired_sessions:
-            logger.info(f"Cleaned up {len(expired_sessions)} expired sessions")
-    
-    async def _execute_action(self, action_name: str, tracker: 'DialogueTracker', retrieval_results: Dict = None) -> Dict[str, Any]:
-        """Execute the specified action with optional retrieval results"""
-        try:
-            # Create action request
-            action_request = ActionRequest(
-                action=action_name,
-                slots=tracker.slots.copy(),
-                session_id=tracker.session_id
-            )
-            
-            # Add retrieval results to action context if available
-            if retrieval_results and retrieval_results.get('retrieved_results'):
-                from app.schemas import RetrievalData, RetrievalResult
-                
-                # Convert raw retrieval results to schema objects
-                retrieval_objects = []
-                for result in retrieval_results.get('retrieved_results', []):
-                    # Create comprehensive college_data dict from result
-                    college_data = {
-                        'name': result.get('name', 'Unknown'),
-                        'location': result.get('location', 'Unknown'),
-                        'programs': result.get('programs', []),
-                        'fees': result.get('fees', 'Contact college'),
-                        'ranking': result.get('ranking', 'Not ranked'),
-                        'description': result.get('description', ''),
-                        'type': result.get('type', ''),
-                        'affiliation': result.get('affiliation', ''),
-                        'established': result.get('established', ''),
-                        'courses': result.get('courses', ''),
-                        'website': result.get('website', ''),
-                        'phone': result.get('phone', '')
-                    }
-                    
-                    retrieval_obj = RetrievalResult(
-                        college_name=result.get('name', 'Unknown'),
-                        similarity_score=result.get('confidence', 0.0),
-                        college_data=college_data,
-                        match_reason=f"{result.get('source', 'semantic')} search match"
-                    )
-                    retrieval_objects.append(retrieval_obj)
-                
-                # Create RetrievalData object
-                retrieval_data = RetrievalData(
-                    query=tracker.messages[-1] if tracker.messages else "",  # Latest user message
-                    results=retrieval_objects,
-                    entities_found=tracker.entities,
-                    search_strategy=retrieval_results.get('policy', 'unknown'),
-                    total_results=len(retrieval_objects)
-                )
-                
-                action_request.retrieval_data = retrieval_data
-            
-            # Execute action through registry
-            result = await self.action_registry.execute_action(action_name, action_request)
-            
-            return {
-                "action": action_name,
-                "response": result.response if hasattr(result, 'response') else str(result),
-                "slots_updated": result.slots_updated if hasattr(result, 'slots_updated') else {},
-                "retrieval_used": retrieval_results is not None,
-                "retrieval_count": len(retrieval_results.get('retrieved_results', [])) if retrieval_results else 0,
-                "success": True
-            }
-            
-        except Exception as e:
-            logger.error(f"Action execution failed for {action_name}: {e}")
-            return {
-                "action": action_name,
-                "response": "I apologize, but I encountered an issue processing your request.",
-                "slots_updated": {},
-                "success": False,
-                "error": str(e)
-            }
+        self.slot_manager.contexts.clear()
+        logger.info("Dialogue Manager shutdown")
 
-# Global dialogue manager instance
+    # ------------------------------------------------------------------
+    # MAIN PIPELINE
+    # ------------------------------------------------------------------
+
+    async def process_message(self, request: ChatRequest) -> ChatResponse:
+        start_time = datetime.now()
+        session_id = request.session_id or self._generate_session_id()
+
+        try:
+            _print_header(session_id, request.message)
+
+            # ── Step 1: NLU ──────────────────────────────────────────────
+            intent, confidence, metadata = await self.intent_classifier.predict(request.message)
+            entity_list, _ner_meta = await self.entity_extractor.predict(request.message)
+            entities = self._entities_to_dict(entity_list, threshold=0.1)
+
+            # Keyword correction + entity fix
+            intent, confidence = self._apply_keyword_corrections(request.message, intent, confidence)
+            entities = self._fix_college_name_entity(entities, request.message)
+
+            # ── Fix #1: Intent lock during slot filling ──────────────────
+            # If the previous turn asked a follow-up question (missing required
+            # slots), lock to that intent so a bare reply like "computer"
+            # doesn't get reclassified as greeting/unknown/etc.
+            prev_context = self.slot_manager.get_context(session_id)
+            if prev_context and prev_context.pending_slot:
+                locked_intent = prev_context.current_intent
+                if intent != locked_intent:
+                    logger.info(
+                        f"Intent lock: {intent} -> {locked_intent} "
+                        f"(pending slot: {prev_context.pending_slot})"
+                    )
+                    intent = locked_intent
+
+            # ── Fix #7: Low-confidence fallback ──────────────────────────
+            # If NLU is very uncertain, keep the previous intent instead
+            # of switching to a likely-wrong prediction.
+            elif (
+                prev_context
+                and prev_context.current_intent
+                and prev_context.current_intent not in ("greeting", "goodbye", "unknown")
+                and confidence < 0.45
+            ):
+                logger.info(
+                    f"Low-confidence fallback: {intent} ({confidence:.0%}) "
+                    f"-> keeping {prev_context.current_intent}"
+                )
+                intent = prev_context.current_intent
+
+            _print_nlu(intent, confidence, metadata, entity_list, entities)
+            logger.info(f"[{session_id[:8]}] Intent: {intent} ({confidence:.2f}) | Entities: {entities}")
+
+            # ── Step 2: Slot Manager ─────────────────────────────────────
+            prev_slots = dict(prev_context.slots) if prev_context else {}
+
+            context = self.slot_manager.process_turn(
+                session_id, intent, entities, raw_text=request.message
+            )
+
+            _print_slots(prev_slots, context)
+            _print_context(context)
+
+            # ── Step 3: Template ─────────────────────────────────────────
+            template = get_template(intent)
+
+            # ── Static intents (no DB) ───────────────────────────────────
+            # Fix #3: Greeting mid-conversation should not wipe state.
+            # We respond with greeting text but preserve slots.
+            if intent in ("greeting", "goodbye", "unknown"):
+                response_msg = format_response(intent, [], context.slots)
+                _print_result("STATIC", 0)
+                elapsed = (datetime.now() - start_time).total_seconds()
+                _print_final(response_msg, elapsed)
+                return self._build_response(
+                    session_id, response_msg, intent, entities,
+                    confidence, start_time,
+                    {"slots": dict(context.slots), "type": "static",
+                     "context": context.to_dict()},
+                )
+
+            # ── Missing required slots → follow-up ───────────────────────
+            # (hybrid handlers also do their own slot check, but this
+            #  catches the standard intents that use templates)
+            if not context.is_actionable and intent not in (
+                "recommend_with_constraints", "personalized_recommendation"
+            ):
+                follow_up = self.slot_manager.get_follow_up(context)
+                # pending_slot is set inside get_follow_up()
+                _print_result("FOLLOW-UP", 0)
+                elapsed = (datetime.now() - start_time).total_seconds()
+                _print_final(follow_up, elapsed)
+                return self._build_response(
+                    session_id, follow_up, intent, entities,
+                    confidence, start_time,
+                    {"slots": dict(context.slots), "missing": context.missing_slots,
+                     "type": "follow_up", "context": context.to_dict()},
+                )
+
+            # ── Route to handler ─────────────────────────────────────────
+            result = await route_intent(
+                intent=intent,
+                slots=context.slots,
+                collection=self.mongo_repo.collection,
+                top_k=5,
+            )
+
+            # Hybrid handlers may return a follow-up question
+            if result.get("action") == "ask":
+                # Record which slot the bot is waiting for
+                if result.get("missing_slot"):
+                    context.pending_slot = result["missing_slot"]
+                    logger.info(f"Hybrid pending_slot = {result['missing_slot']}")
+                _print_result("FOLLOW-UP (hybrid)", 0)
+                elapsed = (datetime.now() - start_time).total_seconds()
+                _print_final(result["response"], elapsed)
+                return self._build_response(
+                    session_id, result["response"], intent, entities,
+                    confidence, start_time,
+                    {"slots": dict(context.slots), "missing_slot": result.get("missing_slot"),
+                     "type": "follow_up", "context": context.to_dict()},
+                )
+
+            # Persist results back into context
+            self.slot_manager.update_with_results(
+                session_id, result["results"], result.get("query", {})
+            )
+
+            _print_result("DB RETRIEVAL", result["count"])
+            elapsed = (datetime.now() - start_time).total_seconds()
+            _print_final(result["response"], elapsed)
+
+            return self._build_response(
+                session_id, result["response"], intent, entities,
+                confidence, start_time,
+                {
+                    "slots": dict(context.slots),
+                    "query": result.get("query"),
+                    "count": result["count"],
+                    "type": "retrieval",
+                    "context": context.to_dict(),
+                },
+            )
+
+        except Exception as e:
+            logger.error(f"Pipeline error: {e}", exc_info=True)
+            return self._build_response(
+                session_id,
+                "I'm sorry, something went wrong. Please try again.",
+                "error", {}, 0.0, start_time,
+                {"error": str(e)},
+            )
+
+    # ------------------------------------------------------------------
+    # HELPERS
+    # ------------------------------------------------------------------
+
+    def _apply_keyword_corrections(self, message: str, intent: str, confidence: float):
+        for pattern, target, max_conf in _KEYWORD_OVERRIDES:
+            if confidence < max_conf and pattern.search(message):
+                if target != intent:
+                    logger.info(f"Keyword override: {intent} -> {target} (conf={confidence:.0%})")
+                    return target, confidence
+        return intent, confidence
+
+    def _fix_college_name_entity(self, entities: Dict[str, str], message: str) -> Dict[str, str]:
+        """Reclassify LOCATION -> COLLEGE_NAME when context indicates a college."""
+        if "LOCATION" not in entities or "COLLEGE_NAME" in entities:
+            return entities
+
+        loc_value = entities["LOCATION"]
+
+        # Value itself contains indicator
+        if _COLLEGE_NAME_INDICATORS.search(loc_value):
+            entities["COLLEGE_NAME"] = entities.pop("LOCATION")
+            return entities
+
+        # Location followed by indicator in message (e.g. "Pulchowk Engineering Campus")
+        escaped = re.escape(loc_value)
+        nearby = re.search(
+            escaped + r"[\s,]+" + r"(?:campus|college|institute|engineering|university|management)",
+            message, re.I,
+        )
+        if nearby:
+            entities["COLLEGE_NAME"] = nearby.group(0).strip()
+            entities.pop("LOCATION")
+
+        return entities
+
+    def _entities_to_dict(self, entity_list: list, threshold: float = 0.1) -> Dict[str, str]:
+        entities: Dict[str, str] = {}
+        for ent in entity_list:
+            conf = ent.get("confidence", 1.0)
+            if conf < threshold:
+                continue
+            etype = ent.get("type", "").upper()
+            evalue = ent.get("value", ent.get("text", ""))
+            if etype and evalue and etype not in entities:
+                entities[etype] = evalue
+        return entities
+
+    def _generate_session_id(self) -> str:
+        return f"session_{int(datetime.now().timestamp())}_{uuid.uuid4().hex[:8]}"
+
+    def _build_response(
+        self, session_id, message, intent, entities,
+        confidence, start_time, debug_info=None,
+    ) -> ChatResponse:
+        elapsed = (datetime.now() - start_time).total_seconds()
+        return ChatResponse(
+            message=message,
+            session_id=session_id,
+            intent=intent,
+            entities=entities,
+            confidence=confidence,
+            timestamp=datetime.now(),
+            debug_info={**(debug_info or {}), "processing_time": elapsed},
+        )
+
+    def get_session_debug(self, session_id: str) -> Dict[str, Any]:
+        return self.slot_manager.get_debug_info(session_id)
+
+    async def health_check(self) -> Dict[str, Any]:
+        return {
+            "status": "healthy",
+            "components": {
+                "intent_classifier": {"status": "loaded" if self.intent_classifier else "not_loaded"},
+                "entity_extractor": {"status": "loaded" if self.entity_extractor else "not_loaded"},
+                "mongodb": {"status": "connected" if (self.mongo_repo and self.mongo_repo.collection is not None) else "not_connected"},
+            },
+            "active_sessions": len(self.slot_manager.contexts),
+        }
+
+
+# Singleton
 dialogue_manager = DialogueManager()

@@ -25,11 +25,11 @@ class MongoRepository:
         try:
             logger.info("Connecting to MongoDB Atlas...")
             
-            # Create async MongoDB client with shorter timeouts
+            # Create async MongoDB client
             self.client = AsyncIOMotorClient(
                 config.database.mongodb_uri,
-                serverSelectionTimeoutMS=5000,  # 5 seconds
-                connectTimeoutMS=5000,  # 5 seconds
+                serverSelectionTimeoutMS=30000,  # 30 seconds
+                connectTimeoutMS=30000,  # 30 seconds
                 maxPoolSize=10,
                 minPoolSize=1
             )
@@ -37,7 +37,7 @@ class MongoRepository:
             # Test connection with timeout
             await asyncio.wait_for(
                 self.client.admin.command('ping'),
-                timeout=5.0  # 5 second timeout
+                timeout=30.0  # 30 second timeout
             )
             
             # Set database and collection
@@ -49,7 +49,7 @@ class MongoRepository:
             logger.info(f"Connected successfully - Documents: {stats.get('count', 0)}")
             
         except asyncio.TimeoutError:
-            logger.error("MongoDB connection timed out after 5 seconds")
+            logger.error("MongoDB connection timed out after 30 seconds")
             raise Exception("MongoDB connection timeout")
         except Exception as e:
             logger.error(f"MongoDB connection failed: {e}")
