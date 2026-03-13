@@ -1,9 +1,10 @@
 """Chat API Routes"""
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Request
 from typing import Dict, Any
 
 from app.schemas import ChatRequest, ChatResponse
+from app.api.auth import verify_token
 
 router = APIRouter()
 
@@ -18,7 +19,11 @@ def get_dialogue_manager(request: Request):
 
 
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: Request, chat_request: ChatRequest) -> ChatResponse:
+async def chat(
+    request: Request,
+    chat_request: ChatRequest,
+    _: None = Depends(verify_token),
+) -> ChatResponse:
     """Main chat endpoint"""
     try:
         dm = get_dialogue_manager(request)

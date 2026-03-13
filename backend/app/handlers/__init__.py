@@ -9,6 +9,7 @@ from app.handlers import (
     details_handler,
     hostel_handler,
     contact_handler,
+    admission_handler,
 )
 from app.handlers.router import route_intent
 
@@ -22,4 +23,5 @@ __all__ = [
     "details_handler",
     "hostel_handler",
     "contact_handler",
+    "admission_handler",
 ]

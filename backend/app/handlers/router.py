@@ -22,6 +22,7 @@ from app.handlers import (
     attribute_handler,
     hostel_handler,
     contact_handler,
+    admission_handler,
 )
 
 logger = logging.getLogger(__name__)
@@ -37,6 +38,7 @@ _HANDLER_MAP = {
     "college_attribute_query":      attribute_handler,
     "hostel_query":                 hostel_handler,
     "contact_query":                contact_handler,
+    "admission_process":             admission_handler,
 }
 
 # Static intents — no DB access

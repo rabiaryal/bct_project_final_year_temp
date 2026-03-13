@@ -1,6 +1,9 @@
-# College Recommendation Dialogue System
+# College Recommendation System (CRS)
 
 An AI-powered chatbot for Nepal engineering college information and recommendations. Built with **FastAPI** (backend), **React** (frontend), **MongoDB Atlas** (database), and custom-trained **BERT** + **RoBERTa+CRF** NLU models.
+
+> **Live API:** `https://api.rabiaryal.com.np` (exposed via Cloudflare Tunnel)
+> **API Key:** `demo-secret-2026` (pass in every request as `x-api-key` header)
 
 ---
 
@@ -441,4 +444,516 @@ User Message
 | Models not found on startup | Train both models first (Step 5) |
 | Frontend can't reach backend | Make sure backend is running on port 8000 |
 | CUDA out of memory during training | Add `--batch_size 8` to reduce memory |
+| `seqeval` not found during entity training | Run `pip install seqeval` |
+
+---
+
+---
+
+# API Integration Guide
+
+Everything you need to call this API from any frontend or tool.
+
+---
+
+## Base URLs
+
+| Environment | URL |
+|---|---|
+| Local development | `http://localhost:8000` |
+| Live (Cloudflare Tunnel) | `https://api.rabiaryal.com.np` |
+
+---
+
+## Authentication
+
+Every request to `/api/v1/chat` must include this header:
+
+```
+x-api-key: demo-secret-2026
+```
+
+Missing or wrong key returns:
+```json
+HTTP 401 Unauthorized
+{ "detail": "Missing or incorrect x-api-key" }
+```
+
+> To change the key, edit `DEMO_API_KEY` in `backend/app/api/auth.py` and restart the server.
+
+---
+
+## Endpoints
+
+### POST `/api/v1/chat` — Send a message
+
+**Request headers:**
+
+| Header | Value | Required |
+|---|---|---|
+| `x-api-key` | `demo-secret-2026` | ✅ Yes |
+| `Content-Type` | `application/json` | ✅ Yes |
+
+**Request body:**
+
+```json
+{
+  "session_id": "abc-123",
+  "message": "show me colleges under 5 lakh"
+}
+```
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `message` | string | ✅ Yes | The user's message (1–1000 chars) |
+| `session_id` | string | ⚠️ Recommended | Tracks conversation context across turns. Omitting it generates a new session each time (no memory). |
+
+**Response body:**
+
+```json
+{
+  "message": "Here are colleges within your budget of Rs. 5,00,000...",
+  "session_id": "abc-123",
+  "intent": "recommend_with_constraints",
+  "entities": {
+    "budget": 500000
+  },
+  "confidence": 0.91,
+  "timestamp": "2026-03-11T10:30:00",
+  "debug_info": {}
+}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `message` | string | The chatbot's reply (may contain Markdown) |
+| `session_id` | string | Echo of the session ID (save this for follow-up messages) |
+| `intent` | string | Detected intent label |
+| `entities` | object | Extracted slots (budget, rank, course, college_name, etc.) |
+| `confidence` | float | Intent confidence score (0.0–1.0) |
+| `timestamp` | string | ISO 8601 datetime |
+| `debug_info` | object | Internal pipeline info (can be ignored) |
+
+---
+
+### GET `/api/v1/health` — Basic health check
+
+No auth required.
+
+```json
+{
+  "status": "healthy",
+  "version": "2.0.0",
+  "timestamp": "2026-03-11T10:30:00"
+}
+```
+
+### GET `/api/v1/health/detailed` — Full system status
+
+No auth required. Returns DB connection status, model load status, uptime.
+
+---
+
+## Session Management
+
+The `session_id` is how the server remembers what a user said previously.
+
+```
+Turn 1:  "show me colleges under 5 lakh"   → bot asks: "which course?"
+Turn 2:  "computer"                         → bot returns recommendations
+
+Both turns MUST use the same session_id.
+```
+
+**Rules:**
+- Generate the `session_id` **once** when the user opens the chat (e.g. `crypto.randomUUID()` in JS).
+- Send that same ID with **every** message in the conversation.
+- To reset the conversation, either send `"message": "clear"` or generate a new `session_id`.
+
+---
+
+## Usage Examples
+
+### cURL
+
+```bash
+# First message
+curl -X POST https://api.rabiaryal.com.np/api/v1/chat \
+     -H "x-api-key: demo-secret-2026" \
+     -H "Content-Type: application/json" \
+     -d '{"session_id": "my-session-1", "message": "show me colleges under 5 lakh"}'
+
+# Follow-up (same session_id — bot remembers budget)
+curl -X POST https://api.rabiaryal.com.np/api/v1/chat \
+     -H "x-api-key: demo-secret-2026" \
+     -H "Content-Type: application/json" \
+     -d '{"session_id": "my-session-1", "message": "computer"}'
+
+# Reset conversation
+curl -X POST https://api.rabiaryal.com.np/api/v1/chat \
+     -H "x-api-key: demo-secret-2026" \
+     -H "Content-Type: application/json" \
+     -d '{"session_id": "my-session-1", "message": "clear"}'
+```
+
+---
+
+### Postman
+
+1. **Method:** `POST`
+2. **URL:** `https://api.rabiaryal.com.np/api/v1/chat`
+3. **Headers tab:**
+   - `x-api-key` → `demo-secret-2026`
+   - `Content-Type` → `application/json`
+4. **Body tab** → raw → JSON:
+   ```json
+   {
+     "session_id": "test-session-1",
+     "message": "compare KEC and IOE"
+   }
+   ```
+
+**Auto-capture session_id between requests** — in the **Tests** tab of your first request:
+```javascript
+var res = pm.response.json();
+pm.environment.set("session_id", res.session_id);
+```
+
+Then in every subsequent body use `{{session_id}}`:
+```json
+{
+  "session_id": "{{session_id}}",
+  "message": "which one has hostel?"
+}
+```
+
+---
+
+### React / JavaScript (fetch)
+
+```javascript
+// chatApi.js — copy this into your React project
+
+const API_BASE = "https://api.rabiaryal.com.np";
+const API_KEY  = "demo-secret-2026";
+
+// Call this once when the chat window opens
+export function createSessionId() {
+  return crypto.randomUUID();
+}
+
+export async function sendMessage(sessionId, message) {
+  const response = await fetch(`${API_BASE}/api/v1/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": API_KEY,
+    },
+    body: JSON.stringify({
+      session_id: sessionId,
+      message: message,
+    }),
+  });
+
+  if (response.status === 401) {
+    throw new Error("Invalid API key");
+  }
+  if (!response.ok) {
+    throw new Error(`Server error: ${response.status}`);
+  }
+
+  return response.json(); // returns the full ChatResponse object
+}
+```
+
+**Usage in a React component:**
+
+```jsx
+import { useState, useRef } from "react";
+import { createSessionId, sendMessage } from "./chatApi";
+
+export default function ChatWidget() {
+  const sessionId = useRef(createSessionId()); // fixed for this session
+  const [messages, setMessages] = useState([]);
+  const [input, setInput]       = useState("");
+  const [loading, setLoading]   = useState(false);
+
+  async function handleSend() {
+    if (!input.trim()) return;
+    const userMsg = input.trim();
+    setInput("");
+    setMessages(prev => [...prev, { role: "user", text: userMsg }]);
+    setLoading(true);
+
+    try {
+      const data = await sendMessage(sessionId.current, userMsg);
+      setMessages(prev => [...prev, { role: "bot", text: data.message }]);
+    } catch (err) {
+      setMessages(prev => [...prev, { role: "bot", text: `Error: ${err.message}` }]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div>
+      <div>
+        {messages.map((m, i) => (
+          <p key={i}><strong>{m.role}:</strong> {m.text}</p>
+        ))}
+        {loading && <p>...</p>}
+      </div>
+      <input value={input} onChange={e => setInput(e.target.value)}
+             onKeyDown={e => e.key === "Enter" && handleSend()} />
+      <button onClick={handleSend}>Send</button>
+    </div>
+  );
+}
+```
+
+---
+
+### Python (requests)
+
+```python
+import requests
+import uuid
+
+API_BASE = "https://api.rabiaryal.com.np"
+API_KEY  = "demo-secret-2026"
+HEADERS  = {
+    "x-api-key": API_KEY,
+    "Content-Type": "application/json",
+}
+
+session_id = str(uuid.uuid4())  # generate once per conversation
+
+def chat(message: str) -> str:
+    response = requests.post(
+        f"{API_BASE}/api/v1/chat",
+        headers=HEADERS,
+        json={"session_id": session_id, "message": message},
+    )
+    response.raise_for_status()
+    return response.json()["message"]
+
+# Example conversation
+print(chat("show me colleges under 5 lakh"))
+print(chat("computer"))          # follow-up — bot remembers budget
+print(chat("which have hostel")) # follow-up — bot remembers budget + course
+```
+
+---
+
+### Next.js / Node.js (server-side API route)
+
+```javascript
+// pages/api/chat.js  (or app/api/chat/route.js for App Router)
+
+const API_BASE = "https://api.rabiaryal.com.np";
+const API_KEY  = "demo-secret-2026"; // keep this server-side only
+
+export default async function handler(req, res) {
+  if (req.method !== "POST") return res.status(405).end();
+
+  const { session_id, message } = req.body;
+
+  const upstream = await fetch(`${API_BASE}/api/v1/chat`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": API_KEY,
+    },
+    body: JSON.stringify({ session_id, message }),
+  });
+
+  const data = await upstream.json();
+  res.status(upstream.status).json(data);
+}
+```
+
+> This proxies the request through your Next.js server so the API key is never exposed to the browser.
+
+---
+
+### Flutter / Dart
+
+```dart
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:uuid/uuid.dart';
+
+const String _apiBase = 'https://api.rabiaryal.com.np';
+const String _apiKey  = 'demo-secret-2026';
+
+class CrsApiService {
+  final String sessionId = const Uuid().v4(); // one per conversation
+
+  Future<String> sendMessage(String message) async {
+    final uri = Uri.parse('$_apiBase/api/v1/chat');
+    final response = await http.post(
+      uri,
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': _apiKey,
+      },
+      body: jsonEncode({
+        'session_id': sessionId,
+        'message': message,
+      }),
+    );
+
+    if (response.statusCode == 401) throw Exception('Invalid API key');
+    if (response.statusCode != 200) throw Exception('Server error');
+
+    final data = jsonDecode(response.body);
+    return data['message'] as String;
+  }
+}
+```
+
+---
+
+## What the Bot Can Answer
+
+| Example message | Intent triggered |
+|---|---|
+| `hello` / `hi` | `greeting` |
+| `tell me about KEC` | `college_details` |
+| `compare IOE and KU` | `compare_colleges` |
+| `show colleges in Kathmandu` | `search_college` |
+| `top rated colleges` | `best_items_search` |
+| `recommend colleges for rank 500, budget 6 lakh` | `personalized_recommendation` |
+| `colleges under 5 lakh for computer` | `recommend_with_constraints` |
+| `does KEC have hostel?` | `hostel_query` |
+| `contact number of Sagarmatha college` | `contact_query` |
+| `what is the fee of KU?` | `college_attribute_query` |
+| `how to get admission in KEC?` | `admission_process` |
+| `clear` | resets session context |
+
+---
+
+## Intent & Entity Reference
+
+**12 Intent labels:**
+`greeting`, `goodbye`, `college_details`, `compare_colleges`, `search_college`,
+`best_items_search`, `personalized_recommendation`, `recommend_with_constraints`,
+`hostel_query`, `contact_query`, `college_attribute_query`, `admission_process`
+
+**9 Entity types extracted from messages:**
+
+| Entity | Example |
+|---|---|
+| `COLLEGE_NAME` | "KEC", "Kathmandu University" |
+| `COURSE` | "Computer", "Civil", "BE Computer" |
+| `LOCATION` | "Kathmandu", "Lalitpur" |
+| `BUDGET` | "5 lakh", "600000" |
+| `RANK` | "500", "rank 1200" |
+| `COLLEGE_TYPE` | "government", "private" |
+| `ATTRIBUTE` | "fee", "rating", "hostel" |
+| `COLLEGE_NAME_1` | first college in comparisons |
+| `COLLEGE_NAME_2` | second college in comparisons |
+
+**Budget normalization:**
+
+| User input | Stored as |
+|---|---|
+| `"5 lakh"` | `500000` |
+| `"600000"` | `600000` |
+| `"7"` *(bare number < 1000)* | `700000` |
+| `"1.5 lakh"` | `150000` |
+
+---
+
+## Running the Backend
+
+```bash
+# 1. Activate environment
+conda activate bctproject
+
+# 2. Start server
+cd backend
+python -m app.main
+```
+
+Server starts at `http://localhost:8000`. Swagger docs at `http://localhost:8000/docs`.
+
+**With Cloudflare Tunnel** (run in a separate terminal):
+```bash
+cloudflared tunnel run
+```
+
+Both must be running simultaneously for the live URL to work.
+
+---
+
+## Changing the API Key
+
+Edit the one line in `backend/app/api/auth.py`:
+
+```python
+DEMO_API_KEY = os.getenv("DEMO_API_KEY", "demo-secret-2026")
+```
+
+Or set an environment variable before starting the server:
+```bash
+export DEMO_API_KEY="my-new-key"
+python -m app.main
+```
+
+---
+
+## Architecture Overview
+
+```
+User Message
+    │
+    ▼
+┌─────────────────────┐
+│   NLU Pipeline       │
+│  ┌───────────────┐  │
+│  │ BERT Intent    │──│──▶ Intent (12 labels)
+│  │ Classifier     │  │
+│  └───────────────┘  │
+│  ┌───────────────┐  │
+│  │ RoBERTa+CRF   │──│──▶ Entities (9 types, BIO tags)
+│  │ NER Extractor  │  │
+│  └───────────────┘  │
+└─────────────────────┘
+    │
+    ▼
+┌─────────────────────┐
+│  Dialogue Manager    │
+│  • Intent locking    │
+│  • Slot filling      │
+│  • Fuzzy matching    │
+│  • Context tracking  │
+└─────────────────────┘
+    │
+    ▼
+┌─────────────────────┐
+│  Intent Handlers     │──▶ MongoDB Query ──▶ Format Response
+│  (10 handlers)       │
+└─────────────────────┘
+    │
+    ▼
+  Response
+```
+
+**Database:** MongoDB Atlas — `crs` database, `college data` collection, 15 Nepal engineering colleges
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+| ------- | -------- |
+| `401 Unauthorized` | Check `x-api-key` header value — must be `demo-secret-2026` |
+| Follow-up messages lose context | Ensure same `session_id` is sent in every message |
+| `ModuleNotFoundError: No module named 'torchcrf'` | Run `pip install pytorch-crf` |
+| `ModuleNotFoundError: No module named 'rapidfuzz'` | Run `pip install rapidfuzz` |
+| MongoDB connection timeout | Check `.env.mongodb` URI, whitelist IP in Atlas Network Access |
+| Models not found on startup | Train both models first (Step 5) |
+| Frontend can't reach backend | Ensure backend is running on port 8000 |
+| CUDA out of memory during training | Add `--batch_size 8` to training command |
 | `seqeval` not found during entity training | Run `pip install seqeval` |

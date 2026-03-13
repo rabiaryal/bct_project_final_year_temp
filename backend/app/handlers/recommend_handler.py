@@ -30,12 +30,22 @@ def _format_response(top_colleges: List[Dict[str, Any]], slots: Dict[str, Any]) 
         msg = "Sorry, no colleges match your constraints.\n\n"
         msg += "Possible reasons:\n"
         if slots.get("rank"):
-            msg += f"  • Rank {slots['rank']} may be too high\n"
-        if slots.get("budget"):
+            msg += f"  • Rank {slots['rank']} may be too competitive for available seats\n"
+        if slots.get("budget") and slots.get("college_type"):
+            ctype = str(slots["college_type"]).upper()
+            budget = int(slots["budget"])
+            if ctype == "PUBLIC" and budget >= 500_000:
+                msg += f"  • Budget Rs.{budget:,} covers most public colleges — rank may be the limiting factor\n"
+            else:
+                msg += f"  • Budget Rs.{budget:,} may be too low for {ctype.lower()} colleges\n"
+        elif slots.get("budget"):
             msg += f"  • Budget Rs.{int(slots['budget']):,} may be too low\n"
         msg += "\nTry:\n"
-        msg += "  • Increasing your budget\n"
-        msg += "  • Removing location filter\n"
+        if slots.get("location"):
+            msg += "  • Removing the location filter\n"
+        if slots.get("college_type"):
+            msg += "  • Trying both public and private colleges\n"
+        msg += "  • Adjusting your budget or rank\n"
         msg += "  • Checking other courses"
         return msg
 

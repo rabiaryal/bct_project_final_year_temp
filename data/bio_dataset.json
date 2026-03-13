@@ -48415,6 +48415,8506 @@
       "intent": "college_attribute_query",
       "text": "What is the minimum rank for BE Computer Engineering at Sagarmatha Engineering College",
       "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "the",
+        "admission",
+        "steps",
+        "for",
+        "Thapathali",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Tell me the admission steps for Thapathali Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "do",
+        "I",
+        "apply",
+        "for",
+        "BE",
+        "Civil",
+        "Engineering",
+        "at",
+        "Khwopa",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How do I apply for BE Civil Engineering at Khwopa College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "entrance",
+        "exam",
+        "is",
+        "needed",
+        "for",
+        "Himalaya",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "What entrance exam is needed for Himalaya College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "you",
+        "walk",
+        "me",
+        "through",
+        "the",
+        "admission",
+        "process",
+        "at",
+        "Pulchowk",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "admission_process",
+      "text": "Can you walk me through the admission process at Pulchowk Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "documents",
+        "do",
+        "I",
+        "need",
+        "to",
+        "apply",
+        "to",
+        "Kathmandu",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "What documents do I need to apply to Kathmandu Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "does",
+        "someone",
+        "get",
+        "admitted",
+        "to",
+        "BE",
+        "Computer",
+        "Engineering",
+        "at",
+        "Kantipur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How does someone get admitted to BE Computer Engineering at Kantipur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "an",
+        "entrance",
+        "test",
+        "for",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Is there an entrance test for Sagarmatha Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "application",
+        "process",
+        "for",
+        "BE",
+        "Electrical",
+        "Engineering",
+        "at",
+        "National",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "What is the application process for BE Electrical Engineering at National College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "do",
+        "I",
+        "get",
+        "into",
+        "Lalitpur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How do I get into Lalitpur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "how",
+        "admissions",
+        "work",
+        "at",
+        "Kathford",
+        "International",
+        "College",
+        "for",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "admission_process",
+      "text": "Tell me how admissions work at Kathford International College for computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Do",
+        "I",
+        "need",
+        "to",
+        "appear",
+        "in",
+        "IOE",
+        "entrance",
+        "to",
+        "join",
+        "Pashchimanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Do I need to appear in IOE entrance to join Pashchimanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What's",
+        "the",
+        "process",
+        "to",
+        "enroll",
+        "in",
+        "BE",
+        "Mechanical",
+        "Engineering",
+        "at",
+        "Thapathali?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "What's the process to enroll in BE Mechanical Engineering at Thapathali?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "you",
+        "explain",
+        "the",
+        "steps",
+        "to",
+        "apply",
+        "to",
+        "Purwanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Can you explain the steps to apply to Purwanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "do",
+        "I",
+        "register",
+        "for",
+        "admission",
+        "at",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "and",
+        "Management?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How do I register for admission at Advanced College of Engineering and Management?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "required",
+        "to",
+        "get",
+        "admitted",
+        "into",
+        "BE",
+        "Electronics",
+        "Engineering",
+        "at",
+        "Janakpur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "What is required to get admitted into BE Electronics Engineering at Janakpur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "a",
+        "separate",
+        "application",
+        "form",
+        "for",
+        "Chitwan",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Is there a separate application form for Chitwan Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "rank",
+        "is",
+        "needed",
+        "and",
+        "how",
+        "do",
+        "I",
+        "apply",
+        "to",
+        "Pulchowk",
+        "for",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "admission_process",
+      "text": "What rank is needed and how do I apply to Pulchowk for civil engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "the",
+        "admission",
+        "procedure",
+        "for",
+        "BE",
+        "Civil",
+        "Engineering",
+        "at",
+        "Khwopa."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Give me the admission procedure for BE Civil Engineering at Khwopa.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "can",
+        "a",
+        "student",
+        "from",
+        "outside",
+        "Kathmandu",
+        "apply",
+        "to",
+        "Thapathali",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How can a student from outside Kathmandu apply to Thapathali Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "counseling",
+        "involved",
+        "in",
+        "the",
+        "admission",
+        "at",
+        "Kathmandu",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Is counseling involved in the admission at Kathmandu Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "is",
+        "the",
+        "best",
+        "engineering",
+        "college",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "best_items_search",
+      "text": "Which is the best engineering college in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "are",
+        "the",
+        "top",
+        "colleges",
+        "for",
+        "computer",
+        "engineering",
+        "in",
+        "Nepal?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "What are the top colleges for computer engineering in Nepal?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "the",
+        "best",
+        "public",
+        "engineering",
+        "colleges",
+        "available."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Tell me the best public engineering colleges available.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "college",
+        "has",
+        "the",
+        "highest",
+        "rating",
+        "for",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "best_items_search",
+      "text": "Which college has the highest rating for civil engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "best",
+        "private",
+        "engineering",
+        "college",
+        "in",
+        "Kathmandu?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "best_items_search",
+      "text": "What is the best private engineering college in Kathmandu?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "top-rated",
+        "colleges",
+        "in",
+        "Bagmati",
+        "Province."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "best_items_search",
+      "text": "Show me top-rated colleges in Bagmati Province.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "have",
+        "the",
+        "best",
+        "rating",
+        "for",
+        "electronics",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which colleges have the best rating for electronics engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "are",
+        "the",
+        "highest",
+        "ranked",
+        "colleges",
+        "for",
+        "electrical",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "best_items_search",
+      "text": "What are the highest ranked colleges for electrical engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Best",
+        "colleges",
+        "in",
+        "Bhaktapur",
+        "for",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Best colleges in Bhaktapur for engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "is",
+        "the",
+        "most",
+        "reputed",
+        "engineering",
+        "campus",
+        "in",
+        "Nepal?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which is the most reputed engineering campus in Nepal?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "the",
+        "top",
+        "3",
+        "colleges",
+        "for",
+        "mechanical",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "best_items_search",
+      "text": "Give me the top 3 colleges for mechanical engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Best",
+        "colleges",
+        "with",
+        "hostel",
+        "facility",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "best_items_search",
+      "text": "Best colleges with hostel facility in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "private",
+        "colleges",
+        "in",
+        "Kathmandu",
+        "are",
+        "top",
+        "rated?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which private colleges in Kathmandu are top rated?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "the",
+        "best",
+        "college",
+        "for",
+        "computer",
+        "engineering",
+        "under",
+        "10",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "best_items_search",
+      "text": "Suggest the best college for computer engineering under 10 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "number",
+        "one",
+        "college",
+        "for",
+        "civil",
+        "engineering",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "best_items_search",
+      "text": "What is the number one college for civil engineering in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "public",
+        "campus",
+        "in",
+        "Nepal",
+        "is",
+        "considered",
+        "best",
+        "overall?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which public campus in Nepal is considered best overall?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Best",
+        "college",
+        "for",
+        "computer",
+        "engineering",
+        "near",
+        "Kathmandu",
+        "valley?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Best college for computer engineering near Kathmandu valley?",
+      "failed": [
+        "COURSE:'BE'"
+      ]
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "have",
+        "a",
+        "rating",
+        "above",
+        "4.5?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which colleges have a rating above 4.5?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Top",
+        "engineering",
+        "colleges",
+        "for",
+        "someone",
+        "with",
+        "rank",
+        "under",
+        "500."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "best_items_search",
+      "text": "Top engineering colleges for someone with rank under 500.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "college",
+        "is",
+        "best",
+        "for",
+        "electronics",
+        "if",
+        "my",
+        "budget",
+        "is",
+        "8",
+        "lakhs?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "best_items_search",
+      "text": "Which college is best for electronics if my budget is 8 lakhs?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "Pulchowk",
+        "Engineering",
+        "Campus",
+        "a",
+        "public",
+        "or",
+        "private",
+        "college?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Is Pulchowk Engineering Campus a public or private college?",
+      "failed": [
+        "ATTRIBUTE:'type'"
+      ]
+    },
+    {
+      "tokens": [
+        "What",
+        "courses",
+        "does",
+        "Thapathali",
+        "Engineering",
+        "Campus",
+        "offer?"
+      ],
+      "labels": [
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What courses does Thapathali Engineering Campus offer?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "many",
+        "seats",
+        "are",
+        "there",
+        "in",
+        "BE",
+        "Computer",
+        "Engineering",
+        "at",
+        "Pulchowk?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "How many seats are there in BE Computer Engineering at Pulchowk?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "email",
+        "address",
+        "of",
+        "Kathmandu",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the email address of Kathmandu Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Where",
+        "exactly",
+        "is",
+        "National",
+        "College",
+        "of",
+        "Engineering",
+        "located?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "B-ATTRIBUTE"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Where exactly is National College of Engineering located?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "rating",
+        "of",
+        "Kantipur",
+        "Engineering",
+        "College",
+        "for",
+        "computer",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the rating of Kantipur Engineering College for computer engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Himalaya",
+        "College",
+        "of",
+        "Engineering",
+        "have",
+        "hostel",
+        "facilities?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "B-ATTRIBUTE",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Does Himalaya College of Engineering have hostel facilities?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "departments",
+        "are",
+        "available",
+        "in",
+        "Purwanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What departments are available in Purwanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "phone",
+        "number",
+        "for",
+        "Thapathali",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "I-ATTRIBUTE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the phone number for Thapathali Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "many",
+        "seats",
+        "does",
+        "Pulchowk",
+        "have",
+        "for",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "college_attribute_query",
+      "text": "How many seats does Pulchowk have for civil engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "Kathford",
+        "International",
+        "College",
+        "a",
+        "government",
+        "college?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Is Kathford International College a government college?",
+      "failed": [
+        "ATTRIBUTE:'type'"
+      ]
+    },
+    {
+      "tokens": [
+        "What",
+        "programs",
+        "does",
+        "Khwopa",
+        "College",
+        "of",
+        "Engineering",
+        "have?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What programs does Khwopa College of Engineering have?",
+      "failed": [
+        "ATTRIBUTE:'courses'"
+      ]
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "location",
+        "of",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the location of Sagarmatha Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Pashchimanchal",
+        "Campus",
+        "have",
+        "a",
+        "hostel",
+        "for",
+        "students?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Does Pashchimanchal Campus have a hostel for students?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "cut-off",
+        "rank",
+        "for",
+        "BE",
+        "Electronics",
+        "at",
+        "Pulchowk?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the cut-off rank for BE Electronics at Pulchowk?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "much",
+        "does",
+        "BE",
+        "Civil",
+        "Engineering",
+        "cost",
+        "at",
+        "Lalitpur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "B-ATTRIBUTE",
+        "I-ATTRIBUTE",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "How much does BE Civil Engineering cost at Lalitpur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "fee",
+        "structure",
+        "at",
+        "Chitwan",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the fee structure at Chitwan Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "a",
+        "private",
+        "institution?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Is Advanced College of Engineering a private institution?",
+      "failed": [
+        "ATTRIBUTE:'type'"
+      ]
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "total",
+        "fee",
+        "for",
+        "BE",
+        "Mechanical",
+        "Engineering",
+        "at",
+        "Thapathali?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the total fee for BE Mechanical Engineering at Thapathali?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Janakpur",
+        "Engineering",
+        "College",
+        "offer",
+        "mechanical",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Does Janakpur Engineering College offer mechanical engineering?",
+      "failed": [
+        "ATTRIBUTE:'courses'"
+      ]
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "all",
+        "the",
+        "details",
+        "about",
+        "Pulchowk",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Give me all the details about Pulchowk Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "everything",
+        "about",
+        "Kathmandu",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Tell me everything about Kathmandu Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "can",
+        "you",
+        "tell",
+        "me",
+        "about",
+        "Himalaya",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "What can you tell me about Himalaya College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "know",
+        "more",
+        "about",
+        "Kantipur",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "I want to know more about Kantipur Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Describe",
+        "Khwopa",
+        "College",
+        "of",
+        "Engineering",
+        "in",
+        "detail."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O"
+      ],
+      "intent": "college_details",
+      "text": "Describe Khwopa College of Engineering in detail.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "you",
+        "give",
+        "me",
+        "info",
+        "about",
+        "National",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Can you give me info about National College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "do",
+        "you",
+        "know",
+        "about",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "What do you know about Sagarmatha Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "heard",
+        "about",
+        "Kathford",
+        "International",
+        "College,",
+        "can",
+        "you",
+        "elaborate?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_details",
+      "text": "I heard about Kathford International College, can you elaborate?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "a",
+        "full",
+        "overview",
+        "of",
+        "Thapathali",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Give me a full overview of Thapathali Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "Lalitpur",
+        "Engineering",
+        "College",
+        "all",
+        "about?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O"
+      ],
+      "intent": "college_details",
+      "text": "What is Lalitpur Engineering College all about?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "about",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "and",
+        "Management."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Tell me about Advanced College of Engineering and Management.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What's",
+        "the",
+        "full",
+        "profile",
+        "of",
+        "Purwanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "What's the full profile of Purwanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "everything",
+        "about",
+        "Pashchimanchal",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Show me everything about Pashchimanchal Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "details",
+        "on",
+        "Chitwan",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Give details on Chitwan Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "learn",
+        "more",
+        "about",
+        "Janakpur",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "I want to learn more about Janakpur Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "does",
+        "Pulchowk",
+        "Engineering",
+        "Campus",
+        "have",
+        "to",
+        "offer?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_details",
+      "text": "What does Pulchowk Engineering Campus have to offer?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "you",
+        "tell",
+        "me",
+        "all",
+        "about",
+        "Khwopa",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Can you tell me all about Khwopa College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "curious",
+        "about",
+        "Kathford",
+        "College,",
+        "what's",
+        "there",
+        "to",
+        "know?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_details",
+      "text": "I'm curious about Kathford College, what's there to know?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Describe",
+        "everything",
+        "about",
+        "National",
+        "College",
+        "of",
+        "Engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Describe everything about National College of Engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "the",
+        "complete",
+        "profile",
+        "of",
+        "Himalaya",
+        "College",
+        "of",
+        "Engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_details",
+      "text": "Give me the complete profile of Himalaya College of Engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Compare",
+        "Pulchowk",
+        "and",
+        "Thapathali",
+        "Engineering",
+        "Campus."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Compare Pulchowk and Thapathali Engineering Campus.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "is",
+        "better",
+        "for",
+        "computer",
+        "engineering,",
+        "Kathmandu",
+        "Engineering",
+        "College",
+        "or",
+        "Kantipur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which is better for computer engineering, Kathmandu Engineering College or Kantipur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "are",
+        "the",
+        "differences",
+        "between",
+        "Himalaya",
+        "College",
+        "and",
+        "National",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "What are the differences between Himalaya College and National College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "Kathford",
+        "better",
+        "than",
+        "Lalitpur",
+        "Engineering",
+        "College",
+        "for",
+        "fees?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "B-ATTRIBUTE"
+      ],
+      "intent": "compare_colleges",
+      "text": "Is Kathford better than Lalitpur Engineering College for fees?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Pulchowk",
+        "vs",
+        "Thapathali,",
+        "which",
+        "one",
+        "should",
+        "I",
+        "pick",
+        "for",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "compare_colleges",
+      "text": "Pulchowk vs Thapathali, which one should I pick for civil engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "does",
+        "Sagarmatha",
+        "Engineering",
+        "College",
+        "compare",
+        "to",
+        "Kantipur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "How does Sagarmatha Engineering College compare to Kantipur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "college",
+        "has",
+        "a",
+        "better",
+        "rating,",
+        "Khwopa",
+        "or",
+        "Janakpur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which college has a better rating, Khwopa or Janakpur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Between",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "and",
+        "Kathmandu",
+        "Engineering",
+        "College,",
+        "which",
+        "one",
+        "is",
+        "more",
+        "affordable?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Between Advanced College of Engineering and Kathmandu Engineering College, which one is more affordable?",
+      "failed": [
+        "ATTRIBUTE:'fee'"
+      ]
+    },
+    {
+      "tokens": [
+        "I'm",
+        "torn",
+        "between",
+        "Purwanchal",
+        "and",
+        "Pashchimanchal",
+        "Engineering",
+        "Campus,",
+        "can",
+        "you",
+        "help",
+        "me",
+        "compare?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "I'm torn between Purwanchal and Pashchimanchal Engineering Campus, can you help me compare?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Compare",
+        "Kantipur",
+        "Engineering",
+        "College",
+        "and",
+        "Himalaya",
+        "College",
+        "in",
+        "terms",
+        "of",
+        "computer",
+        "engineering",
+        "fees."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE"
+      ],
+      "intent": "compare_colleges",
+      "text": "Compare Kantipur Engineering College and Himalaya College in terms of computer engineering fees.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "has",
+        "more",
+        "seats,",
+        "Pulchowk",
+        "or",
+        "Thapathali",
+        "for",
+        "computer",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which has more seats, Pulchowk or Thapathali for computer engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Kathford",
+        "vs",
+        "National",
+        "College",
+        "of",
+        "Engineering,",
+        "which",
+        "has",
+        "better",
+        "ratings?"
+      ],
+      "labels": [
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Kathford vs National College of Engineering, which has better ratings?",
+      "failed": [
+        "ATTRIBUTE:'rating'"
+      ]
+    },
+    {
+      "tokens": [
+        "Is",
+        "Lalitpur",
+        "Engineering",
+        "College",
+        "cheaper",
+        "than",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Is Lalitpur Engineering College cheaper than Sagarmatha Engineering College?",
+      "failed": [
+        "ATTRIBUTE:'fee'"
+      ]
+    },
+    {
+      "tokens": [
+        "Which",
+        "campus",
+        "has",
+        "more",
+        "courses,",
+        "Purwanchal",
+        "or",
+        "Chitwan",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which campus has more courses, Purwanchal or Chitwan Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Tell",
+        "me",
+        "the",
+        "pros",
+        "and",
+        "cons",
+        "of",
+        "Thapathali",
+        "vs",
+        "Kathmandu",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Tell me the pros and cons of Thapathali vs Kathmandu Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Compare",
+        "Khwopa",
+        "and",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "for",
+        "electronics",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Compare Khwopa and Advanced College of Engineering for electronics engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Between",
+        "Himalaya",
+        "and",
+        "Kathford,",
+        "which",
+        "one",
+        "is",
+        "better",
+        "overall?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Between Himalaya and Kathford, which one is better overall?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "Purwanchal",
+        "Engineering",
+        "Campus",
+        "better",
+        "ranked",
+        "than",
+        "Pashchimanchal?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Is Purwanchal Engineering Campus better ranked than Pashchimanchal?",
+      "failed": [
+        "ATTRIBUTE:'rank'"
+      ]
+    },
+    {
+      "tokens": [
+        "Compare",
+        "all",
+        "public",
+        "colleges",
+        "vs",
+        "private",
+        "colleges",
+        "in",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "compare_colleges",
+      "text": "Compare all public colleges vs private colleges in Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "is",
+        "better,",
+        "Janakpur",
+        "or",
+        "Lalitpur",
+        "Engineering",
+        "College",
+        "for",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COURSE",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which is better, Janakpur or Lalitpur Engineering College for civil engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "contact",
+        "number",
+        "of",
+        "Pulchowk",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "What is the contact number of Pulchowk Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "can",
+        "I",
+        "contact",
+        "Thapathali",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "How can I contact Thapathali Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "the",
+        "email",
+        "address",
+        "of",
+        "Kathmandu",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "Give me the email address of Kathmandu Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What's",
+        "the",
+        "phone",
+        "number",
+        "for",
+        "Purwanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "What's the phone number for Purwanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "I",
+        "get",
+        "the",
+        "contact",
+        "details",
+        "of",
+        "Himalaya",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "Can I get the contact details of Himalaya College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "need",
+        "to",
+        "call",
+        "Khwopa",
+        "College,",
+        "what's",
+        "their",
+        "number?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "contact_query",
+      "text": "I need to call Khwopa College, what's their number?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "email",
+        "should",
+        "I",
+        "write",
+        "to",
+        "for",
+        "admissions",
+        "at",
+        "Pulchowk?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "What email should I write to for admissions at Pulchowk?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "do",
+        "I",
+        "reach",
+        "the",
+        "admissions",
+        "office",
+        "of",
+        "National",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "How do I reach the admissions office of National College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Please",
+        "share",
+        "the",
+        "contact",
+        "info",
+        "for",
+        "Kantipur",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "Please share the contact info for Kantipur Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "are",
+        "the",
+        "contact",
+        "details",
+        "for",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "What are the contact details for Advanced College of Engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "a",
+        "website",
+        "or",
+        "email",
+        "for",
+        "Kathford",
+        "International",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "Is there a website or email for Kathford International College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "official",
+        "email",
+        "of",
+        "Thapathali",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "contact_query",
+      "text": "What is the official email of Thapathali Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "inquire",
+        "about",
+        "Chitwan",
+        "Engineering",
+        "Campus,",
+        "what's",
+        "their",
+        "contact?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "contact_query",
+      "text": "I want to inquire about Chitwan Engineering Campus, what's their contact?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "the",
+        "phone",
+        "number",
+        "of",
+        "Lalitpur",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "Give me the phone number of Lalitpur Engineering College.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "How",
+        "can",
+        "I",
+        "get",
+        "in",
+        "touch",
+        "with",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "contact_query",
+      "text": "How can I get in touch with Sagarmatha Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hello,",
+        "I",
+        "need",
+        "help",
+        "finding",
+        "a",
+        "college."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hello, I need help finding a college.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hi",
+        "there!",
+        "Can",
+        "you",
+        "help",
+        "me",
+        "with",
+        "college",
+        "information?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hi there! Can you help me with college information?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hey,",
+        "I'm",
+        "looking",
+        "for",
+        "engineering",
+        "colleges",
+        "in",
+        "Nepal."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hey, I'm looking for engineering colleges in Nepal.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Namaste,",
+        "I",
+        "want",
+        "to",
+        "know",
+        "about",
+        "engineering",
+        "admissions."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Namaste, I want to know about engineering admissions.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Good",
+        "morning!",
+        "I",
+        "need",
+        "help",
+        "choosing",
+        "a",
+        "college."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Good morning! I need help choosing a college.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hi,",
+        "I",
+        "just",
+        "got",
+        "my",
+        "IOE",
+        "results",
+        "and",
+        "need",
+        "guidance."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hi, I just got my IOE results and need guidance.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hello!",
+        "I'm",
+        "a",
+        "student",
+        "looking",
+        "for",
+        "college",
+        "recommendations."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hello! I'm a student looking for college recommendations.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hey!",
+        "Can",
+        "you",
+        "suggest",
+        "some",
+        "engineering",
+        "colleges?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hey! Can you suggest some engineering colleges?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Namaskar,",
+        "I'm",
+        "confused",
+        "about",
+        "which",
+        "college",
+        "to",
+        "choose."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Namaskar, I'm confused about which college to choose.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Hi,",
+        "I",
+        "want",
+        "to",
+        "explore",
+        "my",
+        "options",
+        "after",
+        "IOE",
+        "entrance."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "greeting",
+      "text": "Hi, I want to explore my options after IOE entrance.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Thank",
+        "you,",
+        "that",
+        "was",
+        "really",
+        "helpful!"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Thank you, that was really helpful!",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "think",
+        "I",
+        "have",
+        "enough",
+        "info",
+        "now,",
+        "thanks!"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "I think I have enough info now, thanks!",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Thanks",
+        "a",
+        "lot,",
+        "I'll",
+        "make",
+        "my",
+        "decision",
+        "now."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Thanks a lot, I'll make my decision now.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Okay,",
+        "I'm",
+        "done",
+        "for",
+        "now.",
+        "Bye!"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Okay, I'm done for now. Bye!",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "That's",
+        "all",
+        "I",
+        "needed,",
+        "thank",
+        "you",
+        "so",
+        "much."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "That's all I needed, thank you so much.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Alright,",
+        "I'll",
+        "look",
+        "into",
+        "those",
+        "colleges.",
+        "Thanks!"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Alright, I'll look into those colleges. Thanks!",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Goodbye,",
+        "you",
+        "were",
+        "very",
+        "helpful."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Goodbye, you were very helpful.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "appreciate",
+        "the",
+        "help,",
+        "see",
+        "you",
+        "later."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "I appreciate the help, see you later.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Okay",
+        "bye,",
+        "I'll",
+        "now",
+        "apply",
+        "to",
+        "those",
+        "colleges."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Okay bye, I'll now apply to those colleges.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Thank",
+        "you",
+        "for",
+        "the",
+        "suggestions,",
+        "I'm",
+        "logging",
+        "off",
+        "now."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "goodbye",
+      "text": "Thank you for the suggestions, I'm logging off now.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "in",
+        "Lalitpur",
+        "have",
+        "hostel",
+        "facilities?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Which colleges in Lalitpur have hostel facilities?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Pulchowk",
+        "Engineering",
+        "Campus",
+        "provide",
+        "accommodation",
+        "for",
+        "students?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Does Pulchowk Engineering Campus provide accommodation for students?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "a",
+        "hostel",
+        "at",
+        "Thapathali",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Is there a hostel at Thapathali Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "coming",
+        "from",
+        "outside",
+        "Kathmandu,",
+        "which",
+        "colleges",
+        "have",
+        "hostels?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "I'm coming from outside Kathmandu, which colleges have hostels?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "all",
+        "engineering",
+        "colleges",
+        "with",
+        "hostel",
+        "in",
+        "Nepal."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "List all engineering colleges with hostel in Nepal.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Chitwan",
+        "Engineering",
+        "Campus",
+        "offer",
+        "hostel",
+        "stay?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Does Chitwan Engineering Campus offer hostel stay?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "need",
+        "a",
+        "college",
+        "that",
+        "has",
+        "a",
+        "hostel",
+        "because",
+        "I",
+        "live",
+        "far",
+        "away."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "I need a college that has a hostel because I live far away.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "public",
+        "colleges",
+        "have",
+        "hostel",
+        "available",
+        "for",
+        "students?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Which public colleges have hostel available for students?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Pashchimanchal",
+        "Engineering",
+        "Campus",
+        "have",
+        "a",
+        "hostel?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Does Pashchimanchal Engineering Campus have a hostel?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "I",
+        "stay",
+        "in",
+        "a",
+        "hostel",
+        "if",
+        "I",
+        "join",
+        "Purwanchal",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "hostel_query",
+      "text": "Can I stay in a hostel if I join Purwanchal Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "near",
+        "Bhaktapur",
+        "have",
+        "hostel",
+        "facilities?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Which colleges near Bhaktapur have hostel facilities?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "a",
+        "college",
+        "in",
+        "Kathmandu",
+        "with",
+        "hostel,",
+        "what",
+        "are",
+        "my",
+        "options?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "I want a college in Kathmandu with hostel, what are my options?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "hostel",
+        "available",
+        "at",
+        "Kantipur",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "hostel_query",
+      "text": "Is there hostel available at Kantipur Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Advanced",
+        "College",
+        "of",
+        "Engineering",
+        "have",
+        "a",
+        "place",
+        "to",
+        "stay",
+        "on",
+        "campus?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Does Advanced College of Engineering have a place to stay on campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "me",
+        "colleges",
+        "with",
+        "hostel",
+        "under",
+        "8",
+        "lakhs",
+        "budget."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O"
+      ],
+      "intent": "hostel_query",
+      "text": "Suggest me colleges with hostel under 8 lakhs budget.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "live",
+        "in",
+        "Lalitpur,",
+        "suggest",
+        "me",
+        "a",
+        "nearby",
+        "college."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I live in Lalitpur, suggest me a nearby college.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "from",
+        "Bhaktapur",
+        "and",
+        "want",
+        "to",
+        "study",
+        "civil",
+        "engineering,",
+        "what",
+        "do",
+        "you",
+        "suggest?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I'm from Bhaktapur and want to study civil engineering, what do you suggest?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "budget",
+        "is",
+        "6",
+        "lakhs",
+        "and",
+        "I",
+        "prefer",
+        "a",
+        "college",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "My budget is 6 lakhs and I prefer a college in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "am",
+        "from",
+        "Pokhara,",
+        "suggest",
+        "colleges",
+        "close",
+        "to",
+        "me."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I am from Pokhara, suggest colleges close to me.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "stay",
+        "near",
+        "home",
+        "in",
+        "Lalitpur",
+        "and",
+        "study",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I want to stay near home in Lalitpur and study computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "got",
+        "rank",
+        "1500",
+        "in",
+        "IOE",
+        "and",
+        "my",
+        "budget",
+        "is",
+        "8",
+        "lakhs,",
+        "I",
+        "live",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I got rank 1500 in IOE and my budget is 8 lakhs, I live in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "me",
+        "a",
+        "good",
+        "engineering",
+        "college,",
+        "I",
+        "prefer",
+        "public",
+        "type."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "Suggest me a good engineering college, I prefer public type.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "in",
+        "Lalitpur",
+        "and",
+        "I",
+        "want",
+        "a",
+        "college",
+        "with",
+        "hostel",
+        "facility."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I'm in Lalitpur and I want a college with hostel facility.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "secured",
+        "rank",
+        "2800",
+        "and",
+        "have",
+        "a",
+        "budget",
+        "of",
+        "9",
+        "lakhs,",
+        "help",
+        "me",
+        "choose."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I secured rank 2800 and have a budget of 9 lakhs, help me choose.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "IOE",
+        "rank",
+        "is",
+        "450",
+        "and",
+        "I",
+        "want",
+        "the",
+        "best",
+        "college",
+        "possible."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "My IOE rank is 450 and I want the best college possible.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "based",
+        "in",
+        "Kathmandu",
+        "and",
+        "can",
+        "spend",
+        "around",
+        "12",
+        "lakhs",
+        "total."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I'm based in Kathmandu and can spend around 12 lakhs total.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Recommend",
+        "a",
+        "college",
+        "near",
+        "Pulchowk",
+        "area",
+        "for",
+        "civil",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "Recommend a college near Pulchowk area for civil engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "live",
+        "near",
+        "Baneshwor,",
+        "which",
+        "colleges",
+        "are",
+        "around",
+        "that",
+        "area?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I live near Baneshwor, which colleges are around that area?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "prefer",
+        "a",
+        "private",
+        "college",
+        "in",
+        "Lalitpur",
+        "with",
+        "a",
+        "decent",
+        "rating."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I prefer a private college in Lalitpur with a decent rating.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Got",
+        "rank",
+        "3200,",
+        "studying",
+        "mechanical",
+        "engineering",
+        "is",
+        "my",
+        "goal,",
+        "suggest",
+        "options."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "Got rank 3200, studying mechanical engineering is my goal, suggest options.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "stay",
+        "near",
+        "Koteshwor,",
+        "which",
+        "engineering",
+        "colleges",
+        "are",
+        "close",
+        "to",
+        "me?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I stay near Koteshwor, which engineering colleges are close to me?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "from",
+        "Sanepa",
+        "area,",
+        "suggest",
+        "colleges",
+        "within",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I'm from Sanepa area, suggest colleges within Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "family",
+        "is",
+        "in",
+        "Bhaktapur",
+        "so",
+        "I",
+        "want",
+        "to",
+        "study",
+        "near",
+        "there."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "My family is in Bhaktapur so I want to study near there.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "have",
+        "a",
+        "rank",
+        "of",
+        "700",
+        "and",
+        "want",
+        "computer",
+        "or",
+        "electronics",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I have a rank of 700 and want computer or electronics engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "live",
+        "in",
+        "Patan",
+        "and",
+        "need",
+        "a",
+        "college",
+        "I",
+        "can",
+        "commute",
+        "to",
+        "easily."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I live in Patan and need a college I can commute to easily.",
+      "failed": [
+        "LOCATION:'Lalitpur'"
+      ]
+    },
+    {
+      "tokens": [
+        "I'm",
+        "a",
+        "girl",
+        "student",
+        "from",
+        "Kathmandu",
+        "looking",
+        "for",
+        "safe",
+        "colleges",
+        "with",
+        "good",
+        "ratings."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I'm a girl student from Kathmandu looking for safe colleges with good ratings.",
+      "failed": [
+        "ATTRIBUTE:'rating'"
+      ]
+    },
+    {
+      "tokens": [
+        "I",
+        "finished",
+        "+2",
+        "science",
+        "and",
+        "live",
+        "in",
+        "central",
+        "Kathmandu,",
+        "suggest",
+        "a",
+        "college."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I finished +2 science and live in central Kathmandu, suggest a college.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "rank",
+        "is",
+        "1800",
+        "and",
+        "I",
+        "want",
+        "a",
+        "college",
+        "in",
+        "Bagmati",
+        "Province."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "My rank is 1800 and I want a college in Bagmati Province.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "came",
+        "from",
+        "outside",
+        "the",
+        "valley",
+        "and",
+        "need",
+        "hostel",
+        "plus",
+        "good",
+        "education."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I came from outside the valley and need hostel plus good education.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "don't",
+        "want",
+        "to",
+        "go",
+        "far",
+        "from",
+        "home,",
+        "I'm",
+        "in",
+        "New",
+        "Baneshwor",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "personalized_recommendation",
+      "text": "I don't want to go far from home, I'm in New Baneshwor Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Recommend",
+        "me",
+        "a",
+        "college,",
+        "my",
+        "rank",
+        "is",
+        "1500,",
+        "budget",
+        "is",
+        "8",
+        "lakhs",
+        "and",
+        "I",
+        "live",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Recommend me a college, my rank is 1500, budget is 8 lakhs and I live in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "live",
+        "in",
+        "Lalitpur,",
+        "my",
+        "rank",
+        "is",
+        "2000",
+        "and",
+        "budget",
+        "is",
+        "6",
+        "lakhs,",
+        "suggest",
+        "a",
+        "college."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I live in Lalitpur, my rank is 2000 and budget is 6 lakhs, suggest a college.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "IOE",
+        "rank",
+        "is",
+        "1800,",
+        "I'm",
+        "from",
+        "Bhaktapur",
+        "and",
+        "can",
+        "spend",
+        "7",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My IOE rank is 1800, I'm from Bhaktapur and can spend 7 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Best",
+        "colleges",
+        "for",
+        "rank",
+        "1100",
+        "in",
+        "Kathmandu",
+        "with",
+        "fees",
+        "around",
+        "5",
+        "to",
+        "8",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Best colleges for rank 1100 in Kathmandu with fees around 5 to 8 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "total",
+        "budget",
+        "is",
+        "5",
+        "lakhs,",
+        "which",
+        "colleges",
+        "can",
+        "I",
+        "afford?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My total budget is 5 lakhs, which colleges can I afford?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "scored",
+        "rank",
+        "3500",
+        "in",
+        "entrance",
+        "exam,",
+        "what",
+        "are",
+        "my",
+        "options",
+        "in",
+        "Kathmandu?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I scored rank 3500 in entrance exam, what are my options in Kathmandu?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "engineering",
+        "colleges",
+        "with",
+        "rank",
+        "under",
+        "2500",
+        "in",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest engineering colleges with rank under 2500 in Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "have",
+        "a",
+        "budget",
+        "of",
+        "NPR",
+        "800000",
+        "and",
+        "want",
+        "a",
+        "private",
+        "college",
+        "in",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I have a budget of NPR 800000 and want a private college in Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "rank",
+        "is",
+        "900",
+        "and",
+        "I",
+        "want",
+        "a",
+        "public",
+        "college,",
+        "help",
+        "me",
+        "find",
+        "one."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My rank is 900 and I want a public college, help me find one.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Recommend",
+        "colleges",
+        "for",
+        "rank",
+        "2800",
+        "in",
+        "Bhaktapur",
+        "area."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Recommend colleges for rank 2800 in Bhaktapur area.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Colleges",
+        "with",
+        "fees",
+        "not",
+        "more",
+        "than",
+        "six",
+        "lakhs",
+        "for",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Colleges with fees not more than six lakhs for computer engineering.",
+      "failed": [
+        "BUDGET:'600000'"
+      ]
+    },
+    {
+      "tokens": [
+        "My",
+        "CEE",
+        "rank",
+        "is",
+        "2800,",
+        "suggest",
+        "some",
+        "good",
+        "colleges."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My CEE rank is 2800, suggest some good colleges.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "can",
+        "spend",
+        "around",
+        "50,000",
+        "per",
+        "year",
+        "on",
+        "fees,",
+        "what",
+        "colleges",
+        "fit",
+        "that?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I can spend around 50,000 per year on fees, what colleges fit that?",
+      "failed": [
+        "BUDGET:'50000'"
+      ]
+    },
+    {
+      "tokens": [
+        "I",
+        "have",
+        "2.5",
+        "lakh",
+        "rupees",
+        "for",
+        "my",
+        "entire",
+        "education,",
+        "any",
+        "options?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I have 2.5 lakh rupees for my entire education, any options?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "colleges",
+        "where",
+        "total",
+        "cost",
+        "is",
+        "under",
+        "3",
+        "lakh."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest colleges where total cost is under 3 lakh.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "can",
+        "afford",
+        "up",
+        "to",
+        "Rs.",
+        "7,50,000",
+        "total",
+        "and",
+        "got",
+        "rank",
+        "2200."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I can afford up to Rs. 7,50,000 total and got rank 2200.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "entrance",
+        "rank",
+        "is",
+        "1200",
+        "and",
+        "I",
+        "live",
+        "near",
+        "Lalitpur,",
+        "which",
+        "colleges",
+        "can",
+        "I",
+        "get?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My entrance rank is 1200 and I live near Lalitpur, which colleges can I get?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "stood",
+        "150th",
+        "in",
+        "the",
+        "merit",
+        "list",
+        "and",
+        "want",
+        "to",
+        "study",
+        "civil",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I stood 150th in the merit list and want to study civil engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "scored",
+        "rank",
+        "450",
+        "in",
+        "IOE",
+        "and",
+        "my",
+        "preferred",
+        "location",
+        "is",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I scored rank 450 in IOE and my preferred location is Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "a",
+        "college",
+        "for",
+        "civil",
+        "engineering",
+        "in",
+        "Bagmati",
+        "Province",
+        "under",
+        "5",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want a college for civil engineering in Bagmati Province under 5 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Recommend",
+        "colleges",
+        "near",
+        "Patan",
+        "with",
+        "fees",
+        "under",
+        "10",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Recommend colleges near Patan with fees under 10 lakhs.",
+      "failed": [
+        "LOCATION:'Lalitpur'"
+      ]
+    },
+    {
+      "tokens": [
+        "I'm",
+        "from",
+        "Pokhara,",
+        "my",
+        "rank",
+        "is",
+        "2400,",
+        "what",
+        "are",
+        "my",
+        "choices?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I'm from Pokhara, my rank is 2400, what are my choices?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "colleges",
+        "can",
+        "a",
+        "rank",
+        "3000",
+        "student",
+        "get",
+        "into",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "What colleges can a rank 3000 student get into in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "an",
+        "engineering",
+        "college",
+        "in",
+        "Kathmandu",
+        "under",
+        "12",
+        "lakhs",
+        "with",
+        "rank",
+        "1700."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want an engineering college in Kathmandu under 12 lakhs with rank 1700.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Filter",
+        "colleges",
+        "for",
+        "rank",
+        "2600",
+        "with",
+        "fees",
+        "below",
+        "9",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Filter colleges for rank 2600 with fees below 9 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "rank",
+        "is",
+        "3500",
+        "and",
+        "I",
+        "have",
+        "a",
+        "budget",
+        "of",
+        "11",
+        "lakhs,",
+        "what",
+        "private",
+        "colleges",
+        "are",
+        "available?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My rank is 3500 and I have a budget of 11 lakhs, what private colleges are available?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "electrical",
+        "engineering",
+        "colleges",
+        "for",
+        "rank",
+        "2500",
+        "in",
+        "Kathmandu",
+        "valley."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest electrical engineering colleges for rank 2500 in Kathmandu valley.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "study",
+        "electronics",
+        "and",
+        "my",
+        "rank",
+        "is",
+        "3200,",
+        "budget",
+        "around",
+        "8",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want to study electronics and my rank is 3200, budget around 8 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Any",
+        "college",
+        "in",
+        "Bhaktapur",
+        "I",
+        "can",
+        "get",
+        "with",
+        "rank",
+        "2800",
+        "and",
+        "budget",
+        "8",
+        "lakhs?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Any college in Bhaktapur I can get with rank 2800 and budget 8 lakhs?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "need",
+        "a",
+        "mechanical",
+        "engineering",
+        "college",
+        "and",
+        "my",
+        "rank",
+        "is",
+        "2500."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I need a mechanical engineering college and my rank is 2500.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "me",
+        "a",
+        "college",
+        "in",
+        "Lalitpur",
+        "for",
+        "rank",
+        "3100",
+        "under",
+        "12",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest me a college in Lalitpur for rank 3100 under 12 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "have",
+        "rank",
+        "1400",
+        "and",
+        "a",
+        "budget",
+        "of",
+        "around",
+        "5",
+        "lakhs,",
+        "which",
+        "public",
+        "campus",
+        "can",
+        "I",
+        "join?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I have rank 1400 and a budget of around 5 lakhs, which public campus can I join?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "budget",
+        "is",
+        "around",
+        "13",
+        "lakhs",
+        "and",
+        "I",
+        "want",
+        "computer",
+        "engineering",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My budget is around 13 lakhs and I want computer engineering in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Rank",
+        "1900,",
+        "budget",
+        "9",
+        "lakhs,",
+        "prefer",
+        "Lalitpur",
+        "area,",
+        "suggest",
+        "colleges."
+      ],
+      "labels": [
+        "O",
+        "B-RANK",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Rank 1900, budget 9 lakhs, prefer Lalitpur area, suggest colleges.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "am",
+        "from",
+        "Kathmandu",
+        "and",
+        "got",
+        "rank",
+        "3700,",
+        "any",
+        "private",
+        "college",
+        "options?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I am from Kathmandu and got rank 3700, any private college options?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "in",
+        "Bhaktapur",
+        "I",
+        "can",
+        "afford",
+        "with",
+        "8",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Show me colleges in Bhaktapur I can afford with 8 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "a",
+        "public",
+        "college",
+        "for",
+        "electrical",
+        "engineering",
+        "for",
+        "rank",
+        "2400."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest a public college for electrical engineering for rank 2400.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "prefer",
+        "Kathmandu",
+        "colleges,",
+        "rank",
+        "1300,",
+        "budget",
+        "5",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I prefer Kathmandu colleges, rank 1300, budget 5 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Budget:",
+        "NPR",
+        "800000,",
+        "rank",
+        "3000,",
+        "looking",
+        "for",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-BUDGET",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Budget: NPR 800000, rank 3000, looking for computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "colleges",
+        "can",
+        "I",
+        "afford",
+        "with",
+        "10",
+        "lakhs",
+        "for",
+        "electronics",
+        "engineering",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "What colleges can I afford with 10 lakhs for electronics engineering in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "a",
+        "college",
+        "with",
+        "hostel,",
+        "rank",
+        "is",
+        "2100",
+        "and",
+        "budget",
+        "is",
+        "6",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want a college with hostel, rank is 2100 and budget is 6 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "live",
+        "in",
+        "Kathmandu",
+        "valley",
+        "and",
+        "have",
+        "rank",
+        "600,",
+        "what",
+        "are",
+        "the",
+        "best",
+        "options",
+        "for",
+        "me?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I live in Kathmandu valley and have rank 600, what are the best options for me?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Recommend",
+        "civil",
+        "engineering",
+        "colleges",
+        "near",
+        "Bhaktapur",
+        "for",
+        "rank",
+        "2800."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Recommend civil engineering colleges near Bhaktapur for rank 2800.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Looking",
+        "for",
+        "a",
+        "private",
+        "college",
+        "in",
+        "Kathmandu",
+        "with",
+        "rating",
+        "above",
+        "4",
+        "and",
+        "rank",
+        "1600."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Looking for a private college in Kathmandu with rating above 4 and rank 1600.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "study",
+        "at",
+        "a",
+        "college",
+        "in",
+        "Lalitpur,",
+        "my",
+        "rank",
+        "is",
+        "3400",
+        "and",
+        "can",
+        "pay",
+        "up",
+        "to",
+        "12",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want to study at a college in Lalitpur, my rank is 3400 and can pay up to 12 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "colleges",
+        "with",
+        "rank",
+        "cutoff",
+        "around",
+        "3000",
+        "in",
+        "any",
+        "location."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest colleges with rank cutoff around 3000 in any location.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "a",
+        "college",
+        "with",
+        "hostel",
+        "in",
+        "Kathmandu",
+        "and",
+        "rank",
+        "below",
+        "2000."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I want a college with hostel in Kathmandu and rank below 2000.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "got",
+        "rank",
+        "4000",
+        "and",
+        "can",
+        "pay",
+        "9",
+        "lakhs,",
+        "any",
+        "colleges",
+        "left",
+        "for",
+        "me?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I got rank 4000 and can pay 9 lakhs, any colleges left for me?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "in",
+        "Lalitpur",
+        "with",
+        "rank",
+        "2500",
+        "and",
+        "total",
+        "budget",
+        "of",
+        "10",
+        "lakhs."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I'm in Lalitpur with rank 2500 and total budget of 10 lakhs.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Suggest",
+        "engineering",
+        "colleges",
+        "for",
+        "rank",
+        "1700",
+        "with",
+        "budget",
+        "around",
+        "5",
+        "lakhs",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Suggest engineering colleges for rank 1700 with budget around 5 lakhs in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "me",
+        "the",
+        "colleges",
+        "in",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List me the colleges in Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "me",
+        "the",
+        "colleges",
+        "located",
+        "at",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List me the colleges located at Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "all",
+        "colleges",
+        "in",
+        "Bhaktapur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me all colleges in Bhaktapur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "are",
+        "there",
+        "in",
+        "Bhaktapur",
+        "district?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges are there in Bhaktapur district?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "available",
+        "in",
+        "Bagmati",
+        "Province."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me colleges available in Bagmati Province.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "situated",
+        "in",
+        "Lalitpur",
+        "Metropolitan",
+        "City."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "List colleges situated in Lalitpur Metropolitan City.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Colleges",
+        "in",
+        "New",
+        "Baneshwor,",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Colleges in New Baneshwor, Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Any",
+        "good",
+        "colleges",
+        "in",
+        "Pulchowk?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "search_college",
+      "text": "Any good colleges in Pulchowk?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "colleges",
+        "around",
+        "Baneshwor",
+        "area."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Find colleges around Baneshwor area.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "stay",
+        "near",
+        "Koteshwor,",
+        "what",
+        "colleges",
+        "are",
+        "nearby?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "I stay near Koteshwor, what colleges are nearby?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Give",
+        "me",
+        "colleges",
+        "in",
+        "central",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Give me colleges in central Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "all",
+        "public",
+        "colleges",
+        "in",
+        "Nepal."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Show all public colleges in Nepal.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "all",
+        "private",
+        "engineering",
+        "colleges."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "List all private engineering colleges.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "that",
+        "offer",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "Show me colleges that offer computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "have",
+        "civil",
+        "engineering",
+        "programs?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges have civil engineering programs?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "offering",
+        "electronics",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "List colleges offering electronics engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "in",
+        "Lalitpur",
+        "offer",
+        "electrical",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges in Lalitpur offer electrical engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "public",
+        "colleges",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me public colleges in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "private",
+        "colleges",
+        "are",
+        "there",
+        "in",
+        "Bhaktapur?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Which private colleges are there in Bhaktapur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "colleges",
+        "in",
+        "Pokhara."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Find colleges in Pokhara.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "colleges",
+        "in",
+        "Koshi",
+        "Province."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show colleges in Koshi Province.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "engineering",
+        "colleges",
+        "in",
+        "Dharan."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List engineering colleges in Dharan.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "are",
+        "near",
+        "Patan?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges are near Patan?",
+      "failed": [
+        "LOCATION:'Lalitpur'"
+      ]
+    },
+    {
+      "tokens": [
+        "Show",
+        "all",
+        "colleges",
+        "in",
+        "the",
+        "Kathmandu",
+        "valley."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Show all colleges in the Kathmandu valley.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I'm",
+        "looking",
+        "for",
+        "colleges",
+        "in",
+        "Sanepa",
+        "area."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "I'm looking for colleges in Sanepa area.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "colleges",
+        "near",
+        "Kalanki",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Find colleges near Kalanki Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "in",
+        "Talchhikhel",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List colleges in Talchhikhel Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "colleges",
+        "are",
+        "in",
+        "Chyasal",
+        "area?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "What colleges are in Chyasal area?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "colleges",
+        "located",
+        "in",
+        "Gwarkho",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show colleges located in Gwarkho Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "all",
+        "colleges",
+        "that",
+        "offer",
+        "mechanical",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "List all colleges that offer mechanical engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "in",
+        "Kathmandu",
+        "have",
+        "computer",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges in Kathmandu have computer engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "in",
+        "Libali",
+        "Bhaktapur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me colleges in Libali Bhaktapur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "in",
+        "Tathali",
+        "area."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "List colleges in Tathali area.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "colleges",
+        "near",
+        "Thapathali."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Find colleges near Thapathali.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "colleges",
+        "available",
+        "in",
+        "Dhapakhel",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show colleges available in Dhapakhel Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "situated",
+        "near",
+        "Chakupat."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List colleges situated near Chakupat.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "are",
+        "in",
+        "Kalimati",
+        "area",
+        "of",
+        "Kathmandu?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges are in Kalimati area of Kathmandu?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "in",
+        "Rampur",
+        "Chitwan."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me colleges in Rampur Chitwan.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "colleges",
+        "in",
+        "Lamachaur",
+        "Pokhara."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "List colleges in Lamachaur Pokhara.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Are",
+        "there",
+        "any",
+        "engineering",
+        "colleges",
+        "near",
+        "me",
+        "in",
+        "Lalitpur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Are there any engineering colleges near me in Lalitpur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "am",
+        "from",
+        "Pokhara,",
+        "are",
+        "there",
+        "colleges",
+        "close",
+        "to",
+        "me",
+        "there?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "I am from Pokhara, are there colleges close to me there?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "colleges",
+        "that",
+        "have",
+        "both",
+        "civil",
+        "and",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "Show colleges that have both civil and computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "public",
+        "colleges",
+        "near",
+        "Bhaktapur."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Find public colleges near Bhaktapur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "all",
+        "colleges",
+        "in",
+        "Lalitpur",
+        "that",
+        "are",
+        "private."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COLLEGE_TYPE"
+      ],
+      "intent": "search_college",
+      "text": "List all colleges in Lalitpur that are private.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "are",
+        "available",
+        "in",
+        "Gandaki",
+        "Province?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges are available in Gandaki Province?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "engineering",
+        "colleges",
+        "near",
+        "Pulchowk",
+        "area."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Show engineering colleges near Pulchowk area.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "colleges",
+        "that",
+        "offer",
+        "BE",
+        "Electrical",
+        "Engineering",
+        "in",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Find colleges that offer BE Electrical Engineering in Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "List",
+        "private",
+        "colleges",
+        "in",
+        "Kathmandu",
+        "with",
+        "computer",
+        "engineering."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "search_college",
+      "text": "List private colleges in Kathmandu with computer engineering.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "public",
+        "campuses",
+        "in",
+        "Bagmati",
+        "Province."
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "B-LOCATION",
+        "I-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show public campuses in Bagmati Province.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "are",
+        "there",
+        "near",
+        "Sunsari",
+        "district?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges are there near Sunsari district?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "want",
+        "colleges",
+        "that",
+        "are",
+        "in",
+        "Lalitpur",
+        "or",
+        "nearby."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "I want colleges that are in Lalitpur or nearby.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Can",
+        "you",
+        "list",
+        "all",
+        "engineering",
+        "colleges",
+        "currently",
+        "in",
+        "Bhaktapur?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Can you list all engineering colleges currently in Bhaktapur?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "need",
+        "a",
+        "list",
+        "of",
+        "all",
+        "colleges",
+        "available",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "I need a list of all colleges available in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "near",
+        "me",
+        "are",
+        "in",
+        "the",
+        "Bagmati",
+        "area?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Which colleges near me are in the Bagmati area?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Find",
+        "all",
+        "colleges",
+        "that",
+        "have",
+        "BE",
+        "Mechanical",
+        "Engineering",
+        "courses."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Find all colleges that have BE Mechanical Engineering courses.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "am",
+        "from",
+        "Lalitpur",
+        "and",
+        "looking",
+        "for",
+        "colleges",
+        "that",
+        "match",
+        "my",
+        "rank",
+        "of",
+        "2300",
+        "and",
+        "7",
+        "lakh",
+        "budget."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I am from Lalitpur and looking for colleges that match my rank of 2300 and 7 lakh budget.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "colleges",
+        "near",
+        "Kathmandu",
+        "offer",
+        "computer",
+        "engineering",
+        "for",
+        "someone",
+        "with",
+        "rank",
+        "1600",
+        "and",
+        "10",
+        "lakh",
+        "budget?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "B-BUDGET",
+        "I-BUDGET",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "What colleges near Kathmandu offer computer engineering for someone with rank 1600 and 10 lakh budget?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "secured",
+        "rank",
+        "500",
+        "in",
+        "IOE,",
+        "which",
+        "are",
+        "the",
+        "best",
+        "colleges",
+        "I",
+        "can",
+        "target?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I secured rank 500 in IOE, which are the best colleges I can target?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Looking",
+        "for",
+        "a",
+        "college",
+        "near",
+        "Bhaktapur",
+        "with",
+        "hostel",
+        "and",
+        "rank",
+        "around",
+        "2800."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "Looking for a college near Bhaktapur with hostel and rank around 2800.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "My",
+        "rank",
+        "is",
+        "4200",
+        "and",
+        "I",
+        "want",
+        "to",
+        "study",
+        "computer",
+        "engineering",
+        "in",
+        "Kathmandu."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-RANK",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "My rank is 4200 and I want to study computer engineering in Kathmandu.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Show",
+        "me",
+        "colleges",
+        "near",
+        "my",
+        "home",
+        "in",
+        "Chakupat",
+        "Lalitpur."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "Show me colleges near my home in Chakupat Lalitpur.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "am",
+        "searching",
+        "for",
+        "engineering",
+        "colleges",
+        "in",
+        "Sanepa."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION"
+      ],
+      "intent": "search_college",
+      "text": "I am searching for engineering colleges in Sanepa.",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "any",
+        "college",
+        "in",
+        "Gwarkho",
+        "area?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "search_college",
+      "text": "Is there any college in Gwarkho area?",
+      "failed": [
+        "LOCATION:'Lalitpur'"
+      ]
+    },
+    {
+      "tokens": [
+        "How",
+        "do",
+        "I",
+        "get",
+        "admitted",
+        "to",
+        "BE",
+        "Computer",
+        "Engineering",
+        "at",
+        "Pulchowk",
+        "Engineering",
+        "Campus?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "How do I get admitted to BE Computer Engineering at Pulchowk Engineering Campus?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "admission",
+        "schedule",
+        "for",
+        "Kathford",
+        "International",
+        "College",
+        "this",
+        "year?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O"
+      ],
+      "intent": "admission_process",
+      "text": "What is the admission schedule for Kathford International College this year?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Is",
+        "there",
+        "a",
+        "deadline",
+        "for",
+        "applying",
+        "to",
+        "Sagarmatha",
+        "Engineering",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "admission_process",
+      "text": "Is there a deadline for applying to Sagarmatha Engineering College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Between",
+        "Pulchowk",
+        "and",
+        "Kathmandu",
+        "Engineering",
+        "College,",
+        "which",
+        "is",
+        "more",
+        "affordable?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "compare_colleges",
+      "text": "Between Pulchowk and Kathmandu Engineering College, which is more affordable?",
+      "failed": [
+        "ATTRIBUTE:'fee'"
+      ]
+    },
+    {
+      "tokens": [
+        "Compare",
+        "the",
+        "ratings",
+        "of",
+        "Kantipur",
+        "Engineering",
+        "College",
+        "and",
+        "Sagarmatha",
+        "Engineering",
+        "College."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "I-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2",
+        "I-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Compare the ratings of Kantipur Engineering College and Sagarmatha Engineering College.",
+      "failed": [
+        "ATTRIBUTE:'rating'"
+      ]
+    },
+    {
+      "tokens": [
+        "Which",
+        "has",
+        "a",
+        "better",
+        "cut-off",
+        "rank",
+        "for",
+        "civil",
+        "engineering,",
+        "Pulchowk",
+        "or",
+        "Thapathali?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "O",
+        "B-COLLEGE_NAME_1",
+        "O",
+        "B-COLLEGE_NAME_2"
+      ],
+      "intent": "compare_colleges",
+      "text": "Which has a better cut-off rank for civil engineering, Pulchowk or Thapathali?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "What",
+        "is",
+        "the",
+        "cut-off",
+        "rank",
+        "for",
+        "BE",
+        "Computer",
+        "Engineering",
+        "at",
+        "Kathford",
+        "International",
+        "College?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "B-COURSE",
+        "I-COURSE",
+        "I-COURSE",
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "What is the cut-off rank for BE Computer Engineering at Kathford International College?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Does",
+        "Kantipur",
+        "Engineering",
+        "College",
+        "offer",
+        "civil",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "I-COLLEGE_NAME",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "college_attribute_query",
+      "text": "Does Kantipur Engineering College offer civil engineering?",
+      "failed": [
+        "ATTRIBUTE:'courses'"
+      ]
+    },
+    {
+      "tokens": [
+        "How",
+        "many",
+        "seats",
+        "are",
+        "available",
+        "for",
+        "electronics",
+        "engineering",
+        "at",
+        "Thapathali?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "B-COLLEGE_NAME"
+      ],
+      "intent": "college_attribute_query",
+      "text": "How many seats are available for electronics engineering at Thapathali?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "Which",
+        "colleges",
+        "in",
+        "Kathmandu",
+        "have",
+        "the",
+        "best",
+        "ratings",
+        "for",
+        "electrical",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "B-COURSE",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "intent": "best_items_search",
+      "text": "Which colleges in Kathmandu have the best ratings for electrical engineering?",
+      "failed": [
+        "ATTRIBUTE:'rating'"
+      ]
+    },
+    {
+      "tokens": [
+        "Which",
+        "public",
+        "college",
+        "has",
+        "the",
+        "lowest",
+        "cut-off",
+        "rank",
+        "for",
+        "computer",
+        "engineering?"
+      ],
+      "labels": [
+        "O",
+        "B-COLLEGE_TYPE",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-ATTRIBUTE",
+        "O",
+        "O",
+        "B-COURSE"
+      ],
+      "intent": "best_items_search",
+      "text": "Which public college has the lowest cut-off rank for computer engineering?",
+      "failed": []
+    },
+    {
+      "tokens": [
+        "I",
+        "need",
+        "a",
+        "hostel-equipped",
+        "college",
+        "in",
+        "Kathmandu",
+        "with",
+        "rank",
+        "under",
+        "1500."
+      ],
+      "labels": [
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B-LOCATION",
+        "O",
+        "O",
+        "O",
+        "B-RANK"
+      ],
+      "intent": "recommend_with_constraints",
+      "text": "I need a hostel-equipped college in Kathmandu with rank under 1500.",
+      "failed": []
     }
   ]
 }

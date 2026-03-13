@@ -170,6 +170,20 @@ class DialogueManager:
         session_id = request.session_id or self._generate_session_id()
 
         try:
+            # ── "clear" command — reset all context ──────────────────────
+            if request.message.strip().lower() == "clear":
+                self.slot_manager.clear_context(session_id)
+                logger.info(f"[{session_id[:8]}] Context cleared by user")
+                print(f"\n{Colors.BOLD}{Colors.YELLOW}  *** CONTEXT CLEARED ***{Colors.END}\n", flush=True)
+                return self._build_response(
+                    session_id,
+                    "🔄 **Conversation cleared!**\n\n"
+                    "All previous context, slots, and filters have been reset.\n"
+                    "Feel free to start a new query from scratch.",
+                    "clear", {}, 1.0, start_time,
+                    {"type": "clear"},
+                )
+
             _print_header(session_id, request.message)
 
             # ── Step 1: NLU ──────────────────────────────────────────────

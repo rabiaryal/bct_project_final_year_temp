@@ -124,9 +124,14 @@ def normalize_budget(value: Any) -> Optional[int]:
     """Parse budget string -> integer rupees.
 
     Handles: "700000", "7 lakhs", "700k", "7,00,000", plain int/float.
+    Bare small numbers (< 1000) are assumed to be in lakhs because
+    the cheapest Nepal engineering fee is ~490,000.
     """
     if isinstance(value, (int, float)):
-        return int(value)
+        v = int(value)
+        if v < 1000:
+            return v * 100_000
+        return v
     text = str(value).lower().strip().replace(",", "")
     # "7 lakhs" / "7 lakh"
     m = re.search(r"(\d+(?:\.\d+)?)\s*(?:lakhs?|lakh)", text)
@@ -139,7 +144,10 @@ def normalize_budget(value: Any) -> Optional[int]:
     # plain digits
     m = re.search(r"(\d+)", text)
     if m:
-        return int(m.group(1))
+        v = int(m.group(1))
+        if v < 1000:
+            return v * 100_000
+        return v
     return None
 
 
@@ -226,8 +234,25 @@ def normalize_college_name(value: str) -> str:
     return value.strip()
 
 
+# Common misspellings / aliases → canonical location name
+_LOCATION_CORRECTIONS: Dict[str, str] = {
+    "kathamandu":    "kathmandu",
+    "kathamndu":     "kathmandu",
+    "kathmandu":     "kathmandu",
+    "ktm":           "kathmandu",
+    "lalitpur":      "lalitpur",
+    "patan":         "lalitpur",
+    "pokhara":       "pokhara",
+    "pokhra":        "pokhara",
+    "bhaktapur":     "bhaktapur",
+    "bhadgaon":      "bhaktapur",
+    "chitwan":       "chitwan",
+    "dharan":        "dharan",
+    "sunsari":       "sunsari",
+}
+
 def normalize_location(value: str) -> str:
-    """Normalize location names."""
+    """Normalize location names (fix typos, province aliases)."""
     v = value.lower().strip()
     provinces = {
         "province 1": "koshi",
@@ -238,7 +263,11 @@ def normalize_location(value: str) -> str:
         "province 6": "karnali",
         "province 7": "sudurpashchim",
     }
-    return provinces.get(v, value.strip())
+    if v in provinces:
+        return provinces[v]
+    if v in _LOCATION_CORRECTIONS:
+        return _LOCATION_CORRECTIONS[v]
+    return value.strip()
 
 
 def normalize_value(slot_name: str, value: Any) -> Any:

@@ -10,13 +10,14 @@ Intents:
   6. college_details         →  COLLEGE_NAME
   7. hostel_query            →  LOCATION + COLLEGE_TYPE + HOSTEL  (no $unwind)
   8. contact_query           →  COLLEGE_NAME  (no $unwind)
-  9. greeting                →  static
- 10. goodbye                 →  static
+  9. admission_process       →  COLLEGE_NAME  (no $unwind, contact-oriented)
+ 10. greeting                →  static
+ 11. goodbye                 →  static
 
 DB fields (15-college Nepal engineering DB):
   Top-level: Name, Location, Type, ContactNumber, Email, HostelAvailability
   Departments[]: Name
-  Departments[].Courses[]: Name, AverageCutoffRank, Fee, TotalSeats, Rating
+  Departments[].Courses[]: CourseId, Name, AverageCutoffRank, Fee, Rating
 """
 
 from typing import Dict, List, Any, Optional
@@ -122,10 +123,11 @@ INTENT_TEMPLATES: Dict[str, IntentTemplate] = {
         intent_name="best_items_search",
         description="Find best-rated colleges for a course or location",
         required_slots=[],
-        optional_slots=["course", "location"],
+        optional_slots=["course", "location", "budget"],
         query_fields={
             "course":   "Departments.Courses.Name",
             "location": "Location",
+            "budget":   "Departments.Courses.Fee",
         },
         uses_unwind=True,
         sort_field="rating",
@@ -266,7 +268,23 @@ INTENT_TEMPLATES: Dict[str, IntentTemplate] = {
         },
     ),
 
-    # 9 — greeting (static)
+    # 9 — admission_process (NO $unwind — top-level contact info)
+    "admission_process": IntentTemplate(
+        intent_name="admission_process",
+        description="Admission enquiry — returns contact info with admission guidance",
+        required_slots=["college_name"],
+        optional_slots=[],
+        query_fields={
+            "college_name": "Name",
+        },
+        uses_unwind=False,
+        no_results_message="No information found for that college.",
+        follow_up_questions={
+            "college_name": "Which college are you asking about admission for?",
+        },
+    ),
+
+    # 10 — greeting (static)
     "greeting": IntentTemplate(
         intent_name="greeting",
         description="User greeting",
@@ -297,7 +315,7 @@ INTENT_FAMILIES = {
     ],
     "info_family": [
         "college_details", "college_attribute_query", "compare_colleges",
-        "hostel_query", "contact_query",
+        "hostel_query", "contact_query", "admission_process",
     ],
     "conversational": ["greeting", "goodbye"],
 }
