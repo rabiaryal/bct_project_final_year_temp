@@ -114,9 +114,18 @@ _COURSE_ALIASES: Dict[str, str] = {
 }
 
 
-def normalize_course(value: str) -> str:
-    """Normalize course name to official DB value."""
-    key = value.lower().strip()
+def normalize_course(value: str) -> Optional[str]:
+    """Normalize course name to official DB value.
+
+    Returns None for non-course ranking words (e.g. "best", "top rated").
+    """
+    key = re.sub(r"[^a-z0-9\s\-/]", "", value.lower().strip())
+    noisy_course_words = {
+        "best", "top", "top rated", "best rated", "highest rated", "rated",
+        "college", "colleges",
+    }
+    if key in noisy_course_words:
+        return None
     return _COURSE_ALIASES.get(key, value.strip())
 
 
@@ -253,7 +262,7 @@ _LOCATION_CORRECTIONS: Dict[str, str] = {
 
 def normalize_location(value: str) -> str:
     """Normalize location names (fix typos, province aliases)."""
-    v = value.lower().strip()
+    v = re.sub(r"[^a-z0-9\s\-]", "", value.lower().strip())
     provinces = {
         "province 1": "koshi",
         "province 2": "madhesh",
@@ -267,7 +276,7 @@ def normalize_location(value: str) -> str:
         return provinces[v]
     if v in _LOCATION_CORRECTIONS:
         return _LOCATION_CORRECTIONS[v]
-    return value.strip()
+    return v if v else value.strip()
 
 
 def normalize_value(slot_name: str, value: Any) -> Any:

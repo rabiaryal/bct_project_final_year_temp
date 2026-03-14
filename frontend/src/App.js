@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
     Search,
     Filter,
@@ -40,32 +40,23 @@ const App = () => {
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
-    // API Base URL - Empty string to use package.json proxy
-    const API_BASE_URL = '';
+    // API config
+    // - REACT_APP_API_BASE_URL: optional (defaults to package.json proxy via empty string)
+    // - REACT_APP_API_KEY: required by backend auth (fallback for demo)
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || '';
+    const API_KEY = process.env.REACT_APP_API_KEY || 'demo-secret-2026';
 
     // Filter options
     const locations = ['Kathmandu', 'Lalitpur', 'Bhaktapur', 'Pokhara', 'Chitwan', 'Dharan', 'Butwal', 'Dhulikhel'];
     const courses = ['Civil Engineering', 'Computer Engineering', 'Electronics Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Architecture'];
 
-    useEffect(() => {
-        checkConnection();
-        generateSessionId();
-
-        // Set up periodic connection check
-        const interval = setInterval(checkConnection, 30000); // Check every 30 seconds
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages]);
-
     const generateSessionId = () => {
         const newSessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         setSessionId(newSessionId);
+        sessionStorage.setItem('chat_session_id', newSessionId);
     };
 
-    const checkConnection = async () => {
+    const checkConnection = useCallback(async () => {
         setIsConnecting(true);
         try {
             // Add timeout of 5 seconds
@@ -94,7 +85,27 @@ const App = () => {
             }
         }
         setIsConnecting(false);
-    };
+    }, [API_BASE_URL]);
+
+    useEffect(() => {
+        checkConnection();
+
+        // Keep one stable session id per browser tab/session.
+        const savedSessionId = sessionStorage.getItem('chat_session_id');
+        if (savedSessionId) {
+            setSessionId(savedSessionId);
+        } else {
+            generateSessionId();
+        }
+
+        // Set up periodic connection check
+        const interval = setInterval(checkConnection, 30000); // Check every 30 seconds
+        return () => clearInterval(interval);
+    }, [checkConnection]);
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
 
     const sendMessage = async (messageText = null) => {
         const textToSend = messageText || inputMessage.trim();
@@ -119,6 +130,7 @@ const App = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'x-api-key': API_KEY,
                 },
                 body: JSON.stringify({
                     message: textToSend,
@@ -126,12 +138,22 @@ const App = () => {
                 }),
             });
 
+            if (response.status === 401) {
+                throw new Error('Unauthorized (401). Missing/invalid x-api-key.');
+            }
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
 
             const data = await response.json();
             console.log('Received response:', data);
+
+            // Keep frontend aligned with backend session id (if backend generated one).
+            if (data.session_id && data.session_id !== sessionId) {
+                setSessionId(data.session_id);
+                sessionStorage.setItem('chat_session_id', data.session_id);
+            }
 
             const botMessage = {
                 id: Date.now() + 1,
@@ -202,18 +224,6 @@ const App = () => {
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const clearChat = () => {
-        setMessages([]);
-        generateSessionId(); // Generate new session for fresh start
-    };
-
-    const formatTimestamp = (timestamp) => {
-        return new Date(timestamp).toLocaleTimeString('en-US', {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
     };
 
     const getConnectionStatus = () => {

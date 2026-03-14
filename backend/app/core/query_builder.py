@@ -8,6 +8,7 @@ without duplicating low-level MongoDB logic.
 from typing import Dict, List, Any
 import json
 import logging
+import re
 
 from app.templates.intent_templates import IntentTemplate, get_template
 
@@ -31,7 +32,7 @@ def _unwind_projection() -> Dict[str, Any]:
         "course":        "$Departments.Courses.Name",
         "fee":           "$Departments.Courses.Fee",
         "rating":        "$Departments.Courses.Rating",
-        "cutoff_rank":   "$Departments.Courses.AverageCutoffRank",
+        "cutoff_rank":   "$Departments.Courses.Rank",
     }
 
 
@@ -66,7 +67,9 @@ def _build_match(slots: Dict[str, Any], template: IntentTemplate) -> Dict[str, A
         elif slot_name == "hostel":
             match[db_field] = bool(value)
         else:
-            match[db_field] = {"$regex": str(value), "$options": "i"}
+            # Escape regex metacharacters so punctuation like '?' doesn't break matching.
+            safe_value = re.escape(str(value).strip())
+            match[db_field] = {"$regex": safe_value, "$options": "i"}
     return match
 
 
@@ -171,7 +174,7 @@ def build_candidate_pipeline(slots: Dict[str, Any], limit: int = 15) -> List[Dic
         # Lenient filter: accept courses whose cutoff is at least 50%
         # of the user's rank.  The Python scorer handles exact ranking.
         lenient_rank = max(1, int(int(slots["rank"]) * 0.5))
-        match["Departments.Courses.AverageCutoffRank"] = {
+        match["Departments.Courses.Rank"] = {
             "$gte": lenient_rank,
         }
     if slots.get("budget"):
